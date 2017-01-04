@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>我的购物车 - 京东商城</title>
+        <link rel='icon' href='images/head.ico' type='image/x-ico'/>
+        <script src="../lib/jquery-1.8.3/jquery.min.js"></script>
+        <style>
+/*通用部分*/
+            *{margin: 0;padding: 0;}
+            body{font-size: 13px;color: #666;}
+            a{text-decoration: none;color: #666;}
+            a:hover{color: #c81623;}
+            ul,ol{list-style: none;}
+            .mg0{margin: 0;}
+            .color1{color: #c81623;}
+            .color2{color:#b1191a;}
+            .color3{color:block;}       
+            .bg1{background: #f1f1f1;}
+            .bg2{background: pink;}
+            .bg3{background: yellow;}
+            .cent{margin: 0 auto;}
+            .bd{border-right: 1px solid #dfdfdf;}
+            .bdt{border-bottom:1px solid #dfdfdf;}
+            .mg20{margin-top: 20px auto;}
+            .fl{float: left;}
+            .fr{float:right;}
+            .ds{display: inline-block;}
+/*top.css部分*/
+            #top{width: 100%;height: 30px;}
+            #top .cen{width:1200px;height: 100%;}
+            #top .cen .dz{width: 90px;height: 30px;position: relative;float: left;}
+            #top .cen .dz .dz1{width:70px;height:30px;text-align: center;line-height: 30px;float: left;}
+            #top .cen .dz .fh{width:15px;height:15px;transition: all 0.2s;float: left;margin-top: 6px;}
+            #top .cen .dz .city{width: 313px;height: 246px;border: 1px solid #ddd;padding: 10px;display: none;position: absolute;z-index: 9;}
+            #top .cen .dz ul li{display: inline-block;padding: 0 10px;margin: 5px 10px;}
+            #top .cen .dz .city1{background: #b1191a;}
+            #top .cen .dz .city2{color:white;}
+            #top .cen .dz .kong{width:90px;height:5px;background: white;display: none;z-index: 9;position: absolute;top:29px;left: 0;}
+
+            #top .cen .zhuce{width: 800px;height: 100%;float:right;line-height: 30px;}
+            #top .cen .zhuce a{margin:0 5px;}
+            #top .cen .zhuce .wdjd{width: 80px;height: 100%;margin-left: 5px;line-height:30px;display: inline-block;position: relative;}
+            #top .cen .zhuce .top{display:inline-block;margin-right: 10px;transition:all 0.2s;}
+            #top .cen .zhuce .wdjd .dl{width: 280px;height: 190px;border: 1px solid #ddd;display: none;position: absolute;}
+            #top .cen .zhuce .wdjd  .fh1{width:15px;height:15px;transition: all 0.2s;display:inline-block;line-height: 15px;margin-left: -10px;}
+            #top .cen .zhuce .wdjd .dl .img{display: inline-block;width: 60px;height: 60px;border-radius: 50%;margin: 10px 10px 0 10px;float: left;}
+            #top .cen .zhuce .wdjd .dl .nihao{width:200px;height:60px;float: left;margin-top: 15px;}
+            #top .cen .zhuce .wdjd .dl ul li{display: inline-block;margin-right: 50px;}
+            #top .cen .zhuce .wdjd .dl ul li a{margin: 5px;}
+            #top .cen .zhuce .wdjd .kong{width:80px;height:5px;background: white;display: none;z-index: 9;position: absolute;top:29px;left: 0;}
+            #top .cen .zhuce .sjjd{height: 30px;display: inline-block;line-height: 30px;}
+            #top .cen .zhuce .sjjd .tp{width: 20px;height: 20px;display: inline-block;margin-top:5px;}
+            #top .cen .zhuce .gzjd{display: inline-block;}
+            #top .cen .zhuce .khfw{display: inline-block;}
+            #top .cen .zhuce .wzdh{display: inline-block;}
+/*sousuo.css部分*/
+            #sosuo{width: 1210px;height: 100px;margin: 0 auto;}
+            #sosuo .logo{width:360px;height: 100px;display: inline-block;float: left;margin: 25px 0 0 100px;position: relative;}
+            #sosuo .logo .font{width:100px;height:50px;font-size: 25px;position: absolute;left:170px;top:15px;background: #fff;}
+            #sosuo .text{width: 270px;height: 26px;display: inline-block;float: left;margin: 30px 0 0 200px;}
+            #sosuo .text .text1{width: 100%;height: 100%;border: 2px solid #b1191a;display: inline-block;color:#ddd;}
+            #sosuo .anniu{width: 48px;height: 30px;float: left;}
+            #sosuo .anniu button{width:100%;height: 100%;background: #b1191a;border:0;margin-top:30px;font-size: 13px;color: white;}
+            #sosuo .gwc{width: 141px;height: 36px;float: left;margin: 32px 0 0 100px;border:1px solid #DFDFDF;background: #F9F9F9;position: relative;}
+            #sosuo .gwc .tupian{width: 18px;height: 14px;margin: 10px 0 0 20px;float: left;}
+            #sosuo .gwc .gwc1{margin-top:10px;}
+            #sosuo .gwc .gwc-number{width: 16px;height: 14px;border-radius:50% 50% 50% 0;position: absolute;top:-5px;left: 105px;background: #c81623;color: white;text-align:center;}
+/*content.css部分*/
+            #content{width: 100%;height: 807px;}
+            #content .center{width: 1050px;height: 100%;margin: 0 auto;}
+            #content .center .denglu{width: 968px;height: 26px;padding: 10px 20px;color: #FF7700;background: #FFFDEE;border: 1px solid #EDD28B;}
+             #content .center .denglu div{width: 16px;height: 16px;background: pink;display: inline-block;margin-left:-370px;background:url("images/duicuo.png") no-repeat 0 1px;}
+            #content .center .denglu button{background: #E74649;width:70px;height: 25px;border: 0 none;border-radius: 3px;color:#fff;cursor: pointer;margin-left: 5px;}
+            #content .center .title{width: 990px;height: 37px;margin-top: 10px;}
+            #content .center .title .qbsp{width: 85px;height: 30px;color:#000;font-size: 16px;border-bottom:2px solid #fff;float: left;margin-right: 10px;text-align: center;}
+            #content .center .quanxuan{width: 990px;height: 32px;background: #F3F3F3;padding: 10px;border: 1px solid #ddd;}
+            #content .center .quanxuan .tou{width: 110px;height: 100%;padding: 5px;float: left;}
+            #content .center .quanxuan .tou input{margin-right: 5px;}
+            #content .center .quanxuan .kong{width: 250px;height: 100%;float: left;margin-right: 20px;}
+            #content .center .jd{width: 990px;height:20px;padding: 10px;border-bottom: 2px solid #ccc;}
+            #content .center .jd .jdzy{width: 54px;height: 18px;display: inline-block;background: #E74649;border-radius: 3px;cursor: pointer;color:#fff;padding: 1px;}
+            #content .center .jd .yunfei{float: right;}
+            #content .center .huangou{width: 990px;height: 26px;padding: 10px;}
+            #content .center .huangou .h1{width: 30px;height: 16px;color:#fff;background: #F48719;padding:3px 7px;text-align: center;margin:0 10px;cursor:pointer;}
+            #content .center .huangou .h3{width: 55px;height: 19px;background: #E74649;padding:1px 3px;color: #fff;border-radius: 3px;margin-left: 20px;cursor:pointer;}
+            #content .center .huangou .h5{width: 100px;margin-left: 270px;}
+            #content .center .shangpin{width: 990px;height: 128px;padding: 10px;}
+            #content .center .shangpin input{margin-top: 10px;float: left;}
+            #content .center .shangpin .shangpin_img{width: 80px;height: 80px;border: 1px solid #ddd;margin: 5px 20px;float: left;}
+            #content .center .shangpin .shangpin_name{width: 208px;height: 40px;float: left;font-size: 12px;margin-top:5px;}
+            #content .center .shangpin .shangpin_name .zzbz{width: 200px;height:18px;margin-top: 30px;}
+            #content .center .shangpin .shangpin_name .zzbz .zz{float: left;margin:5px;}
+            #content .center .shangpin .shangpin_chima{width: 160px;height: 80px;float: left;padding:10px;}
+            #content .center .shangpin .shangpin_cuxiao{width: 120px;height: 40px;float: left;}
+            #content .center .shangpin .shangpin_cuxiao button{width: 78px;height: 20px;border:1px solid #F9D2D3;color: #E4393C;background: #fff;}
+            #content .center .shangpin .shangpin_shuliang{width: 80px;height: 42px;float: left;}
+            #content .center .shangpin .shangpin_shuliang .s1{width: 16px;height:18px;border:1px solid #ddd;float: left;text-align: center;cursor: pointer;}
+            #content .center .shangpin .shangpin_shuliang .s2{width: 42px;height:18px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;float: left;text-align: center;color:#000;}
+            #content .center .shangpin .shangpin_shuliang .s2 input{width: 42px;height: 18px;margin: 0;border:0;text-align: center;background: rgba(0,0,0,0)}
+            #content .center .shangpin .shangpin_shuliang .s3{width: 80px;height: 20px;color: #aaa;text-align:center;}
+            #content .center .shangpin .shangpin_zongjia{width: 100px;height: 20px;text-align: center;float: left;color:#000;}
+            #content .center .shangpin .shangpin_shanchu{margin-left: 50px;}
+            #content .center .jiesuan{width: 1008px;height: 50px;border:1px solid #ddd;margin-top: 20px;}
+            #content .center .jiesuan .j1{width: 45px;height: 18px;padding: 16px 0 16px 9px;}
+            #content .center .jiesuan .j2{width: 93px;height: 50px;margin-left: 10px;line-height: 50px;}
+            #content .center .jiesuan .j3{width: 82px;height: 50px;margin-left: 10px;line-height: 50px;}
+            #content .center .jiesuan .j4{width: 101px;height: 44px;margin-left: 300px;line-height: 30px;color:#aaa;}
+            #content .center .jiesuan .j4 span{color: #E4393C;font-size: 16px;}
+            #content .center .jiesuan .j5{width: 120px;height: 43px;line-height: 20px;color:#aaa;margin: 5px 40px 0 10px;}
+            #content .center .jiesuan .j5 span{color: #E4393C;font-size: 16px;}
+            #content .center .jiesuan .j6{width: 96px;height: 52px;background:#E4393C;color:#fff;font-size: 20px;text-align: center;line-height: 50px;cursor: pointer;}
+            #content .center .cnxh{width: 990px;height: 23px;padding: 10px;}
+            #content .center .cnxh .c1{width: 58px;height: 18px;color:#E4393C;font-weight: 700;border-bottom: 2px solid #E4393C;}
+            #content .center .cnxh .c2{width: 58px;height: 18px;margin-left: 40px;}
+/*dkhs.css部分*/
+            #dkhs{width: 100%;height: 94px;background: #f5f5f5;margin-top: 10px;}
+            #dkhs .duo{width: 302px;height: 54px;margin:20px 0 0 28px;}
+            #dkhs .kuai{width: 302px;height: 54px;margin-top: 20px;}
+/*wlike.css*/
+            .wlike{width:990px;height:359px;margin-top:20px;}
+            .wlike .wlike1{width:990px;height:22px;font-size:12px;}
+            .wlike .wlike-second{font-weight:bold;color:#C91623;}
+            .wlike .wlikeborder{border-bottom:2px solid #C91623;}
+            .wlike .wlike1-1{width:50px;height:23px;}
+            .wlike .wlike1-2{width:50px;height:23px;margin-left:30px;}
+            .wlike .wlike1-3{width:50px;height:23px;margin-left:30px;}
+            .wlike .wlike1 span{font:14px "Microsoft YaHei","微软雅黑";padding-top:3px;padding-left:10px;display:block;}
+            .wlike .wlike-con{width:990px;height:309px;/*border:1px dashed #cacaca;border-right:none;*/margin-top:10px;overflow:hidden;position:relative;}
+            /*.wlike .wlike-con ul{border-collapse:collapse;}*/
+            .wlike .wlike-con .ul1{position:absolute;display:none;}
+            .wlike .wlike-con ul li{width:244px;height:307px;float:left;   /*border-right:1px dashed #cacaca;*/}
+            .wlike .wlike-con .divres{width:990px;height:309px;font-size:12px;text-align:center;line-height:309px;}
+            .wlike .wlike-con .listbor1{border:1px dashed #cacaca;}
+            .wlike .wlike-con .listbor{border:1px solid #C91623;}
+            .wlike .wlike-con .prev1{width:40px;height:100px;border:none;position:absolute;top:90px;left:1px;font-size:30px;color:#9D9999;display:none;}
+            .wlike .wlike-con .next1{width:40px;height:100px;border:none;position:absolute;top:90px;right:7px;font-size:30px;color:#9D9999;display:none;}
+            .wlike .wlike-con .btncolor{background:rgba(230,230,230,0.4);}
+            .wlike .wlike-con .btncolor1{background:rgba(192 192 192,0.4);}
+            .wlike .wlike-con img{width:160px;height:160px;margin-top:20px;margin-left:40px;}
+            .wlike .wlike-con .wlike-name{width:246px;height:28px;overflow:hidden;}
+            .wlike .wlike-con a{width:206px;height:30px;display:block;margin-left:20px;font-size:12px;}
+            .wlike .wlike-con span{font:14px "Microsoft YaHei","微软雅黑";color:#C91623;margin-top:10px;display:block;padding-left:94px;}
+            .wlike .wlike-con .wlike-car{width:125px;height:31px;border:1px solid #999;border-radius:2px;margin:10px auto;}
+            .wlike .wlike-con .car-img{width:18px;height:18px;margin-top:5px;margin-left:25px;background:url('images/wlike-icons.png') 0 -55px;}
+            .wlike .wlike-con .car-font{font-size:12px;color:#666;margin-top:8px;margin-left:5px;}
+            .wlike .wlike-con .wlike-car:hover{background:#E64346;}
+            .wlike .wlike-con .wlike-car:hover .car-img{background:url('images/wlike-icons.png')-29px -55px;}
+            .wlike .wlike-con .wlike-car:hover .car-font{color:#fff;}
+/*buttom.css*/
+            #bottom{width:100%;height:156px;}
+            #bottom .b{width:1210px;height:180px;margin-top: 10px;}
+            #bottom .b .fore1{width: 180px;height:156;}
+            #bottom .b .fore1 dt{font:400 16px/24px;font-size:20px;padding:5px 0px;}
+            #bottom .b .fore1 dd{padding:3px 0;}
+            #bottom .b .coverage{width: 310px;height:168px;}
+            #bottom .b .coverage .dt{font:400 16px/24px;font-size:20px;padding:5px 0px;}
+            #bottom .b .coverage .dd{width:210px;height:54px;font-size: 14px;margin-top: 20px;}
+            #bottom .b .coverage .ar{width:210px;height:54px;text-align: right;}
+
+            #footer{width: 100%;height:auto;margin-top:20px;}
+            #footer .content{width:1210px;height:197px;}
+            #footer .content .a1{width: 100%;height:14px;text-align: center;font-size: 13px;}
+            #footer .content .a2{width:100%;height:74px; text-align: center;font-size: 12px;margin:20px 0;line-height: 20px;}
+            #footer .content .a3{width: 100%;height:34px; font-size: 12px;}
+            #footer .content .a3 .ico{width: 750px;height: 100%;margin-left:200px; text-align: center;}
+            #footer .content .a3 .ico .img{width: 105px;height:32px;}
+/* top:hover属性*/
+            #top .cen .dz:hover{background: white;border-left: 1px solid #ddd;border-right: 1px solid #ddd;top:0px;left:-1px;}
+            #top .cen .dz:hover .fh{transform: rotate(180deg);}
+            #top .cen .dz:hover .city{display:block;background: white;top:30px;left:-1px;}
+            #top .cen .dz ul li:hover{background: #f1f1f1;}
+            #top .cen .dz ul li a:hover{color: #b1191a;}
+            #top .cen .dz:hover .kong{display: block;}
+            #top .cen .zhuce .wdjd:hover{background: white;border-left:1px solid #ddd; border-right:1px solid #ddd;margin-left: 3px;}
+            #top .cen .zhuce .wdjd:hover a{margin-left: 6px;}
+            #top .cen .zhuce .wdjd:hover .fh1{transform:rotate(180deg);}
+            #top .cen .zhuce .wdjd:hover .dl{display:block;background: white;top:30px;left:-1px;}
+            #top .cen .zhuce .wdjd:hover .kong{display: block;}
+            #top .cen .zhuce .wdjd a:hover .top{transform:rotate(180deg);}
+/*content.hover属性*/
+            #content .center .title .qbsp:hover{color: #E74649;border-color: #E74649;}
+        </style>
+    </head>
+    <body>
+        <div id="top" class="bg1">
+            <div class="cen cent">
+                <div class="dz">                    
+                    <div class="dz1">送至:北京</div>
+                    <div class="fh">∨</div>
+
+                    <div class="kong"></div>             
+                    <ul class="city">
+                        <li class="city1"><a href="" class="city2">北京</a></li>
+                        <li><a href="">江苏</a></li>
+                        <li><a href="">上海</a></li>
+                        <li><a href="">天津</a></li>
+                        <li><a href="">重庆</a></li>
+                        <li><a href="">河北</a></li>
+                        <li><a href="">山西</a></li>
+                        <li><a href="">河南</a></li>
+                        <li><a href="">广东</a></li>
+                        <li><a href="">浙江</a></li>
+                        <li><a href="">陕西</a></li>
+                        <li><a href="">宁夏</a></li>
+                        <li><a href="">山东</a></li>
+                        <li><a href="">四川</a></li>
+                        <li><a href="">吉林</a></li>
+                        <li><a href="">福建</a></li>
+                        <li><a href="">辽宁</a></li>
+                        <li><a href="">安徽</a></li>
+                        <li><a href="">湖南</a></li>
+                        <li><a href="">海南</a></li>
+                        <li><a href="">青海</a></li>
+                        <li><a href="">西藏</a></li>
+                        <li><a href="">甘肃</a></li>
+                        <li><a href="">贵州</a></li>
+                    </ul>  
+                </div>
+                <div class="zhuce">
+                    <a href="">你好,请登录</a><a href="" class="color1">免费注册</a><span>|</span><a href="">我的订单</a><span>|</span><div class="wdjd"><a href="">我的京东</a>
+                        <div class="fh1">∨</div>
+                        <div class="kong"></div>
+                        <div class="dl">
+                            <img src="images/wdjd.jpg" class="img">
+                            <div class="nihao">
+                            <a href=""><b>你好,请登录</b></a><br>
+                            <a href="">优惠券</a><span>|</span><a href="">消息</a>
+                            </div>
+                            <ul>
+                                <li><a href="">待处理订单</a></li>
+                                <li><a href="">我的关注</a></li>
+                                <li><a href="">咨询回复</a></li>
+                                <li><a href="">&nbsp;我的京豆</a></li>
+                                <li><a href="">降价商品</a></li>
+                                <li><a href="">&nbsp;我的理财</a></li>
+                                <li><a href="">返修退换货</a></li>
+                                <li><a href="">京东白条</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- <div class="top">∨</div> --><span>|</span><a href="">京东会员</a><span>|</span><a href="">企业采购</a><span>|</span><div class="sjjd"><!-- <div class="tp">
+                    <img src="images/shouji.jpg"></div> --><a href="">手机京东∨</a><span>|</span>
+                    </div>
+                    <div class="gzjd"><a href="">关注京东∨</a></div><span>|</span>
+                    <div class="khfw"><a href="">客户服务∨</a></div><span>|</span>
+                    <div class="wzdh"><a href="">网站导航∨</a></div><span>|</span>
+                </div>
+            </div>
+        </div>
+        <div id="sosuo">
+            <div class="logo">
+                <img src="images/logo.jpg">
+                <div class="font"><b>购物车</b></div>            
+            </div>
+            <div class="text"><input type="text" value="游戏本" class="text1 color2"></div>
+            <div class="anniu"><button><b>搜索</b></button></div>
+        </div>
+        <div id="content">
+            <div class="center">
+                <div class="denglu">
+                    <div></div>
+                    <span>您还没有登录！登录后购物车的商品将保存到您账号中</span>
+                    <button>立即登录</button>
+                </div>
+                <div class="title">
+                    <div class="qbsp"><b>全部商品</b></div>
+                    <div class="qbsp"><b>京东大药房</b></div>
+                </div>
+                <div class="quanxuan">
+                    <div class="tou"><input class="qx" name="love[]" type="checkbox">全选</div>
+                    <div class="tou">商品</div>
+                    <div class="kong"></div>
+                    <div class="tou">单价(元)</div>
+                    <div class="tou">数量</div>
+                    <div class="tou">小计(元)</div>
+                    <div class="tou">操作</div>
+                </div>
+                <div class="jd">
+                    <input name="love[]" type="checkbox">
+                    <div class="jdzy">京东自营</div>
+                    <div class="yunfei">钻石会员满￥79.00免运费，其他会员满￥99.00免运费</div>
+                </div>
+                <div class="huangou">
+                    <span class="h1 ds">换购</span>
+                    <span class="h2 ds"><a href="">活动商品已满2999.00元,可加价换购商品1件&gt;&nbsp;</a></span>
+                    <span class="h3 ds">换购商品</span>
+                    <span class="h4 ds"><a href="">去凑单&gt;&nbsp;</a></span>
+                    <span class="h5 ds">5699.00</span>
+                </div>
+                <div class="shangpin">
+                    <input name="love[]" type="checkbox">
+                    <div class="shangpin_img"><img src="images/gwc_shangpin.jpg" alt=""></div>
+                    <div class="shangpin_name">
+                        <a href="">华硕(ASUS) 飞行堡垒旗舰版FX-PRO 15.6英寸游戏本(i5-6300HQ 8G 1TB</a>
+                        <div class="zzbz">
+                            <div class="zz"><img src="images/gwc_zzbz.jpg" alt=""></div>
+                            <div class="zz"><a href="">购买增值保障</a></div>
+                        </div>
+                    </div>
+                    <div class="shangpin_chima">尺码：Intel 六代i5</div>
+                    <div class="shangpin_cuxiao">
+                        <div>5699.00</div>
+                        <div class="cxyh">
+                            <button>促销优惠∨</button>
+                        </div>
+                    </div>
+                    <div class="shangpin_shuliang">
+                        <div class="s1">-</div>
+                        <div class="s2"><input type="text" value="1"></div>
+                        <div class="s1">+</div>
+                        <div class="s3">有货</div>
+                    </div>
+                    <div class="shangpin_zongjia"><b>5699.00</b></div>
+                    <div class="shangpin_shanchu fl">
+                        <div><a>删除</a></div>
+                        <div><a href="">移到我的关注</a></div>
+                    </div>
+                </div>
+                <div class="jiesuan">
+                    <div class="j1 fl"><input class="qx" name="love[]" type="checkbox">全选</div>
+                    <div class="j2 fl"><a href="">删除选中的商品</a></div>
+                    <div class="j3 fl"><a href="">移到我的关注</a></div>
+                    <div class="j3 fl"><a href="">清除下柜商品</a></div>
+                    <div class="j4 fl">已选择<span><b>0</b></span>件商品^</div>
+                    <div class="j5 fl">
+                        总价:<span><b>￥0.00&nbsp;&nbsp;</b></span>
+                        已节省-￥0.00
+                    </div>
+                    <div class="j6 fl"><b>去结算</b></div>
+                </div>
+                <div class="wlike">
+                    <div class="wlike1">
+                        <div class="wlike1-1 wlikeborder fl">
+                            <a href="" class="wlike-second">猜你喜欢</a>
+                        </div>
+                        <div class="wlike1-2 fl">
+                            <a href="" class="wlike-first">我的关注</a>
+                        </div>
+                        <div class="wlike1-3 fl">
+                            <a href="" class="wlike-first">最近浏览</a>
+                        </div>
+                        <div class="fr"><img src="images/qh.png" alt=""></div>
+                    </div>
+                    <div class="wlike-con">
+                        <ul style="display:block;" class="ul1 ulz">
+                            <li class="listbor1">
+                                <img src="images/like1.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 13.3英寸超轻薄笔记本电脑（I5-6200U 8G 256G PCIE SSD IPS FHD WIN10）金</a>
+                                </div>
+                                <span>¥5999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like2.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想（Lenovo）小新310经典版 14英寸超薄笔记本电脑（i7-6500U 4G 500G 2G独显 全高清屏 Win10）黑色</a>
+                                </div>
+                                <span>¥4399.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like3.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）</a>
+                                </div>
+                                <span>¥6499.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like4.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 12.2英寸13.4mm超轻薄笔记本电脑（6Y30 4G 128G SSD IPS FHD WIN10 WiFi）金</a>
+                                </div>
+                                <span>¥2999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like5.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 13.3英寸超轻薄笔记本电脑（I5-6200U 8G 256G PCIE SSD IPS FHD WIN10）金</a>
+                                </div>
+                                <span>¥5999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like6.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想（Lenovo）小新310经典版 14英寸超薄笔记本电脑（i7-6500U 4G 500G 2G独显 全高清屏 Win10）黑色</a>
+                                </div>
+                                <span>¥4399.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like7.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）</a>
+                                </div>
+                                <span>¥6499.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like8.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 12.2英寸13.4mm超轻薄笔记本电脑（6Y30 4G 128G SSD IPS FHD WIN10 WiFi）金</a>
+                                </div>
+                                <span>¥2999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like9.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 13.3英寸超轻薄笔记本电脑（I5-6200U 8G 256G PCIE SSD IPS FHD WIN10）金</a>
+                                </div>
+                                <span>¥5999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like10.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想（Lenovo）小新310经典版 14英寸超薄笔记本电脑（i7-6500U 4G 500G 2G独显 全高清屏 Win10）黑色</a>
+                                </div>
+                                <span>¥4399.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like11.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）</a>
+                                </div>
+                                <span>¥6499.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/like12.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 12.2英寸13.4mm超轻薄笔记本电脑（6Y30 4G 128G SSD IPS FHD WIN10 WiFi）金</a>
+                                </div>
+                                <span>¥2999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="ul1">
+                            <li class="listbor1">
+                                <img src="images/likes1.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 13.3英寸超轻薄笔记本电脑（I5-6200U 8G 256G PCIE SSD IPS FHD WIN10）金</a>
+                                </div>
+                                <span>¥5999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/likes2.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想（Lenovo）小新310经典版 14英寸超薄笔记本电脑（i7-6500U 4G 500G 2G独显 全高清屏 Win10）黑色</a>
+                                </div>
+                                <span>¥4399.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/likes3.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）</a>
+                                </div>
+                                <span>¥6499.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                            <li class="listbor1">
+                                <img src="images/likes4.jpg" alt="">
+                                <div class="wlike-name">
+                                    <a href="">联想(Lenovo)小新Air 12.2英寸13.4mm超轻薄笔记本电脑（6Y30 4G 128G SSD IPS FHD WIN10 WiFi）金</a>
+                                </div>
+                                <span>¥2999.00</span>
+                                <div class="wlike-car">
+                                    <div class="car-img fl"></div>
+                                    <div class="car-font fl">加入购物车</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="ul1 divres">
+                           暂时无结果
+                        </div>
+                        <button class="prev1 btncolor">&lt;</button>
+                        <button class="next1 btncolor">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dkhs">
+            <div class="duo ds"><img src="images/duo.png"></div>
+            <div class="kuai ds"><img src="images/kuai.png"></div>
+            <div class="kuai ds"><img src="images/hao.png"></div>
+            <div class="kuai ds"><img src="images/sheng.png"></div>
+        </div>
+        <div id="bottom" class="cent">
+            <div class="b cent">
+                <dl class="fore1 fl">
+                    <dt>购物指南</dt>
+                    <dd><div><a href="">购物流程</a></div></dd>
+                    <dd><div><a href="">会员介绍</a></div></dd>
+                    <dd><div><a href="">生活旅行/团购</a></div></dd>
+                    <dd><div><a href="">常见问题</a></div></dd>
+                    <dd><div><a href="">大家电</a></div></dd>
+                    <dd><div><a href="">联系客服</a></div></dd>             
+                </dl>                
+                <dl class="fore1 fl">
+                    <dt>配送方式</dt>
+                    <dd><div><a href="">上门自提</a></div></dd>
+                    <dd><div><a href="">211限时达</a></div></dd>
+                    <dd><div><a href="">配送服务查询</a></div></dd>
+                    <dd><div><a href="">配送费收取标准</a></div></dd>
+                    <dd><div><a href="">海外配送</a></div></dd>             
+                </dl>
+                <dl class="fore1 fl">
+                    <dt>支付方式</dt>
+                    <dd><div><a href="">货到付款</a></div></dd>
+                    <dd><div><a href="">在线支付</a></div></dd>
+                    <dd><div><a href="">分期付款</a></div></dd>
+                    <dd><div><a href="">邮局汇款</a></div></dd>
+                    <dd><div><a href="">公司转账</a></div></dd>             
+                </dl>
+                <dl class="fore1 fl">
+                    <dt>售后服务</dt>
+                    <dd><div><a href="">售后政策</a></div></dd>
+                    <dd><div><a href="">价格保护</a></div></dd>
+                    <dd><div><a href="">退款说明</a></div></dd>
+                    <dd><div><a href="">返修/退换货</a></div></dd>
+                    <dd><div><a href="">取消订单</a></div></dd>
+                    <dd><div><a href="">联系客服</a></div></dd>             
+                </dl>
+                <dl class="fore1 fl">
+                    <dt>特色服务</dt>
+                    <dd><div><a href="">夺宝岛</a></div></dd>
+                    <dd><div><a href="">DIY装机</a></div></dd>
+                    <dd><div><a href="">延保服务</a></div></dd>
+                    <dd><div><a href="">京东E卡</a></div></dd>
+                    <dd><div><a href="">京东通信</a></div></dd>
+                    <dd><div><a href="">京东JD+</a></div></dd>                
+                </dl>
+
+                <div class="coverage fl">
+                    <div class="dt">京东自营覆盖区县</div>
+                    <div class="dd">京东已向全国2654个城市提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</div>
+                    <p class="ar"><a href="">查看详情></a></p>
+                </div>          
+            </div>      
+        </div>
+        <div id="footer" class="fl">
+            <div class="content center">
+                <div class="a1">
+                    <a href="">关于我们 </a>|
+                    <a href="">联系我们 </a>|
+                    <a href="">联系客服 </a>|
+                    <a href="">商家入驻 </a>|
+                    <a href="">营销中心 </a>|
+                    <a href="">手机京东 </a>|
+                    <a href="">友情链接 </a>|
+                    <a href="">销售联盟 </a>|
+                    <a href="">京东社区 </a>|
+                    <a href="">京东公益 </a>|
+                    <a href="">English Site </a>|
+                    <a href="">Contact Us </a>|
+                </div>
+                <div class="a2">
+                    <img src="images/plic.png" width="20px" height="20px">
+                    <a href="">京公网安备 11000002000088号 </a>|
+                    京ICP证070359号 |
+                    <a href="">互联网药品信息服务资格证编号（京）-经营性-2014-0008</a>|
+                    新出发京零 字第大120007号<br>
+                    <a href="">互联网出版许可证编号新出网证(京)字150号</a>|
+                    <a href=""> 出版物经营许可证</a>|
+                    <a href=""> 网络文化经营许可证京网文[2014]2148-348号</a>|
+                    违法和不良信息举报电话：4006561155<br>
+                    Copyright ? 2004 - 2016  京东JD.com 版权所有 | 消费者维权热线：4006067733<br>
+                    <a href="">京东旗下网站：京东钱包</a>
+                </div>
+                <div class="a3 cent">
+                    <div class="ico">
+                        <div class="img fl ml10"><img src="images/footer1.png"></div>
+                        <div class="img fl ml10"><img src="images/footer2.png"></div>
+                        <div class="img fl ml10"><img src="images/footer3.png"></div>
+                        <div class="img fl ml10"><img src="images/footer4.jpg"></div>
+                        <div class="img fl ml10"><img src="images/footer5.jpg"></div>
+                        <div class="img fl ml10"><img src="images/footer6.jpg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //全选按钮
+                $('input[name="love[]"]').attr('checked',true);
+                $('.qx').click(function(){
+                    $('input[name="love[]"]').attr('checked',this.checked);
+                    if(this.checked){
+                        $('.shangpin').css('background', '#FFF4E8');
+                    }else{
+                        $('.shangpin').css('background', '#fff');
+                    }
+                    
+                })
+            //增加物品数量
+                var value=$('#content .s2 input').val();
+                $('.jiesuan .j4 b').text(value);
+                $('.jiesuan .j5 span b').text('￥'+value*5699+'.00');
+                $('#content .s1:eq(0)').click(function(){
+                    if(!(value==1)){
+                        value--;
+                        $('#content .s2 input').hide();
+                        $('#content .s2 input').val(value).slideDown(100);
+                        $('.shangpin_zongjia b').text(value*5699+'.00');
+                        $('.jiesuan .j5 span b').text('￥'+value*5699+'.00');
+                        $('.jiesuan .j4 b').text(value);
+                    }
+                })
+            //减少物品数量
+                $('#content .s1:eq(1)').click(function(){
+                    value++;
+                    $('#content .s2 input').hide();
+                    $('#content .s2 input').val(value).slideDown(100);
+                    $('#content .s2 input').val(value);
+                    $('.shangpin_zongjia b').text(value*5699+'.00');
+                    $('.jiesuan .j5 span b').text('￥'+value*5699+'.00');
+                    $('.jiesuan .j4 b').text(value);
+                })
+            //删除商品
+                $('.shangpin_shanchu div:eq(0)').click(function(){
+                    value=0;
+                    $('.shangpin').hide();
+                    $('.shangpin_zongjia b').text(value*5699+'.00');
+                    $('.jiesuan .j5 span b').text(' ￥ '+value*5699+' .00 ');
+                    $('.jiesuan .j4 b').text(value);
+                    $('input[name="love[]"]').attr('checked',false);
+                })
+            //标题切换
+                $('.wlike1 div').mouseover(function(){
+                    $(this).siblings().removeClass('wlikeborder');
+                    $(this).siblings().children().removeClass('wlike-second');
+                    $(this).addClass('wlikeborder');
+                    $(this).children().addClass('wlike-second');
+                    $('.wlike-con .ul1').css('display','none').eq($(this).index()).css('display','block');
+
+                })
+            //li的边框
+                $('.wlike-con .ul1 li').mouseover(function(){
+                    $(this).siblings().removeClass('listbor');
+                    $(this).addClass('listbor');
+                }).mouseout(function(){
+                    $('.wlike-con .ul1 li').removeClass('listbor');
+                    $('.wlike-con button').hide();
+                })
+            //按钮的显示隐藏
+                $('.wlike-con').mouseover(function(){
+                    $('.wlike-con button').show();
+                }).mouseout(function(){
+                    $('.wlike-con button').hide();
+                })
+            //鼠标移入按钮颜色变化
+                $('button').mouseover(function(){
+                    $(this).removeClass('btncolor').addClass('btncolor1');
+                }).mouseout(function(){
+                    $(this).removeClass('btncolor1').addClass('btncolor');
+                })
+            //点击换上一张
+                var divPos;
+                var divW=$('.wlike-con').width();     //div的宽度
+                var liW=$('.wlike-con .ulz li').width()+2;  //li的宽度
+                $('.wlike-con .prev1').on('click',function(){
+                    divPos=$('.wlike-con .ulz').position().left;   //ul的left值
+                    $('.wlike-con .ulz').css({left:divPos-divW+6},300);
+                    var endLeft=-($('.wlike-con .ulz li').length-8)*liW;
+                    if(divPos<=-984){
+                        $('.wlike-con .prev1').off('click');
+                         
+                    }
+                    console.log(divPos)
+                })
+                //点击换下一张
+                $('.wlike-con .next1').on('click',function(){
+                    var endLeft=divW-6;
+                    divPos=$('.wlike-con .ulz').position().left;   //ul的left值
+                     $('.wlike-con .ulz').css({left:divPos+divW-6});
+                    console.log(divPos)
+                    if(divPos>=-984){
+                        $('.wlike-con .next1').off('click');
+                    }
+                })
+        </script>
+    </body>
+</html>

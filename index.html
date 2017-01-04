@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8">
+<title>李蓉的简历</title>
+ <link rel="stylesheet" href="css/jquery.fullPage.css">
+ <style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+</style>
+</head>
+
+<body>
+<div id="dowebok">
+    <div class="section">
+        <div class="header">  
+        </div>
+        <div class="head">
+                <img src="images/head.jpg" alt="">
+            </div>
+        <h1>个人简历</h1>
+        <h2 style="margin-bottom:5px">李蓉</h2>
+        <p>WEB前端工程师</p>
+        <div class="fh-top">^</div>
+    </div>
+    <div class="section">
+        <div class="page-top" style="height:18%;">
+            <h1>个人信息</h1>
+            <div class="xian"></div>
+        </div>
+        <div class="page3-main">
+            <div class="container">姓名：李蓉</div>
+            <div class="container">坐标：北京</div>
+            <div class="container">年龄：23</div>
+            <div class="container">学历：大专</div>
+            <div class="container">专业：信息工程与网络技术</div>
+            <div class="container">TEL：189-6120-8839</div>
+            <div class="container">QQ: 875373853</div>
+            <div class="container">E-mail：lirong8839@qq.com</div>
+        </div>
+        <div class="fh-top">^</div>
+    </div>
+    <div class="section">
+        <div class="page-top" style="height:18%;">
+            <h1>专业技能</h1>
+            <div class="xian"></div>
+        </div>
+        <div class="page4-main">
+            <div>1.熟练使用HTML、CSS进行页面架构和布局</div>
+            <div>2.熟练使用Javascript、Jquery实现动态效果，如轮播图，放大镜，选项卡，时钟，小游戏等特效</div>
+            <div>3.熟练使用bootstrap、Angularjs等框架进行网页布局</div>
+            <div>4.熟悉HTML5和CSS3新特性，如canvas、Web存储、转换、过度、动画等</div>
+            <div>5.熟悉Ajax，能够实现网页局部刷新及后台数据的获取</div>
+            <div>6.熟悉Photoshop切图，栅格系统，能用axure快速呈现网页原型效果</div>
+            <div>7.熟悉Node.js，能用Node.js创建服务器，熟悉mongoDB对数据库进行增删改查</div>
+            <div>8.熟悉phpcms，可以用phpcms结合简单的php语言进行二次开发</div>
+            <div>9.了解LESS、SASS等预处理工具</div>
+        </div>
+            
+        <div class="fh-top">^</div>
+    </div>
+    <div class="section">
+        <div class="slide"><a href="JD/index.html"><img src="images/jd.png" alt=""></a></div>
+        <div class="slide"><a href="XM/index.html"><img src="images/xm.png" alt=""></a></div>
+        <div class="slide"><a href="XYS/index.html"><img src="images/xys.jpg" alt=""></a></div>
+        <div class="fh-top" style="z-index:9">^</div>
+    </div>
+    <div class="section">
+        <div class="page-top" style="height:18%;">
+            <h1>我就是我</h1>
+            <div class="xian"></div>
+        </div>
+        <div class="page5-main">
+            <img style="width:80%;margin-top:5%" src="images/me.png" alt="">
+            <h2 style="margin:2%">我就是我，不一样的花火</h2>
+            <div style="padding:0 10%;">性格开朗，热爱冒险，热爱学习，女汉子≠糙汉子</div>
+        </div>
+            
+        <div class="fh-top">^</div>
+    </div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+    $('#dowebok').fullpage({
+        // sectionsColor : ['#0C0121', '#0C0121', '#0C0121', '#0C0121'],
+        loopBottom: true
+        
+    });
+
+    setInterval(function(){
+        $.fn.fullpage.moveSlideRight();
+
+    }, 3000);
+    // console.log('aaa');
+});
+
+// heead背景旋转
+$(window).load(function(){
+    var deg=1;
+    setInterval(function(){
+        deg++;
+        $('#dowebok .section .header').css('transform','rotate('+deg+'deg)');
+
+    },50)
+    $('#dowebok .section h1').fadeIn(3000);
+    $('#dowebok .section p').animate({left:'10%'},1000);
+})
+
+$(window).load(function(){
+    setInterval(function(){
+        $('.fh-top').animate({bottom:'1%',},500).animate({bottom:'3%',},500).animate({bottom:'1%',},500).animate({bottom:'3%',},500).animate({bottom:'1%',},500).animate({bottom:'3%',},500);
+        $('.xian').animate({width:'80%'},1000).animate({width:'10%'},1000).animate({width:'80%'},1000).animate({width:'10%'},1000);
+    },3000)
+    var width=$(window).width();
+    if(width>1000){
+        $('.section .header').css({width:'20vw',height:'20vw',margin:'2% auto'});
+        $('.section .head').css({width:'16vw',height:'16vw',left:'34%',top:'8%'});
+        $('.section h1').css({'font-size':'5vw',margin:'1%'});
+        $('.section h2').css({'font-size':'4vw',margin:'1%'});
+        $('.section p').css({'font-size':'3vw','padding':'1% 0',margin:'1%'});
+        $('.fh-top').hide();
+        $('.page-top').css({'padding-top':'3%'});
+        $('.page-top h1').css({margin:'0',padding:'0'});
+        $('.section .page3-main .container').css({width:'40%',height:'3.5vw',margin:'1% auto','line-height':'3.5vw','font-size':'2vw'});
+        $('.section .page4-main').css({'font-size':'2vw',padding:'0 18%'});
+        $('.section .page4-main div').css({'margin-top':'1%'});
+        $('.section .page5-main img').css({width:'20%','margin-top':'1%'});
+        $('.section .page5-main p').css({'margin-top':'1%'});
+    }
+    // var fid=$('div').find('active');
+    // if(fid){
+    //     alert()
+    // }
+    
+})
+
+    // $('.section .main:eq(0)').fadeIn(4004,function(){
+
+    //     $('.section .main:eq(1)').fadeIn(4004,function(){
+    //         $('.section .main:eq(2)').fadeIn(4004,function(){
+        
+    //         })
+    //     })
+    // })
+
+</script>
+
+<!-- <a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a> -->
+
+</body>
+</html>

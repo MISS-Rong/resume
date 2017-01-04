@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<title>【外星人ALW15ER-3718】</title>
+    <script src="../lib/jquery-1.8.3/jquery.min.js"></script>
+	<link rel='icon' href='images/tit_ico.ico ' type='image/x-ico' />
+	<style>
+	/*自定义样式*/
+		*{margin:0;padding:0;}
+		ol,ul{list-style: none;}
+
+		body{color:#666;font-size:14px;}
+		a{text-decoration: none;color:#666;font-size: 12px;}
+		a:hover{color:#b2191b;}
+		.bg1{background:#f1f1f1;}
+		.bg2{background:#b2191b;}
+		.bg3{background: pink;}
+		.bg4{background:#fff;}
+		.center{margin:0 auto;}
+		.fl{float:left;}
+		.ml5{margin-left:5px;}
+		.ml10{margin-left: 10px;}
+		.ml20{margin-left: 20px;}
+		.ml25{margin-left: 25px;}
+		.ml30{margin-left: 30px;}
+		.ml40{margin-left: 40px;}
+		.ml50{margin-left:50px;}
+		.mt10{margin-top: 10px;}
+		.mt20{margin-top: 20px;}
+		/*.font1{font-size: }*/	
+	/* top部分 */
+		.top-bg{width:100%;height:auto;}
+		.top-bg .top{width:1210px;height:30px;line-height:30px;font-size:12px;}
+		.top-bg .top .ads{width:100px;height:30px;position:relative;border-left: 1px solid #f1f1f1;border-right: 1px solid #f1f1f1;}
+		.top-bg .top .ads .name{float: left;margin-left:20px;}
+		.ico{float:left;width:10px;height:10px;font-size:20px;margin-top: 8px; margin-left:5px;transition:all 0.1s;}
+		.top-bg .top .ads .ads-none{z-index: 10; width:310px;height:250px;border:1px solid #ddd;left:-1px;top:30px;position: absolute;display:none;}
+		.top-bg .top .ads .ads-none ul{margin-top:10px;}
+		.top-bg .top .ads .ads-none ul li{float:left;margin:5px 10px;line-height: 22px;}
+		.top-bg .top .ads .ads-none ul li a{padding:5px 5px;}
+		.top-bg .top .ads .ads-none .first{background:#b2191b;color:white;}
+		.top-bg .top .ads .cover{width:100px;height:5px;background:#fff; position: absolute;top:28px;z-index: 11;display: none; }
+
+
+		.top-bg .top .login{width:auto;height:100%;margin-left: 300px;}
+		.top-bg .top .reg{width:auto;height:100%;margin-left:5px;color:red; }
+		.ico1{margin:5px 5px;}
+		.top-bg .top .goods{width:auto;height:100%;}
+		.top-bg .top .myd{width:auto;height:100%;position:relative;border-left: 1px solid #f1f1f1;border-right: 1px solid #f1f1f1;}
+		.top-bg .top .myd .list1{width:250px;height:220px;position:absolute;border:1px solid #ddd;display: none;top:30px;left:-1px;}
+		.top-bg .top .myd .cover{width:62px;height:5px;background:white; position: absolute;top:28px;z-index: 9;display: none; }
+
+		.top-bg .top .phd{width:auto;height:100%;position: relative;}
+		.phone{width:20px;height:20px;background:url('../images/2.png') 3px 0px no-repeat;margin-top:5px;}
+		.top-bg .top .phd .list2{width:250px;height:220px;background: #fff; border:1px solid #ddd;z-index:9; position:absolute;top:30px;display: none;}
+		.top-bg .top .phd .cover{width:82px;height:5px;background:#fff; position: absolute;top:28px;left:1px;z-index:12;display: none; }
+
+		.top-bg .top .sever{width:auto;height:100%;position:relative;border-left: 1px solid #f1f1f1;border-right: 1px solid #f1f1f1;}
+		.top-bg .top .sever .list3{width:200px;height:200px;position:absolute;border:1px solid #ddd;display: none;top:30px;left:-1px;background: #fff;z-index: 9;}
+		.top-bg .top .sever .cover{width:62px;height:5px;background:white; position: absolute;top:28px;z-index: 10;display: none; }
+
+		.top-bg .top .focus{width:80px;height:100%;position:relative;border-left: 1px solid #f1f1f1;border-right: 1px solid #f1f1f1;}
+		.top-bg .top .focus .list4{width:80px;height:85px;position:absolute;border:1px solid #ddd;display: none;top:30px;left:-1px;z-index: 9;}
+		.top-bg .top .focus .list4 .m{width:56px;height:auto;}
+		.top-bg .top .focus img{margin-left:10px;}
+		.top-bg .top .focus .cover{width:80px;height:5px;background:white; position: absolute;top:28px;z-index: 10;display: none; }
+
+
+		.banner-wrap{width:100%;height:80px;background:#f65382;background: url('../images/banner.jpg');}
+		.banner-wrap img{float:left;}
+
+
+		/*状态选择器*/
+		.top-bg .top .ads:hover{background:white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+		.top-bg .top .ads:hover .ads-none{display: block;background: white;}
+		.top-bg .top .ads .ads-none ul li a:hover{background: #f1f1f1;color:#b2191b;}
+		.top-bg .top .ads:hover .cover{display: block;}
+		.top-bg .top .ads:hover .ico{transform:rotate(180deg);}
+
+		.top-bg .top .login:hover{color:red;}
+		.top-bg .top .reg:hover{color:red;}
+		.top-bg .top .goods:hover{color:red;}
+
+		.top-bg .top .myd:hover{color:red;background: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+		.top-bg .top .myd:hover .list1{display: block;background:white;}
+		.top-bg .top .myd a:hover{color:#b2191b;}
+		.top-bg .top .myd:hover .cover{display: block;}
+		.top-bg .top .myd:hover .ico{transform:rotate(180deg);}
+
+		.top-bg .top .phd:hover{color:red;background: #fff;}
+		.top-bg .top .phd:hover .phone{background-position:3px -25px;}
+		.top-bg .top .phd:hover .list2{display: block;}
+		.top-bg .top .phd a:hover{color:#b2191b;}
+		.top-bg .top .phd:hover .cover{display: block;}
+		.top-bg .top .phd:hover .ico{transform:rotate(180deg);}
+
+		.top-bg .top .sever:hover{color:red;background: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+		.top-bg .top .sever:hover .list3{display: block;}
+		.top-bg .top .sever a:hover{color:#b2191b;}
+		.top-bg .top .sever:hover .cover{display: block;}
+		.top-bg .top .sever:hover .ico{transform:rotate(180deg);}
+
+		.top-bg .top .focus:hover{color:red;background: white;border-left:1px solid #ddd;border-right:1px solid #ddd;}
+		.top-bg .top .focus:hover .list4{display: block;background:white;}
+		.top-bg .top .focus a:hover{color:#b2191b;}
+		.top-bg .top .focus:hover .cover{display: block;}
+		.top-bg .top .focus:hover .ico{transform:rotate(180deg);}
+	/* scarch部分 */
+		.search{width: 1210px;height: 110px;}
+		.search .logo{width:auto;height:auto;margin-top: 30px;}
+		.search .middle{width: 545px;height: 60px;margin-left: 80px;margin-top:30px;}
+		.search input{width:450px;height:40px;border:2px solid #b2191b;float: left;}
+		.search button{width:80px;height:44px;background: #b2191b;color:white;border:0px;font-size: 20px;float: left;}
+		.search button:hover{cursor:pointer;}
+		.search .shop{width:150px;height:44px;margin-left: 80px;margin-top: 30px;border:1px solid #ddd;position: relative;background: #f1f1f1;}
+		.search .shop .car{width:20px;height:20px;background:url('../images/2.png');background-position:0px -59px;margin-top: 15px;margin-left: 20px; background-repeat:no-repeat;}
+		.search .shop .zero{width:15px;height:15px;background: #c81623;color:white;text-align: center; position: absolute;right: 20px;top:-10px;border-top-left-radius: 10px;border-top-right-radius: 10px;border-bottom-right-radius: 10px;}
+		.search .shop .mycar{width:auto;height:30px;margin-top:15px;}
+		.search .shop .goods{width: 300px;height:80px;position: absolute;border:1px solid #ddd;top:44px;left:-151px;line-height: 80px;display: none;}
+		.search .shop .cover{width:150px;height:5px;background:white; position: absolute;top:42px;z-index: 9;display: none; }
+
+		.list{width:100%;height:auto;border-bottom: 2px solid #b2191b;}
+		.list .sub_list{width: 1210px;height: 50px;}
+		.list .sub_list .sort{width:180px;padding:0 10px;height:100%;background: #b2191b;font-size: 20px;color:white;line-height: 50px;position: relative;}
+		.list .sub_list .sort1 a{font-size: 18px;color:black;}
+		.list .sub_list .sort1{width: auto;height: 100%;line-height: 50px;}
+
+
+		.inner{width:200px;height:auto;z-index: 9;position: absolute;top:52px;left: 0px;display:none;}
+		.inner .list1{width:200px;height:31px;font-size:14px;line-height: 31px;background: #c81623;}
+		.inner .list1 a{color:#fff;font-size: 14px;padding:5px 10px;}
+
+		/*状态选择器*/
+		.li-link{width:245px;height:120px;float: right;background: #fff;border:1px solid #ddd;}
+		.li-link ul li{line-height: 24px;color:#c81623;margin-left: 5px;}
+		.inner .list1:hover{background: #f7f7f7;}
+		.inner .list1:hover a{color:#b61d1d;}
+
+		.search .middle a:hover{color:#b2191b;}
+		.search .shop:hover{box-shadow: 0 0 5px rgba(0,0,0,0.2);background:#fff;}
+		.search .shop:hover a{color:#b2191b;}
+		.search .shop:hover .goods{display: block;background: white;box-shadow: 0 0 5px rgba(0,0,0,0.2)}
+		.search .shop:hover .cover{display: block;}
+		.list .sort:hover .inner{display:block; }
+		.list .sort1:hover a{color:#c81623;}
+	/* 电脑办公 */
+		.good{width:100%;height: 732px;background: #f2f2f2;overflow: hidden;border-bottom:1px solid #ddd;}
+		.good .title{width: 1210px;height: 45px;line-height: 45px; }
+		.good .title .txt1 a{font-size: 18px;color:#666;font-weight: bold;padding-right: 10px;}
+		.good .title .txt2 li{float: left;line-height: 40px;}
+		.good .title .txt2 li a{padding-left:15px;}
+		.good .content{width: 1210px;height: 685px;background: #fff;}
+
+		.content .left{width: 378px;height: 100%;margin-left: -90px;}
+		.content .left #min{width: 350px;height: 350px;/*position: relative;*/}
+		.content .left #min img{width: 350px;height: 350px;}
+		.content .left #min .z{width: 60px;height:60px;background: rgba(255,0,255,0.3);position: absolute;/*display: none;*/}
+		.content .left #max{width: 400px;height:400px;overflow: hidden;position: absolute;display:none;z-index:9;border:1px solid #ddd; }
+		.content .left #img2{width: 364px;height: 54px;margin-top: 5px;}
+		.content .left #img2 #ico{width: 54px;height: 54px;float: left;border:2px solid #fff;}
+		.content .left #img2 #ico img{width: 54px;height: 54px;}
+		.content .left #img2 #next{width:30px;height: 30px;float: right;}
+		.content .left .share{width: 378px;height: 42px;}
+		.content .left .share .item1{width: 14px;height: 14px; margin-left: 50px; background: url('../images/share-ico.jpg') -10px -10px no-repeat;}
+		.content .left .share .item2{width: 14px;height: 14px; margin-left: 50px; background: url('../images/share-ico.jpg') -25px -9px no-repeat;}
+		.content .left .share .a{width: 24px;height: 14px;padding-left: 15px;line-height: 12px;}
+
+		.content .mes{width: 588px;height: 100%;}
+		.content .mes .name{width: 513px;height: 113px;font-size: 16px;line-height: 22px;}
+		.content .mes .btn{width: 56px;height: 24px;text-align: center;line-height: 24px; border:1px solid #ddd;background: #f7f7f7;float: right;}
+		.content .mes .name #p-ad{width: 513px;height: 40px;color: #e3393c;font-size: 14px;font-weight: small}
+		.content .mes .summary{width: 100%;height: 213px;}
+		.content .mes .summary .price{width: 100%;height: 105px;background: #f7f7f7;}
+		.content .mes .summary .price .item1{line-height: 40px;}
+		.content .mes .summary .price .item1 span{color:#e4393c;font-size: 20px;font-weight: bold;}
+		.content .mes .summary .price #count{width: 69px;height: 33px;float: right;margin-top: 5px;border-right: 1px solid #ddd;}
+		.content .mes .summary .price #count a{color:#005ea7;font-size: 18px;}
+		.content .mes .summary .price .item2{width: 513px;height: 64px;}
+		.content .mes .summary .price .item2 .sale{width: 72px;height: 30px;}
+		.content .mes .summary .price .item2 span:nth-child(2){background: #e4393c;color: #fff;}
+		.content .mes .summary .send .list1{width: 100%;height: 30px;}
+		.content .mes .summary .send .list1 span{background: url('../images/send-ico.png') 0px 0px no-repeat;padding:5px 0 5px 25px;line-height: 30px;}
+		.content .mes .summary .send .list2{width: 100%;height: 38px;line-height: 38px;}
+		.summary .send .list2 .ads{width: 110px;height: 25px;border:1px solid #ddd;margin-top: 8px;line-height:25px;font-size: 12px;position: relative; }
+		.summary .send .list2 .ads .icon{width: 14px;height: 14px; background: url('../images/newicon.png') -264px -188px no-repeat;float: left;margin-left: 5px;}
+		.summary .send .list2 .ads .de{width: 450px;height: 150px;position: absolute;top: 25px;left: -1px;border:1px solid #ddd;display: none;}
+		.summary .send .list2 .ads .cover{width: 110px;height: 5px;background:#fff;position: absolute;top:22px;display: none;}
+		.summary .send .list2 .ads .de .a1{width: 65px;height: 25px;text-align: center;  border:1px solid #ddd;border-bottom: none; margin:10px 3px 0 3px;float: left;color: #005ea7;font-size: 14px;font-weight: bold;position: relative;}
+		.summary .send .list2 .ads .de .a1 .cover1{width: 65px;height: 5px;background: #fff;top: 21px;}
+		.summary .send .list2 .ads .de .a2{width: auto;height:25px; margin-right: 45px;margin-left: 20px; float: left;color: #005ea7;padding:3px 3px;}
+		.content .mes .summary .send .list3{width: 100%;height: 30px;margin-top: 5px;}
+
+		.content .mes .select{width: 100%;height: 138px;border-top:1px dashed #ddd;}
+		.content .mes .select .banb{width: 72px;height: 18px;}
+		.content .mes .select .lis{width: 505px;height: auto;}
+		.content .mes .select .lis .st{width: auto;height: 25px;border: 1px solid #ddd;float: left;margin-right: 8px;margin-top: 5px;line-height: 25px;cursor: pointer;}
+		.content .mes .zb{width: 100%;height: 85px;}
+		.content .mes .zb .z{width:100%;height: 42px;}
+		.content .mes .zb .z .btn1{width:120px;height: 30px;font-size: 12px;padding-left: 25px;line-height: 30px; border:1px solid #ddd; background: url('../images/cu.png') 5px 8px no-repeat;position: relative;cursor: pointer;}
+		.content .mes .zb .z .btn1 .sub1{width: 250px;height: 120px;background: url('../images/cu.jpg');position: absolute;top:31px;left:-1px;border:1px solid #ddd;display: none;}
+		.content .mes .zb .z .btn2{width:120px;height: 30px;font-size: 12px;padding-left: 25px;line-height: 30px;margin:0 5px; border:1px solid #ddd; background: url('../images/time.png') 5px 8px no-repeat;position: relative;cursor: pointer;}
+		.content .mes .zb .z .btn2 .sub2{width: 245px;height: 35px;background: url('../images/time.jpg') no-repeat;position: absolute;top:31px;left:-1px;border:1px solid #ddd;display: none;}
+		.content .mes .zb .z .btn3{width:120px;height: 30px;font-size: 12px;padding-left: 25px;line-height: 30px; border:1px solid #ddd; background: url('../images/set.png') 5px 8px no-repeat;position: relative;cursor: pointer;}
+		.content .mes .zb .z .btn3 .sub3{width: 250px;height: 168px;background: url('../images/set.jpg');position: absolute;top:31px;left:-1px;border:1px solid #ddd;display: none;}
+		.content .mes .zb .icon{width: 14px;height: 14px; background: url('../images/newicon.png') -264px -188px no-repeat;float: left;margin-left: 5px;margin-top: 3px;}
+		.content .mes .zb .b{width: 100%;height: 42px;}
+		.content .mes .zb .b .item{width: auto;height: 30px;line-height: 30px;margin-right: 8px; border:1px solid #ddd;float: left;cursor: pointer;}
+		.content .mes .zb .b .hui{width: 18px;height: 18px; background: url('../images/hui.png') no-repeat;margin:8px 0 0 8px;}
+		.content .mes .zb .img{width: 18px;height: 18px; background: url('../images/newicon.png') -132px -292px no-repeat;margin:8px;}
+		.content .mes .gou{width: 100%;height: 70px;}
+		.content .mes .gou .sum{width: 50px;height: 36px;border:1px solid #ddd;margin-top: 20px;text-align:center; }
+		.content .mes .gou .sum .shu{width: 31px;height: 100%;line-height: 36px;}
+		.content .mes .gou .sum .up-down{width: 17px;height: 17px;border:1px solid #ddd;line-height: 17px;}
+		.content .mes .gou .che{width: 137px;height: 38px;border:1px solid #ddd;background: url('../images/che.jpg');margin-top: 20px;margin-left: 10px;cursor: pointer;}
+
+		.content .right{width: 200px;height: auto;margin-left: 25px;}
+		.content .right .logo{width: 180px;height: 70px;margin-top: 5px; border-top: 1px solid #ddd;border-bottom: 1px solid #ddd;}
+		.content .right .seller{width: 100%;height: 30px;}
+		.content .right .seller .sell{width:54px;height:18px;background:#e4393c;color:#fff;margin-left:30px;font-size: 12px;float: right;text-align: center;margin-right: 20px;}
+		 #j-jm{width: 90px;height: 30px;border:1px solid #ddd;background: #f7f7f7;line-height: 30px;float: left;margin-right:5px;margin-top: 10px;cursor: pointer;}
+		 .icon1{width: 20px;height: 20px;background: url('../images/sprite-gys-im.gif') no-repeat 3px 0px;margin-top: 3px;}
+		 #j-jm .icon2{width: 20px;height: 20px;background: url('../images/popScore.png') no-repeat -130px 0px;margin-top: 3px;}
+		 #j-jm .icon3{width: 20px;height: 20px;background: url('../images/popScore.png') no-repeat -104px 0px;margin-top: 3px;}
+		 #j-jm .icon4{width: 20px;height: 20px;background: url('../images/popScore.png') no-repeat -78px 0px;margin-top: 3px;}
+		.content .right .sever{width: 100%;height: auto;}
+		.content .right .sever .way{width:60px;height: 16px;float: left;margin-top: 5px;padding-left: 20px;}
+		.content .right .sever .way a{color: #6a77b6;}
+
+
+
+
+		.good a:hover{color:#e4393c;}
+		.content .left #img2 #ico:hover{border:2px solid #e4393c;}
+		.summary .send .list2 .ads .de .a2:hover{color: #fff;background: #005ea7; }
+		.summary .send .list2 .ads:hover .de{display: block;}
+		.summary .send .list2 .ads:hover .cover{display: block;}
+		.content .mes .select .lis .st:hover{color:#e4393c;border:1px solid #e4393c;}
+		.content .mes .zb .z .btn1:hover .sub1{display: block;}
+		.content .mes .zb .z .btn2:hover .sub2{display: block;}
+		.content .mes .zb .z .btn3:hover .sub3{display: block;}
+		.content .mes .zb .b .item:hover{color:#e4393c;border:1px solid #e4393c;}
+		.content .right #j-jm:hover{color: #000;}
+	/* main部分 */
+		.tyz{width: 100%;height: 275px;overflow: hidden;}
+		.tyz .mt{width: 1202px;height: 30px;border-top:2px solid #999;border-right:1px solid #ddd;border-bottom: 1px solid #ddd;background: #f7f7f7;}
+		.tyz .mt #t1{width:86px;height: 30px;border-right: 1px solid #ddd;border-left:1px solid #ddd; text-align: center;margin-left: -7px;}
+		.tyz .mt #t2{width:86px;height: 37px;text-align: center;border-top:2px solid #e4393c;position: relative;top:-2px;border-bottom: 2px solid #fff;background:#fff;z-index: 9; }
+		.tyz .mt #t2 a{color:#e4393c;}
+		.tyz .mt a{font-size: 18px;color:#666;font-weight: bold;line-height: 30px;}
+		.tyz .lh{width: 1208px;height: 67px;border-right: 1px solid #ddd;border-left:1px solid #ddd;}
+		.tyz .lh ul {float: left;}
+		.tyz .lh ul li{float: left;padding:10px 8px;}
+		.tyz .lh ul li a{border-right: 1px solid #ddd;padding-right: 20px;padding-top: 5px;color:#005ea7;}
+		.tyz .mc{width: 1208px;height: 146px;border-right: 1px solid #ddd;border-left:1px solid #ddd;border-bottom: 1px solid #ddd;}
+		.tyz .mc .img{width: 126px;height: 132px;margin-left: 10px;}
+		.tyz .mc .img .ms{width: 126px;height: 32px;}
+		.tyz .mc .add{width: 24px;height: 24px;margin-top: 50px; background: url('../images/newicon.png') 0px -260px;}
+		.tyz .mc .bzz{width: 190px;height: 130px;float: right;}
+		.tyz .mc  .bzz .info{width: 24px;height: 24px;background: url('../images/newicon.png') -30px -260px;margin-top: 30px;}
+		.tyz .mc .bzz span{ color: #005ea7;font-weight: bold;padding-left: 10px;}
+		.tyz .mc .bzz .suit{width: 155px;height: 20px;}
+		.tyz .mc .bzz .price{width: 155px;height: 20px;}
+		.tyz .mc .bzz .btn{width: 77px;height: 25px;text-align: center;line-height: 25px;color: #fff; margin-left: 30px; margin-top: 10px;background: url('../images/newicon.png') -166px -112px;cursor: pointer;}
+
+		.lis-con{width: 1210px;height: auto;}
+		.lis-con .left{width: 210px;height: auto;}
+		.lis-con .left .seller{width: 210px;height: 88px;border:1px solid #ddd;}
+		.lis-con .left .seller .st{width: 200px;height: 30px;background: #f7f7f7;padding-left: 10px;line-height: 30px;border-bottom: 1px solid #ddd;}
+		.lis-con .left .seller .st span{background: url('../images/sprite-gys-im.gif') 10px 13px no-repeat;padding: 15px;}
+		.lis-con .left .seller .btns{width: 100%;height: 58px}
+
+		.lis-con .left .maybe{width: 208px;height: 230px;border:1px solid #ddd;}
+		.mt{width: 200px;height: 30px;padding-left: 8px;line-height: 30px; background: #f7f7f7; border-bottom: 1px solid #ddd;}
+		.lis-con .left .maybe .mcon{width: 200px;height: 200px;height: 200px;}
+		.lis-con .left .maybe .mcon .lis{width: auto;height: 14px;background: #f7f7f7;float: left;margin: 4px 10px;padding: 5px;}
+
+		.lis-con .left .classify{width: 208px;height: 135px;border:1px solid #ddd;}
+		.lis-con .left .classify .ul{width: 200px;height: 104px;}
+		.lis-con .left .classify .ul li{float: left;margin:5px 2px;width: 95px;}
+
+		.lis-con .left .same{width: 208px;height: 205px;border:1px solid #ddd;}
+		.lis-con .left .same .sul{width: 200px;height: 175px;}
+		.lis-con .left .same .sul ul li{width: 60px;height: 14px;float: left;margin:5px 0 5px 5px;}
+		.lis-con .left{width:210px;height:auto;}
+		.lis-con .left .l-list{width: 208px;height:auto;border:1px solid #ddd;margin-top: 10px;}
+		.lis-con .left .l-list .g-txt{width:198px;height:36px;padding:10px 0 0 10px;}
+		.lis-con .left .l-list .g-txt .gg{width: 50px;height: 100%;font-size: 6px;color: #ddd;float: right;}
+
+		.lis-con .left .l-list .item{width:100%;height:200px;border-bottom: 1px dashed #ddd;}
+		.lis-con .left .l-list .item .img{margin-left: 40px;}
+		.lis-con .left .l-list .item .p-name{width:190px;height:34px;padding:10px 0;}
+		.lis-con .left .l-list .item .p-price{width:190px;height:18px;color:#e4393c;font-weight: bold;margin:10px 30px;}
+		.lis-con .left .l-list .item .pl{width:190px;height:18px;}
+		.lis-con .left .l-list .item .pl a{color:#005aa0 ;font-size: 12px;}
+
+		.lis-con .left .rank{width:208px;height: 535px;border:1px solid #ddd;}
+		.lis-con .left .rank .tong1{width: 60px;height: 22px;background: #fff;border:1px solid #ddd; line-height: 22px;text-align: center;float: left;margin-top:10px; margin-left: 5px;position: relative;color: #e4393c}
+		.tong1 .cov{width: 60px;height: 3px;background: #fff;position: absolute;top:22px;}
+		.lis-con .left .rank .tong2{width: 60px;height: 22px;background: #f7f7f7;border-left:1px solid #ddd;border-right:1px solid #ddd;border-top:1px solid #ddd;line-height: 22px;text-align: center;float: left;margin-top:10px;margin-left: 5px;}
+
+
+		.lis-con .left .rank .fore{width: 198px;height: 66px;border-bottom: 1px dashed #ddd;}
+		.fore .first{width: 18px;height: 18px;margin-top: 10px; background: url('../images/newicon.png') -232px -322px no-repeat;text-align: center;line-height: 18px;color: #e4393c;}
+		.fore .second{width: 18px;height: 18px;margin-top: 10px; background: url('../images/newicon.png') -256px -322px no-repeat;text-align: center;line-height: 18px;color: #ddd;}
+		.fore .img{width: 50px;height: 50px;margin-top:10px;}
+		.fore .f-name{width: 116px;height: 14px;margin-top: 10px;}
+		.fore .f-price{width: 118px;height: 18px;margin:20px 5px;color: #e4393c;}
+
+
+
+
+
+		.lis-con .right{width: 990px;height:auto;margin-left: 10px;}
+		.lis-con .right .inner1{width: 990px;height:33px;background: #f7f7f7;border-top: 2px solid #999;border-bottom: 1px solid #ddd;}
+		.lis-con .right .a{width: auto;height:30px;line-height: 30px;margin-right: 20px; float: left;}
+		.lis-con .right .a a{color: #005ea7;}
+		.lis-con .right .addc{width: 105px;height: 20px;margin-top: 3px; float: right;background: url('../images/p-btns.png') 0 -46px no-repeat;cursor: pointer;position: relative;}
+		.lis-con .right .addc .sub1{width: 120px;height: 250px;position: absolute;top:-4px;left: -120px;background: #fff;z-index: 9;display: none;}
+
+		.lis-con .right .new{width: 176px;height: 30px;float: right;line-height: 30px;cursor: pointer;position: relative;margin-right: 10px;}
+		.lis-con .right .new .img{width: 13px;height: 22px;background: url('../images/20130330A_2.png') -128px -360px no-repeat;margin-top: 5px;margin-left: 20px;}
+		.lis-con .right .new .sub2{width: 225px;height: 145px;position: absolute;display: none;left:-5px;}
+
+		.lis-con .right .goods-de{width: 100%;height: 210px;border: 1px solid #ddd;border-top:none;}
+		.lis-con .right .goods-de .pp{width: 90%;height: 25px;line-height: 25px;margin:15px 30px;}
+		.lis-con .right .goods-de .pp a{color: #005ea7;padding-right: 20px;}
+		.lis-con .right .goods-de .btn{width: 64px;height: 25px;border:1px solid #ddd;text-align: center;background: #f7f7f7;}
+		.lis-con .right .goods-de ul{margin-left: 30px;}
+		.lis-con .right .goods-de ul li{float: left;width: 240px;height: 22px;}
+		.lis-con .right .goods-de .more-par{width:auto;height: 25px; float: right;color: #005ea7}
+		.lis-con .right .goods-de .more-par a{color: #005ea7}
+
+		.lis-con .right .banner{width: 100%;height: 180px;margin-top: 10px;}
+		.lis-con .right .de-imgs{width: 100%;height: auto;margin-top: 10px;border:1px solid #ddd;}
+		.lis-con .right .de-imgs .audio{width: 750px;height: 420px;margin:0 auto;}
+		.lis-con .right .de-imgs .img1{width: 750px;height: 100px;margin:0 auto;}
+		.lis-con .right .de-imgs .img2{width: 750px;height: auto;margin:10px auto;border-bottom:1px dashed #ddd;padding-bottom: 10px;}
+
+		.lis-con .right .sever-agree{width: 988px;height: 352px;margin: 10px auto;border:1px solid #ddd;}
+		.lis-con .right .sever-agree dt{color: #e4393c;font-size: 20px;line-height: 32px; margin: 15px 20px;}
+		.lis-con .right .sever-agree dd{line-height: 20px; margin: 10px 52px;}
+		.lis-con .right .sever-agree dt .span1{width: 42px;height: 32px; display: block; background: url('../images/iconZP.png') no-repeat;float: left;}
+		.lis-con .right .sever-agree dt .span2{width: 42px;height: 32px; display: block; background: url('../images/iconLB.png') no-repeat;float: left;}
+		.lis-con .right .sever-agree dt .span3{width: 42px;height: 32px; display: block; background: url('../images/iconWY.png') no-repeat;float: left;}
+
+		.lis-con .right .state{width: 990px;height: 206px;margin-top: 10px;}
+		.lis-con .right .state dt{color:#e4393c;font-weight: bold;margin:10px 0; }
+		.lis-con .right .state dt dd{font-size: 10px;}
+		.lis-con .right h3{width: 980px;height: 42px; margin-top: 30px;background:#f7f7f7;display: block;border:1px solid #ddd; line-height: 42px;padding-left: 10px;}
+		.lis-con .right .pj{width: 100%;height: 150px;}
+		.lis-con .right .allp{width: 100%;height: 32px;border:1px solid #ddd;background: #f7f7f7;line-height: 32px;}
+		.lis-con .right .allp ul li{float: left;}
+		.lis-con .right .allp ul li a{padding: 0 15px;}
+
+		.lis-con .right .page{width: 990px;height: 48px;margin: 10px 0;}
+		.lis-con .right .page .p1{width: 37px;height: 28px;margin-left: 500px;float: left;margin-top: 10px;text-align: center;line-height: 28px;cursor: pointer;}
+		.lis-con .right .page .p2{width: 37px;height: 28px;margin-left: 5px;border:1px solid #ddd;background: #f7f7f7;float: left;margin-top: 10px;text-align: center;line-height: 28px;cursor: pointer;}
+		.lis-con .right .page .nextp{width: 66px;height: 28px;margin-left: 5px;border:1px solid #ddd;background: #f7f7f7;float: left;margin-top: 10px;text-align: center;line-height: 28px;cursor: pointer;}
+
+		.right .clearfix{width: 990px;height: 34px;border:1px solid #ddd;background: #f7f7f7;line-height: 33px;margin-bottom: 50px;}
+		.right .clearfix a{padding:0 10px;text-align: center;}
+		.right .sp{width: 990px;height: 57px;border:1px solid #ddd;border-top: none;margin-left: -1px;}
+		.right .item1{width: 990px;height: 99px;border-bottom: 1px dashed #ddd;margin-top: 20px;}
+		.right .item1 dt{margin:10px 0;}
+		.right .item1 dd{color: #ff6500;}
+		.right .ask{width: 990px;height: 30px;line-height: 30px;margin:10px 0;}
+
+
+		.lis-con .right .addc:hover .sub1{display: block;}
+		.lis-con .right .new:hover .sub2{display: block;}
+	/*猜你喜欢*/
+		.fav{width: 1210px;height: 280px;}
+		.fav .f-txt{width: 1198px;height: 33px;margin-top: 20px;line-height: 33px;padding-left: 10px;border-top: 2px solid #ddd;border-left: 1px solid #ddd;border-right: 1px solid #ddd;}
+		.fav .fav-list{width: 1208px;height: auto;border-left:1px solid #ddd;border-right:1px solid #ddd;border-bottom:1px solid #ddd;}
+		.fav .fav-list .f-con{width: 176px;height: 230px;padding-right: 20px;}
+		.fav .fav-list .f-con .img{width: 130px;height: 130px;}
+		.fav .fav-list .f-con .l-price{width: 220px;height: 22px;color: #e4393c;margin: 40px;font-size: 22px;font-weight: bold;}
+		.fav .fav-list .f-con .l-name{width: 150px;height: 36px;margin: 8px 0;margin-left: 5px;}
+		.fav .fav-list .f-con .pj{width: auto;height: 14px;margin: 8px 0;margin-left: 5px;}
+		.fav .fav-list .f-con .pj a{color: #005aa0;}
+
+		.banner{width: 1210px;height: 115px;}
+		.banner .img{width: 100%;height: 100%;margin-top:10px; }
+
+
+
+		.bottom{width:100%;height:276px;}
+		.bottom .a{width:100%;height:94px;margin:10px 0px;background: #f5f5f5;}
+		.bottom .a .img{width: auto;height: 95px;margin-top:20px;margin-left:20px; }
+		.bottom .b{width:1210px;height:180px;}
+		.bottom .b .fore1{width: 180px;height:156;}
+		.bottom .b .fore1 dt{font:400 16px/24px;font-size:20px;padding:5px 0px;}
+		.bottom .b .fore1 dd{padding:3px 0;}
+		.bottom .b .coverage{width: 310px;height:168px;background: url('../images/coverage.jpg') no-repeat;}
+		.bottom .b .coverage .dt{font:400 16px/24px;font-size:20px;padding:5px 0px;}
+		.bottom .b .coverage .dd{width:210px;height:54px;font-size: 14px;margin-top: 20px;}
+		.bottom .b .coverage .ar{width:210px;height:54px;text-align: right;}
+
+		.footer{width: 100%;height:auto;margin-top:20px;}
+		.footer .content{width:1210px;height:197px;}
+		.footer .content .a1{width: 100%;height:14px;text-align: center;font-size: 13px;}
+		.footer .content .a2{width:100%;height:74px; text-align: center;font-size: 12px;margin:20px 0;line-height: 20px;}
+		.footer .content .a3{width: 100%;height:34px; font-size: 12px;}
+		.footer .content .a3 .ico{width: 750px;height: 100%;margin-left:200px; text-align: center;}
+		.footer .content .a3 .ico .img{width: 105px;height:32px;}
+	</style>
+</head>
+<body>
+	<!-- 头部导航 -->
+	<div class="top-bg bg1 center" id="top">
+		<div class="top center">
+			<div class="ads fl">
+				<div class="name">送至：北京</div>
+				<div class="cover"></div>
+				<div class="ico">^</div>
+				<div class="ads-none">
+					<ul>
+						<li><a class="first" href="">北京</a></li>
+						<li><a href="">上海</a></li>
+						<li><a href="">天津</a></li>
+						<li><a href="">重庆</a></li>
+						<li><a href="">河北</a></li>
+						<li><a href="">山西</a></li>
+						<li><a href="">河南</a></li>
+						<li><a href="">辽宁</a></li>
+						<li><a href="">吉林</a></li>
+						<li><a href="">黑龙江</a></li>
+						<li><a href="">江苏</a></li>
+						<li><a href="">山东</a></li>
+						<li><a href="">安徽</a></li>
+						<li><a href="">浙江</a></li>
+						<li><a href="">内蒙古</a></li>
+						<li><a href="">福建</a></li>
+						<li><a href="">湖北</a></li>
+						<li><a href="">湖南</a></li>
+						<li><a href="">广西</a></li>
+						<li><a href="">广东</a></li>
+						<li><a href="">江西</a></li>
+						<li><a href="">四川</a></li>
+						<li><a href="">贵州</a></li>
+						<li><a href="">西藏</a></li>
+						<li><a href="">陕西</a></li>
+						<li><a href="">甘肃</a></li>
+						<li><a href="">青海</a></li>
+						<li><a href="">宁夏</a></li>
+						<li><a href="">新疆</a></li>
+						<li><a href="">台湾</a></li>
+						<li><a href="">香港</a></li>
+						<li><a href="">澳门</a></li>
+						<li><a href="">海外</a></li>
+						<li><a href="">钓鱼岛</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="login fl">你好，请登录</div>	
+			<div class="reg fl">免费注册</div>	
+			<div class="goods fl ml5">
+				<div class="ico1 fl"><img src="images/su.jpg"></div>我的订单
+			</div>	
+
+			<div class="ico1 fl"><img src="images/su.jpg"></div>
+			<div class="myd fl ml5">
+				<div class="fl">我的京东</div>
+				<div class="cover"></div>
+				<div class="ico fl">^</div>	
+				<div class="list1">
+					<table style="color:#666;margin-top:5px" width="230">
+						<tr>
+							<td colspan="2">
+								<img src="images/1.jpg" width="70" height="70px" style="border-radius:50%;float:left">
+								<a href="">你好，请登录</a><br>
+								<a href="">优惠券 | 消息</a>
+							</td>
+							
+						</tr>
+						<tr>
+							<td><a href="">待处理订单</a></td>
+							<td><a href="">我的关注</a></td>
+						</tr>
+						<tr>
+							<td><a href="">咨询回复</a></td>
+							<td><a href="">我的京豆</a></td>
+						</tr>
+						<tr>
+							<td><a href="">降价商品</a></td>
+							<td><a href="">我的理财</a></td>
+						</tr>
+						<tr>
+							<td><a href="">返修退换货</a></td>
+							<td><a href="">京东白条</a></td>
+						</tr>
+					</table>
+					
+					
+				</div>
+			</div>
+
+			<!-- <div class="ico fl">^</div>	 -->
+			<div class="goods fl ml5">
+				<div class="ico1 fl"><img src="images/su.jpg"></div>京东会员
+			</div>
+
+			<div class="goods fl ml5">
+				<div class="ico1 fl"><img src="images/su.jpg"></div>企业采购
+			</div>
+
+			
+			<div class="ico1 fl"><img src="images/su.jpg"></div>
+			<div class="phd fl ml5">
+				<div class="phone fl"></div>
+				<div class=" fl">手机京东</div>
+				<div class="ico fl">^</div>
+				<div class="cover"></div>
+				<div class="list2">
+					<div class="sub_top fl">
+						<img src="images/phd_ico1.jpg">
+						<img src="images/phd_ico3.jpg">
+						
+					</div>
+					
+					<hr style="border:1px dashed gray">
+					<div class="sub_bottom mt10" >
+						<img src="images/phd_ico2.jpg">
+						<img src="images/phd_ico4.jpg">
+
+					</div>
+					
+				</div>
+
+			</div>
+
+			
+			<div class="ico1 fl"><img src="images/su.jpg"></div>
+			<div class="focus fl ml5">
+				<div class="fl">关注京东</div>
+				<div class="cover"></div>
+				<div class="ico fl">^</div>
+				<div class="list4">
+					<img src="images/erw.jpg" width="55" height="50">
+					<div style="color:#666;margin-left:3px">关注京东微店</div>
+				</div>
+			</div>
+			
+			<div class="ico1 fl"><img src="images/su.jpg"></div>
+			<div class="sever fl">
+				<div class="fl">客户服务</div>
+				<div class="cover"></div>
+				<div class="ico fl">^</div>
+				<div class="list3">
+					<table width="180">
+						<tr>
+							<td colspan="2" style="font-size:15px;color:#666"><b>客户</b></td>
+						</tr>
+						<tr>
+							<td><a href="">帮助中心</a></td>
+							<td><a href="">售后服务</a></td>
+						</tr>
+						<tr>
+							<td><a href="">在线客服</a></td>
+							<td><a href="">意见建议</a></td>
+						</tr>
+						<tr>
+							<td><a href="">电话客服</a></td>
+							<td><a href="">客服邮箱</a></td>
+						</tr>
+						<tr>
+							<td colspan="2" style="font-size:15px;color:#666"><b>商户</b></td>	
+						</tr>
+						<tr>
+							<td><a href="">京东商学院</a></td>
+							<td><a href="">商家入驻</a></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div class="ico1 fl"><img src="images/su.jpg"></div>
+			<div class="goods fl ml5">
+				<div class="fl">网站导航</div>
+				<div class="ico fl">^</div>
+			</div>	
+			
+		</div>	
+	</div>
+	<!-- 搜索框 -->
+	<div class="search  center">
+		<div class="logo fl"><img src="images/logo.jpg"></div>
+
+		<div class=" middle font1 fl">
+			<input type="text" value="游戏本"><button>搜索</button><br>
+			<a href="" style="color:red;">低至9.9元</a> 
+			<a href="">顽石四代</a> 
+			<a href="">游戏显卡</a>
+			<a href="">钛度首发</a> 
+			<a href="">照片打印</a> 
+			<a href=""> 商用电脑</a>
+		</div>
+		<div class="shop fl">
+			<div class="zero">0</div>
+			<div class="car fl"></div>
+			<div class="mycar fl ml20"><a href="gouwuche.html">我的购物车</a></div>
+			<div class="cover"></div>
+			<div class="goods">
+				<img src="images/gouwuche.png" style="margin-top:10px;float:left">
+				<div class="fl">购物车中还没有商品，赶紧选购吧</div>
+			</div>
+		</div>
+	</div>
+	<!--全部商品列表  -->
+	<div class="list">
+		<div class="sub_list center">
+			<div class="sort fl bg3"><a href="" style="color:white;font-size:18px">全部商品分类&nbsp;&nbsp;&nbsp;^</a>
+				<!-- <div class="panel"> -->
+					<div class="inner fl bg3">
+						<div class="list1">
+							<a href="">家用电器</a>
+						</div>
+						<div class="list1">
+							<a href="">手机、数码、京东通信</a>
+						</div>
+						<div class="list1">
+							<a href="">电脑、办公</a>
+						</div>
+						<div class="list1">
+							<a href="">家居、家具、家装、厨具</a>
+						</div>
+						<div class="list1">
+							<a href="">男装、女装、童装、内衣</a>
+						</div>
+
+						<div class="list1">
+							<a href="">个护化妆、清洁用品、宠物</a>
+						</div>
+						<div class="list1">
+							<a href="">鞋靴、箱包、珠宝奢侈品</a>
+						</div>
+						<div class="list1">
+							<a href="">运动户外、钟表</a>
+						</div>
+						<div class="list1">
+							<a href="">汽车、汽车用品</a>
+						</div>
+						<div class="list1">
+							<a href="">母婴、玩具乐器</a>
+						</div>
+						<div class="list1">
+							<a href="">食品、酒类、生鲜、特产</a>
+						</div>
+						<div class="list1">
+							<a href="">医药保健</a>
+						</div>
+						<div class="list1">
+							<a href="">图书、音像、电子书</a>
+						</div>
+						<div class="list1">
+							<a href="">彩票、旅行、充值、票务</a>
+						</div>
+						<div class="list1">
+							<a href="">理财、众筹、白条、保险</a>
+						</div>
+					</div>	
+				<!-- </div> -->
+			</div>
+
+			<div class="sort1 ml20 fl"><a href="">首页</a></div>
+			<div class="sort1 ml30 fl"><a href="">服装城</a></div>
+			<div class="sort1 ml30 fl"><a href="">美妆馆</a></div>
+			<div class="sort1 ml30 fl"><a href="">京东超市</a></div>
+			<div class="sort1 ml30 fl"><a href="">生鲜</a></div>
+			<div class="sort1 ml30 fl"><a href="">全球购</a></div>
+			<div class="sort1 ml30 fl"><a href="">闪购</a></div>
+			<div class="sort1 ml30 fl"><a href="">团购</a></div>
+			<div class="sort1 ml30 fl"><a href="">拍卖</a></div>
+			<div class="sort1 ml30 fl"><a href="">金融</a></div>			
+		</div>
+	</div>
+	<!-- 电脑、办公 -->
+	<div class="good">
+		<div class="title center">
+			<div class="txt1 fl"><a href="">电脑、办公</a> </div>
+			<div class="txt2">
+				<ul>
+					<li> > <a href="">电脑整机</a> > </li>
+					<li><a href="">游戏本</a> > </li>
+					<li><a href="">外星人(Alienware)</a> > </li>
+					<li><a href="">外星人ALW15ER-3718</a></li>
+				</ul>
+			</div>			
+		</div>
+		<div class="content center">
+			<div class="left fl">
+				<div id="min" class="ml10">
+					<div class="z"></div>
+					<img src="images/max-img1.jpg">
+				</div>
+				<div id="max">
+					<img src="images/max-img1.jpg">
+				</div>
+
+				<div id="img2">
+					<div id="ico" class="ml40"><img src="images/max-img1.jpg"></div>
+					<div id="ico"><img src="images/max-img1.jpg"></div>
+					<div id="ico"><img src="images/max-img5.jpg"></div>
+					<div id="ico"><img src="images/max-img4.jpg"></div>
+					<div id="ico"><img src="images/max-img8.jpg"></div>
+					<div id="next"></div>
+				</div>
+				<div class="share mt20">
+					<div class="item1 fl">
+						<div class="a"><a href="">分享</a></div>
+					</div>
+					<div class="item2 fl">
+						<div class="a"><a href="">关注</a></div>
+					</div>
+					<div style="float:right;margin-right:20px;"><a href="">举报</a></div>
+				</div>
+			</div>
+
+			<div class="mes fl">
+				<div class="name fl">	
+					<div style="font-weight: bold;">外星人（Alienware）ALW15ER-3718 15.6英寸游戏笔记本电脑（i7-6700HQ 16G 256G SSD+1T GTX970M 3G WIN10)</div>
+					
+					<div id="p-ad">
+					【国庆大放价，疯抢4天4夜】自营笔记本999元逆天秒杀，每满1000立减100，仅限9.30-10.3，好货不等人，错过必悔哭！<a href="" style="color:#005ea7;text-decoration:underline;">详情请猛戳！</a>
+					</div>
+				</div>
+				<div class="btn">对比</div>
+
+				<div class="summary fl">
+					<div class="price fl">
+						<div class="item1 fl">京东价：<span>￥16999.00</span>
+							<a href="">(降价通知)</a>
+						</div>
+						<div id="count">累计评价
+							<a href="">900+</a>
+						</div>
+
+						<div class="item2 fl">
+							<div class="sale fl">促销信息：</div>
+							<span>加购价</span>
+							<span style="color:#e4393c;">满2999.00另加169.00元，或满999.00另加69.00元，即可在购物车换购热销商品</span>
+							<a href="">详情 >></a>
+						</div>
+					</div>
+					<div class="send fl">
+						<div class="list1">支持：<span><a href="">以旧换新，闲置游戏本回收</a></span></div>
+
+						<div class="list2 ">
+							<div class="fl">配送至：</div>
+							<div class="ads fl">
+								<div class="fl">北京朝阳区管庄</div> 
+								<div class="icon fl"></div>
+								<div class="de bg4">
+									<div class="fl" style="width:100%;border-bottom:2px solid #EDD28B">
+										<div class="a1">北京</div>
+										<div class="a1">朝阳区</div>
+										<div class="a1" style="border-left:2px solid #EDD28B;border-right:2px solid #EDD28B;border-top:2px solid #EDD28B;color:#666">管庄
+											<div class="cover1"></div>
+										</div>
+										
+									</div>
+									
+									<div class="fl" >
+										<div class="a2">管庄</div>
+										<div class="a2">北苑</div>
+										<div class="a2">定福庄</div>
+										<div class="a2">三环以内</div>
+										<div class="a2">三环到四环以内</div>
+										<div class="a2">四环到五环以内</div>
+										<div class="a2">五环到六环以内</div>
+									</div>									
+								</div>	
+								<div class="cover"></div>
+							</div>
+							<div><b>有货</b>,支持<a href="" style="color:#666">99元免运费</a></div>
+						</div>
+
+						<div class="list3">服务：由京东发货，并提供售后服务。23:00前完成下单,预计<b>明天(10月04日)</b>送达</div>
+					</div>
+				</div>
+
+				<div class="select fl">
+					<div class="banb fl mt10">选择版本：</div>
+					<div class="lis fl mt10">
+						<div class="st">大屏i7256SSD 1T GTX970 3G</div>
+						<div class="st">便携i7256SSD GTX960 4G</div>
+						<div class="st">便携i5256SSD GTX970 2G</div>
+						<div class="st">便携i7 512SSD GTX970 4G</div>
+						<div class="st">便携i7 512SSD OLED屏</div>
+						<div class="st">便携i7 双SSD GTX960 2G</div>
+						<div class="st">超大屏i7 512SSD 1T GTX980 8G</div>
+						<div class="st">便携i7 512SSD GTX960 2G</div>
+					</div>		
+				</div>
+
+				<div class="zb fl mt10">
+					<div class="z">
+						<div class="fl mt10">增值保障：</div>
+						<div class="btn1 bg2 fl">
+							<div class="fl">意外保1年￥999</div>
+							<div class="icon fl"></div>
+							<div class="sub1"></div>
+						</div>
+						<div class="btn2 bg2 fl">
+							<div class="fl">原厂上门保￥859</div>
+							<div class="icon fl"></div>
+							<div class="sub2"></div>
+						</div>
+						<div class="btn3 bg2 fl">
+							<div class="fl">原厂金牌保￥1199</div>
+							<div class="icon fl"></div>
+							<div class="sub3"></div>
+						</div>
+						<div class="img fl"></div>	
+					</div>
+
+					<div class="b">
+						<div class="fl mt10">白条分期：</div>
+						<div class="item">30天免息</div>
+						<div class="item">￥5333x3期</div>
+						<div class="item">￥2666.5x6期</div>
+						<div class="item">￥1333.25x12期</div>
+						<div class="item">￥746.62x24期</div>
+						<div class="hui fl"></div>
+						<div class="img fl"></div>
+					</div>
+				</div>
+
+				<div class="gou fl">
+					<div class="sum fl">
+						<div class="shu fl">1</div>
+						<div class="fl">
+							<div class="up-down" style="background:#f7f7f7;">+</div>
+							<div class="up-down">-</div>
+						</div>
+						
+					</div>
+					<div class="che fl"></div>
+				</div>	
+				<div class="fl mt20">温馨提示：本商品不能使用 东券支持7天无理由退货</div>
+			</div> 
+
+			<div class="right fl">
+				<div class="logo"><img src="images/right-logo.jpg"></div>
+				<div class="seller mt20">	
+					<span><a href="" style="color:#005ea7">外星人旗舰店</a></span>	
+					<div class="sell">京东自营</div>
+				</div>
+				<div id="j-jm">
+					<div class="icon1 fl"></div>
+					联系供应商
+				</div>
+				<div id="j-jm">
+					<div class="icon2 fl"></div>
+					咨询JIMI
+				</div>
+				<div id="j-jm">
+					<div class="icon3 fl"></div>
+					进店逛逛
+				</div>
+				<div id="j-jm">
+					<div class="icon4 fl"></div>
+					关注店铺
+				</div>
+
+				<div class="sever mt20 fl">
+					<div>服务支持：</div>
+					<div class="way"><a href="">211限时达</a></div>
+					<div class="way"><a href="">自提</a></div>
+					<div class="way"><a href="">售后到家</a></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 推荐配件、优惠套装、最佳组合 -->
+	<div class="tyz mt10">
+		<div class="mt center">
+			<div id="t1" class="fl"><a href="">推荐配件</a></div>
+			<div id="t2" class="fl"><a href="">优惠套装</a></div>
+			<div id="t1" class="fl" style="border-right:none"><a href="">最佳组合</a></div>
+		</div>
+
+		<div class="lh center">
+			<ul>
+				<li><a href="" style="color:#e4393c">优惠套装1</a></li>
+				<li><a href="">优惠套装2</a></li>
+				<li><a href="">优惠套装3</a></li>
+				<li><a href="">优惠套装4</a></li>
+				<li><a href="">优惠套装5</a></li>
+				<li><a href="">优惠套装6</a></li>
+				<li><a href="">优惠套装7</a></li>
+				<li><a href="">优惠套装8</a></li>
+				<li><a href="">优惠套装9</a></li>
+				<li><a href="">优惠套装10</a></li>
+				<li><a href="">优惠套装11</a></li>
+				<li><a href="">优惠套装12</a></li>
+				<li><a href="" style="border-right:none">优惠套装13</a></li>
+				<li><a href="" style="border-right:none">优惠套装14</a></li>
+			</ul>
+		</div>
+
+		<div class="mc center">
+			<div class="img fl">
+				<img src="images/mc-img1.jpg">
+				<div class="ms">
+					<a href="">外星人（Alienware）ALW15ER-37</a>
+				</div>
+			</div>
+			<div class="add fl"></div>
+			<div class="img fl">
+				<img src="images/mc-img2.jpg">
+				<div class="ms">
+					<a href="">冰豹 (ROCCAT) 幽灵豹 Kova 游戏鼠标 黑色</a>
+				</div>
+			</div>
+
+			<div class="bzz">
+				<div class="info fl"></div>
+				<span>bzz套装</span>
+				<div class="fl mt10 ml10">
+					<div class="suit">套装价：<span style="color:#e4393c">￥16308.00</span></div>
+					<div class="price">京东价：<span style="text-decoration:line-through;color:#666">￥16348.00</span></div>
+					<div class="suit">立即节省：￥40.00</div>
+				</div>
+				<div class="btn fl">购买套装</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- 商品介绍 -->
+	<div class="lis-con center">
+		<!-- 左边内容 -->
+		<div class="left fl ">
+			<div class="seller">
+				<div class="st">外星人旗舰店<span></span></div>
+				<div class="btns">
+					<div id="j-jm" class="ml10">
+					<div class="icon3 fl"></div>
+					进店逛逛
+					</div>
+					<div id="j-jm">
+						<div class="icon4 fl"></div>
+						关注店铺
+					</div>
+				</div>	
+			</div>
+			<div class="maybe mt10">
+				<div class="mt">关于此商品，你可能在找</div>
+				<div class="mcon">
+					<div class="lis"><a href="">Windows 10</a></div>
+					<div class="lis"><a href="">15.6英寸</a></div>
+					<div class="lis"><a href="">256G+1T</a></div>
+					<div class="lis"><a href="">GTX970M</a></div>
+					<div class="lis"><a href="">5-7小时</a></div>
+					<div class="lis"><a href="">16G</a></div>
+					<div class="lis"><a href="">大于2.5KG</a></div>
+					<div class="lis"><a href="">骨灰级</a></div>
+					<div class="lis"><a href="">3G</a></div>
+					<div class="lis"><a href="">全高清屏（1920×1080）</a></div>
+					<div class="lis"><a href="">Intel i7标准电压版</a></div>
+				</div>
+			</div>
+			<div class="classify mt10">
+				<div class="mt">相关分类</div>
+				<div class="ul">
+					<ul>
+						<li><a href="">笔记本</a></li>
+						<li><a href="">游戏本</a></li>
+						<li><a href="">平板电脑</a></li>
+						<li><a href="">平板电脑配件</a></li>
+						<li><a href="">台式机</a></li>
+						<li><a href="">服务器/工作站</a></li>
+						<li><a href="">笔记本配件</a></li>
+						<li><a href="">一体机</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="same mt10">
+				<div class="mt">同类其他品牌</div>
+				<div class="sul">
+					<ul>
+						<li><a href="">机械革命</a></li>
+						<li><a href="">神舟</a></li>
+						<li><a href="">联想</a></li>
+						<li><a href="">华硕</a></li>
+						<li><a href="">惠普</a></li>
+						<li><a href="">戴尔</a></li>
+						<li><a href="">雷神</a></li>
+						<li><a href="">微星</a></li>
+						<li><a href="">宏碁</a></li>
+						<li><a href="">炫龙</a></li>
+						<li><a href="">ThinkPad</a></li>
+						<li><a href="">外星人</a></li>
+						<li><a href="">未来人类</a></li>
+						<li><a href="">机械师</a></li>
+						<li><a href="">dostyle</a></li>
+						<li><a href="">联想</a></li>
+						<li><a href="">艾罗伯特</a></li>
+						<li><a href="">惠普</a></li>
+						<li><a href="">技嘉</a></li>
+						<li><a href="">火影</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="l-list" >
+				<div class="g-txt ">达人选购</div>
+				<div class="item">
+					<div class="img"><a href="" title="外星人（Alienware） 外星人敢死队系列17英寸背包"><img src="images/l-img1.jpg"></a></div>
+					<div class="p-name"><a href="" title="外星人（Alienware） 外星人敢死队系列17英寸背包">外星人（Alienware） 外星人敢死队系列17英寸背包</a></div>
+					<div class="p-price">￥799.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="联想（Lenovo）拯救者15.6英寸游戏笔记本电脑(i7-6700HQ 8G 128G"><img src="images/l-img2.jpg"></a></div>
+					<div class="p-name"><a href="" title="联想（Lenovo）拯救者15.6英寸游戏笔记本电脑(i7-6700HQ 8G 128G SSD+1T GTX960M 4G FHD IPS 背光） ">联想（Lenovo）拯救者15.6英寸游戏笔记本电脑(i7-6700HQ 8G </a></div>
+					<div class="p-price">￥6999.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="雷神（ThundeRobot）G150T银刃版 15.6英寸游戏本（i7-6700HQ 8G 128G+1TB GTX965M 4G独显 FHD）"><img src="images/l-img3.jpg"></a></div>
+					<div class="p-name"><a href="" title="雷神（ThundeRobot）G150T银刃版 15.6英寸游戏本（i7-6700HQ 8G 128G+1TB GTX965M 4G独显 FHD）">雷神（ThundeRobot）G150T银刃版 15.6英寸游戏本（i7-6700HQ 8G 128G+1TB GTX965M 4G独显 FHD）</a></div>
+						<div class="p-price">￥6499.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10 背光 IPS屏）"><img src="images/l-img4.jpg"></a></div>
+					<div class="p-name"><a href="" title="雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10 背光 IPS屏）">雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10</a></div>
+					<div class="p-price">￥10999.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="惠普（HP）暗影精灵II代 15.6英寸游戏笔记本（i5-6300HQ 4G 128SSD+1T GTX960M 2G GDDR5 IPS屏 FHD）"><img src="images/l-img5.jpg"></a></div>
+					<div class="p-name"><a href="" title="惠普（HP）暗影精灵II代 15.6英寸游戏笔记本（i5-6300HQ 4G 128SSD+1T GTX960M 2G GDDR5 IPS屏 FHD）">惠普（HP）暗影精灵II代 15.6英寸游戏笔记本（i5-6300HQ 4G 128SSD+1T GTX960M 2G</a></div>
+					<div class="p-price">￥5499.00</div>	
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="全球购 外星人（Alienware）ALW17E-17.3英寸 i7 游戏本笔记本电脑 i7-6820HK 16G内存 980M 8G独显 1T+(256G SSD"><img src="images/l-img6.jpg"></a></div>
+					<div class="p-name"><a href="" title="全球购 外星人（Alienware）ALW17E-17.3英寸 i7 游戏本笔记本电脑 i7-6820HK 16G内存 980M 8G独显 1T+(256G SSD">全球购 外星人（Alienware）ALW17E-17.3英寸 i7 游戏本笔记本电脑 i7-6820HK 16G内存 980M</a></div>
+					<div class="p-price">￥16970.00</div>
+				</div>
+			</div>
+			<div class="rank mt10">	
+				<div class="mt">游戏本排行榜</div>
+				<div class="fl" style="border-bottom:1px solid #ddd;">
+					<div class="tong1">同价位<div class="cov"></div></div>
+					<div class="tong2">同品牌</div>
+					<div class="tong2">同类别</div>
+				</div>
+				<ul>
+					<li>
+						<div class="fore fl">
+							<div class="first fl">1</div>
+							<div class="img fl"><a href=""><img src="images/fore-img1.jpg"></a></div>
+							<div class="f-name fl"><a href="">宏碁VN7-591G-715G</a></div>
+							<div class="f-price fl">￥10999.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="first fl">2</div>
+							<div class="img fl"><a href=""><img src="images/fore-img1.jpg"></a></div>
+							<div class="f-name fl"><a href="">雷神G155P</a></div>
+							<div class="f-price fl">￥13999.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="first fl">3</div>
+							<div class="img fl"><a href=""><img src="images/fore-img3.jpg"></a></div>
+							<div class="f-name fl"><a href="">未来人类S5</a></div>
+							<div class="f-price fl">￥13299.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="second fl">4</div>
+							<div class="img fl"><a href=""><img src="images/fore-img4.jpg"></a></div>
+							<div class="f-name fl"><a href="">华硕G60V</a></div>
+							<div class="f-price fl">￥12999.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="second fl">5</div>
+							<div class="img fl"><a href=""><img src="images/fore-img5.jpg"></a></div>
+							<div class="f-name fl"><a href="">神舟战神Z7-SP7S1</a></div>
+							<div class="f-price fl">￥8999.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="second fl">6</div>
+							<div class="img fl"><a href=""><img src="images/fore-img6.jpg"></a></div>
+							<div class="f-name fl"><a href="">华硕GFX72</a></div>
+							<div class="f-price fl">￥15699.00</div>
+						</div>
+					</li>
+					<li>
+						<div class="fore fl">
+							<div class="second fl">7</div>
+							<div class="img fl"><a href=""><img src="images/fore-img7.jpg"></a></div>
+							<div class="f-name fl"><a href="">微星GT72VR 6RD-082XCN</a></div>
+							<div class="f-price fl">￥11599.00</div>
+						</div>
+					</li>
+				</ul>		
+			</div>
+			<div class="l-list" >
+				<div class="g-txt ">看了又看</div>
+				<div class="item">
+					<div class="img"><a href="" title="外星人（Alienware） 外星人敢死队系列17英寸背包"><img src="images/l-img1.jpg"></a></div>
+					<div class="p-name"><a href="" title="外星人（Alienware） 外星人敢死队系列17英寸背包">外星人（Alienware） 外星人敢死队系列17英寸背包</a></div>
+					<div class="p-price">￥799.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="炫龙V神 I7-6700K/GTX980MSLI/背光键盘/17.3英寸4K游戏笔记本电脑 V神 泰坦版"><img src="images/l-img7.jpg"></a></div>
+					<div class="p-name"><a href="" title="炫龙V神 I7-6700K/GTX980MSLI/背光键盘/17.3英寸4K游戏笔记本电脑 V神 泰坦版 ">炫龙V神 I7-6700K/GTX980MSLI/背光键盘/17.3英寸4K游戏笔记本电脑 V神 泰坦版 </a></div>
+					<div class="p-price">￥59999.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="外星人（Alienware）452-BBRT Alienware Graphic Amplifier 显卡扩展坞"><img src="images/l-img8.jpg"></a></div>
+					<div class="p-name"><a href="" title="外星人（Alienware）452-BBRT Alienware Graphic Amplifier 显卡扩展坞">外星人（Alienware）452-BBRT Alienware Graphic Amplifier 显卡扩展坞</a></div>
+						<div class="p-price">￥2499.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10 背光 IPS屏）"><img src="images/l-img9.jpg"></a></div>
+					<div class="p-name"><a href="" title="雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10 背光 IPS屏）">雷神（ThundeRobot）911M-M1a 15.6英寸游戏本（i7-6700HQ 16G 256G+1T GTX970M 6G win10</a></div>
+					<div class="p-price">￥8499.00</div>
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="机械师T57 游戏本i7-6700HQ四核GTX960M/8G/240G固态超薄笔记本电脑 六代i7/8G/GTX960M/240G固态"><img src="images/l-img10.jpg"></a></div>
+					<div class="p-name"><a href="" title="机械师T57 游戏本i7-6700HQ四核GTX960M/8G/240G固态超薄笔记本电脑 六代i7/8G/GTX960M/240G固态">机械师T57 游戏本i7-6700HQ四核GTX960M/8G/240G固态超薄笔记本电脑 六代i7/8G/GTX960M/240G固态</a></div>
+					<div class="p-price">￥5999.00</div>	
+				</div>
+				<div class="item">
+					<div class="img"><a href="" title="神舟（HASEE） 战神Z6-SL7D1 15.6英寸游戏笔记本(i7-6700HQ 8G 1T HDD GTX960M 2G独显 1080P)黑色"><img src="images/l-img11.jpg"></a></div>
+					<div class="p-name"><a href="" title="神舟（HASEE） 战神Z6-SL7D1 15.6英寸游戏笔记本(i7-6700HQ 8G 1T HDD GTX960M 2G独显 1080P)黑色">神舟（HASEE） 战神Z6-SL7D1 15.6英寸游戏笔记本(i7-6700HQ 8G 1T HDD GTX960M 2G独显 1080P)黑色</a></div>
+					<div class="p-price">￥4999.00</div>
+				</div>
+			</div>
+			<div style="margin-top:30px;"><img src="images/l-img13.jpg"></div>
+		</div>
+		<!-- 右边内容 -->
+		<div class="right fl">
+			<div class="inner1 fl">
+				<div class="a" style="background:#fff;height:37px;border-top:2px solid #e4393c;position:relative;top:-5px;border-right:1px solid #ddd;border-left:1px solid #ddd;border-bottom:1px solid #fff">商品介绍</div>
+				<div class="a">规格参数</div>
+				<div class="a">包装清单</div>
+				<div class="a" >商品评价<a href="">(900+)</a></div>
+				<div class="a">售后保障</div>
+				<div class="addc">
+					<div class="sub1"><img src="images/addc-sub.jpg"></div>
+				</div>
+				<div class="new">
+					<div class="fl"><a href="">新人188礼包移动专享</a></div>
+					<div class="img fl"></div>
+					<div class="sub2"><img src="images/new-sub.jpg"></div>
+				</div>
+			</div>
+			<div class="goods-de">
+				<div class="pp fl">
+					<div class="fl">品牌：<a href="">外星人(ALWenware)</a></div>
+					<div class="btn fl"><b style="color:#e4393c;font-size:20px;">♥</b>关注</div>
+				</div>
+				<div>
+					<ul>
+						<li>商品名称：外星人ALW15ER-3718</li>
+						<li>商品编号：1994177</li>
+						<li>商品毛重：5.0kg</li>
+						<li>商品产地：中国大陆</li>
+						<li>系统：Windows 10</li>
+						<li>屏幕尺寸：15.6英寸</li>
+						<li>硬盘容量：256G+1T</li>
+						<li>显卡型号：GTX970M</li>
+						<li>待机时长：5-7小时</li>
+						<li>特性：其他</li>
+						<li>内存容量：16G</li>
+						<li>裸机重量：大于2.5KG</li>
+						<li>Game+游戏装备：骨灰级</li>
+						<li>显存容量：3G</li>
+						<li>分辨率：全高清屏（1920×1080)</li>
+						<li>处理器：Intel i7标准电压版</li>
+					</ul>
+				</div>
+				<div class="more-par"><a href="">更多参数 >></a></div>				
+			</div>
+			<div class="banner"><img src="images/lis-con-r.gif"></div>
+			<div class="de-imgs">
+				<div class="audio">
+					<img src="images/audoi.jpg">
+				</div>
+				<div class="img1"><img src="images/57690419N9df0a28c.gif"></div>
+				<div class="img2"><img src="images/lis-con-img1.jpg"></div>
+				<div class="img2"><img src="images/lis-con-img2.jpg"></div>
+				<div class="img2"><img src="images/lis-con-img5.jpg"></div>
+				<div class="img2"><img src="images/lis-con-img3.jpg"></div>
+				<div class="img2"><img src="images/lis-con-img4.jpg"></div>
+			</div>
+			<div class="sever-agree">
+				<dt><span class="span1"></span><strong>正品行货</strong></dt>
+				<dd>京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。</dd>
+				
+				<dt><span class="span2"></span><strong>全国联保</strong></dt>
+				<dd>凭质保证书及京东商城发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。京东商城还为您提供具有竞争力的商品价格和运费政策，请您放心购买！ 。</dd>
+				<dd>注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</dd>
+				<dt><span class="span3"></span><strong>无忧退换货</strong></dt>
+				<dd>客户购买京东自营商品7日内（含7日，自客户收到商品之日起计算），在保证商品完好的前提下，可无理由退货。（部分商品除外，详情请见各商品细则）</dd>
+			</div>
+			<div class="state">
+				<dt>权利声明：</dt>
+					<dd>
+					京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。<br><b>注</b>：本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。
+					</dd>
+				<dt>价格说明：</dt>
+					<dd>
+					<b>京东价：</b>京东价为商品的销售价，是您最终决定是否购买商品的依据。<br><b>划线价：</b>商品展示的划横线价格为参考价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。<br><b>折扣：</b>如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。<br><b>异常问题：</b>商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。
+					</dd>
+			</div>
+			<h3>商品评价</h3>
+			<div class="pj "><img src="images/pingjia.jpg"></div>
+			<div class="allp">
+				<ul>
+					<li><a href="" style="color:#e4393c">全部评价(900+)</a></li>
+					<li><a href="">晒图(900)</a></li>
+					<li><a href="">好评(900+)</a></li>
+					<li><a href="">中评(20+)</a></li>
+					<li><a href="">差评(30+)</a></li>
+					<li><input type="checkbox">只看当前商品评价</li>
+				</ul>
+				<div class="fl">
+					<img src="images/p1.jpg">
+					<img src="images/p2.jpg">
+					<img src="images/p3.jpg">
+				</div>
+			</div>
+			<div class="page fl">
+				<div class="p1"><a href="" style="color:#e4393c">1</a></div>
+				<div class="p2"><a href="">2</a></div>
+				<div class="p2"><a href="">3</a></div>
+				<div class="p2"><a href="">4</a></div>
+				<div class="p2"><a href="">5</a></div>
+				<div class="p2 fl"><a href="">6</a></div>
+				<!-- <div class="p1 fl">...</div> -->
+				<div class="nextp fl"><a href="">下一页</a></div>
+			</div>
+			<div class="clearfix fl">
+				<div class="fl">
+					<a href="" style="height:37px;border-top:2px solid #e4393c;padding-top:13px;padding-bottom:13px; background:#fff;">全部购买咨询</a>
+					<a href="">商品咨询</a>
+					<a href="">库存配送</a>
+					<a href="">支付</a>
+					<a href="">发票保修</a>
+				</div>
+				<div class="fl">
+					<input type="text" value="请输入关键词">
+					<button style="padding:5px 10px;">搜索</button>
+				</div>
+				<div id="j-jm" style="margin-left:230px;margin-top:1px;">
+					<div class="icon2 fl"></div>
+					咨询JIMI
+				</div>
+				<button style="width:80px;height:25px;background:#e4393c;color:#fff;border:none;border-radius:5px;">发表咨询</button>
+				<div class="sp fl">
+				<b>温馨提示:</b>因厂家更改产品包装、产地或者更换随机附件等没有任何提前通知，且每位咨询者购买情况、提问时间等不同，为此以下回复仅对提问者3天内有效，其他网友仅供参考！若由此给您带来不便请多多谅解，谢谢！
+				</div>
+			</div>
+			<div class="item1 fl">
+				<dl>网　　友：jd_月梦灵神 2016-09-24 22:17:13</dl>
+				<dt>咨询内容：<a href="">30天免息是指我得在30天之内凑齐钱，如果凑不齐呢</a></dt>
+				<dd>京东回复： 您好！请您联系京东客服进行解决，您点击以下的链接，预约京东服务的，成功预约之后会有京东的电话客服给您回拨电话，请您保持手机畅通，预约链接：http://myjd.crm.jd.com/appoint/telebooking.action~感谢您对京东的支持！祝您购物愉快！</dd>
+			</div>
+			<div class="item1 fl">
+				<dl>网　　友：jd_sunj1321 2016-09-18 13:13:37</dl>
+				<dt>咨询内容：<a href="">屏幕色域是多少sRGB的</a></dt>
+				<dd>京东回复： 您好！为保证您能够获得更加专业的回复，建议您咨询前台页面右上方“联系供应商”，专业客服人员会为您作详细解答；或者下载京东“咚咚”，方便解决您购物中的一切疑问。感谢您对京东的支持！祝您购物愉快！</dd>
+			</div>
+			<div class="item1 fl">
+				<dl>网　　友：jd_151016vuk 2016-09-07 22:59:14</dl>
+				<dt>咨询内容：<a href="">这有HDMI接口吗</a></dt>
+				<dd>京东回复： 您好！这款电脑是有HDMI接口的哦~感谢您对京东的支持！祝您购物愉快！</dd>
+			</div>
+			<div class="item1 fl">
+				<dl>网　　友：rendundant 2016-09-07 13:18:57</dl>
+				<dt>咨询内容：<a href="">屏幕会小吗</a></dt>
+				<dd>京东回复： 您好！这款屏幕是１５.６寸的，尺寸已经不小了，感谢您对京东的支持！祝您购物愉快！</dd>
+			</div>
+			<div class="ask fl" >购买之前，如有问题请<a href="" style="color:#005ea7;">[发表咨询]</a></div>
+			<div class="clearfix fl mt10" style="margin-bottom:10px;">
+				<div class="fl">
+					<a href="" style="height:37px;border-top:2px solid #e4393c;padding-top:13px;padding-bottom:13px; background:#fff;">网友讨论圈</a>
+					<a href="">晒单贴</a>
+					<a href="">讨论帖</a>
+					<a href="">问答帖</a>
+					<a href="">圈子帖</a>
+				</div>
+			</div>
+			<div class="fl" style="width:990px;height:200px;">
+				<img src="images/taolun.jpg">
+			</div>
+		</div>
+	</div>
+	<!-- 猜你喜欢 -->
+	<div class="fav center">
+		<div class="f-txt fl">猜你喜欢</div>
+		<div class="fl fav-list">
+			<ul>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="宏碁（acer）T5000电竞版 15.6英寸游戏笔记本电报"><img src="images/fav-img1.jpg"></a></div>	
+						<div class="l-price">¥6499.00</div>	
+					</div>
+				</li>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="" title="机械师T57 游戏本I7-6700HQ四核GTX960MC/8G/240G固态超薄笔记本电脑 六代"><img src="images/fav-img2.jpg"></a></div>
+						<div class="l-price">¥5999.00</div>
+					</div>
+				</li>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="" title="联想(ThinkPad)情报系列E450(20DCA7CD)14英寸笔记本电脑"><img src="images/fav-img3.jpg"></a></div>					
+						<div class="l-price">¥4699.00</div>	
+					</div>
+				</li>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="" title="daier(DELL)XPS 13-9350-R3708/4708随机发13.3英寸笔记本电脑"><img src="images/fav-img4.jpg"></a></div>					
+						<div class="l-price">¥8999.00</div>			
+					</div>
+				</li>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="" title="华硕（ASUS）G20CB万家国度ROG游戏态势电脑"><img src="images/fav-img5.jpg"></a></div>
+						<div class="l-price">¥9999.00</div>		
+					</div>
+				</li>
+				<li>
+					<div class="f-con fl">
+						<div class="img"><a href="" title="Apple iMac 21.5英寸一体机（双核 Core i5 处理器/8GB内存）"><img src="images/fav-img6.jpg"></a></div>			
+						<div class="l-price">¥7588.00</div>			
+					</div>
+				</li>
+			</ul>	
+		</div>
+	</div>
+	<!-- 底部 -->
+	<div class="bottom center ">
+		<div class="a fl">
+			<div class="img"><img src="images/bottom-ico.jpg"></div>
+		</div>
+		<div class="b center">
+			<dl class="fore1 fl">
+				<dt>购物指南</dt>
+				<dd><div><a href="">购物流程</a></div></dd>
+				<dd><div><a href="">会员介绍</a></div></dd>
+				<dd><div><a href="">生活旅行/团购</a></div></dd>
+				<dd><div><a href="">常见问题</a></div></dd>
+				<dd><div><a href="">大家电</a></div></dd>
+				<dd><div><a href="">联系客服</a></div></dd>				
+			</dl>
+			
+			<dl class="fore1 fl">
+				<dt>配送方式</dt>
+				<dd><div><a href="">上门自提</a></div></dd>
+				<dd><div><a href="">211限时达</a></div></dd>
+				<dd><div><a href="">配送服务查询</a></div></dd>
+				<dd><div><a href="">配送费收取标准</a></div></dd>
+				<dd><div><a href="">海外配送</a></div></dd>				
+			</dl>
+			<dl class="fore1 fl">
+				<dt>支付方式</dt>
+				<dd><div><a href="">货到付款</a></div></dd>
+				<dd><div><a href="">在线支付</a></div></dd>
+				<dd><div><a href="">分期付款</a></div></dd>
+				<dd><div><a href="">邮局汇款</a></div></dd>
+				<dd><div><a href="">公司转账</a></div></dd>				
+			</dl>
+			<dl class="fore1 fl">
+				<dt>售后服务</dt>
+				<dd><div><a href="">售后政策</a></div></dd>
+				<dd><div><a href="">价格保护</a></div></dd>
+				<dd><div><a href="">退款说明</a></div></dd>
+				<dd><div><a href="">返修/退换货</a></div></dd>
+				<dd><div><a href="">取消订单</a></div></dd>
+				<dd><div><a href="">联系客服</a></div></dd>				
+			</dl>
+			<dl class="fore1 fl">
+				<dt>特色服务</dt>
+				<dd><div><a href="">夺宝岛</a></div></dd>
+				<dd><div><a href="">DIY装机</a></div></dd>
+				<dd><div><a href="">延保服务</a></div></dd>
+				<dd><div><a href="">京东E卡</a></div></dd>
+				<dd><div><a href="">京东通信</a></div></dd>
+				<dd><div><a href="">京东JD+</a></div></dd>				
+			</dl>
+
+			<div class="coverage fl bg2">
+				<div class="dt">京东自营覆盖区县</div>
+				<div class="dd">京东已向全国2654个城市提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。</div>
+				<p class="ar"><a href="">查看详情></a></p>
+			</div>			
+		</div>		
+	</div>
+	<div class="footer fl">
+		<div class="content center">
+			<div class="a1">
+				<a href="">关于我们 </a>|
+				<a href="">联系我们 </a>|
+				<a href="">联系客服 </a>|
+				<a href="">商家入驻 </a>|
+				<a href="">营销中心 </a>|
+				<a href="">手机京东 </a>|
+				<a href="">友情链接 </a>|
+				<a href="">销售联盟 </a>|
+				<a href="">京东社区 </a>|
+				<a href="">京东公益 </a>|
+				<a href="">English Site </a>|
+				<a href="">Contact Us </a>|
+			</div>
+			<div class="a2">
+				<img src="images/plice.jpg" width="20px" height="20px">
+				<a href="">京公网安备 11000002000088号 </a>|
+				京ICP证070359号 |
+				<a href="">互联网药品信息服务资格证编号（京）-经营性-2014-0008</a>|
+				新出发京零 字第大120007号<br>
+				<a href="">互联网出版许可证编号新出网证(京)字150号</a>|
+				<a href=""> 出版物经营许可证</a>|
+				<a href=""> 网络文化经营许可证京网文[2014]2148-348号</a>|
+				违法和不良信息举报电话：4006561155<br>
+				Copyright © 2004 - 2016  京东JD.com 版权所有 | 消费者维权热线：4006067733<br>
+				<a href="">京东旗下网站：京东钱包</a>
+			</div>
+			<div class="a3 center">
+				<div class="ico">
+					<div class="img fl ml10"><img src="images/fm1.jpg"></div>
+					<div class="img fl ml10"><img src="images/fm2.jpg"></div>
+					<div class="img fl ml10"><img src="images/fm3.jpg"></div>
+					<div class="img fl ml10"><img src="images/fm4.jpg"></div>
+					<div class="img fl ml10"><img src="images/fm5.jpg"></div>
+					<div class="img fl ml10"><img src="images/fm6.jpg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script>
+	// 放大镜
+		$('#min').mouseover(function(){
+			// 获取小图的位置
+			var p=$(this).offset();
+			var w=$(this).width();
+
+			$('#max').css({top:p.top,left:p.left+w+10})
+			//显示放大的图
+			$('#max').show();
+			//显示遮罩
+			$('.z').show();
+
+		}).mouseout(function(){
+			//隐藏放大的图
+			$('#max').hide();
+			//隐藏遮罩
+			$('.z').hide();
+		}).mousemove(function(e){
+			//截取小图当前的位置
+			var minTop=$(this).offset().top;
+			var minLeft=$(this).offset().left;
+			
+			//鼠标相对小图的位置
+			var sminTop=e.pageY-minTop;
+			var sminLeft=e.pageX-minLeft;
+			console.log(sminLeft);
+			//设置大图滚动条的位置  //小图与大图的比例为2倍
+			$('#max').scrollTop((e.pageY-minTop)*2-200).scrollLeft((e.pageX-minLeft)*2-200);
+			var x=0;
+			var y=0;
+			if(sminLeft<30){
+				x=0;
+			}else if(sminLeft>320){
+				x=290;
+			}else{
+				x=sminLeft-30;
+			}
+
+			if(sminTop<30){
+				y<0;
+			}else if(sminTop>320){
+				y=290;
+			}else{
+				y=sminTop-30;
+			}
+			$('.z').css({left:x+minLeft,top:y+minTop});
+		});
+		$('#img2 img').on('click',function(){
+		    $(this).clone().replaceAll('#max img');
+		    $(this).clone().replaceAll('#min img');
+		})
+</script>
+
+</body>
+</html>

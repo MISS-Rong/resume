@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel='icon' href='images/head.ico' type='image/x-ico'/>
+    <title>京东(JD.COM)-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</title>
+    <script src="../lib/jquery-1.8.3/jquery.min.js"></script>
+    <style>
+/*通用部分*/
+        *{margin: 0;padding: 0;}
+        body{font-size: 13px;color: #666;}
+        a{text-decoration: none;color: #666;}
+        a:hover{color: #c81623;}
+        ul,ol{list-style: none;}
+        .mg0{margin: 0;}
+        .color1{color: #c81623;}
+        .color2{color:#b1191a;}        
+        .bg1{background: #f1f1f1;}
+        .bg2{background: pink;}
+        .bg3{background: yellow;}
+        .bg4{background:#3e3e3e;}
+        .bg5{background:#b1191a;}
+        .cent{margin: 0 auto;}
+        .bd{border-right: 1px solid #dfdfdf;}
+        .bdt{border-bottom:1px solid #dfdfdf;}
+        .mg20{margin-top: 20px auto;}
+/*top.css部分*/
+        #top{width: 100%;height: 30px;}
+        #top .cen{width:1200px;height: 100%;}
+        #top .cen .dz{width: 110px;height: 30px;position: relative;float: left;}
+        #top .cen .dz .dz1{width:70px;height:30px;text-align: center;line-height: 30px;float: left;}
+        #top .cen .dz .fh{width:15px;height:15px;transition: all 0.2s;float: left;margin-top: 6px;}
+        #top .cen .dz .city{width: 313px;height: 246px;border: 1px solid #ddd;padding: 10px;display: none;position: absolute;}
+        #top .cen .dz ul li{display: inline-block;padding: 0 10px;margin: 5px 10px;}
+        #top .cen .dz .city1{background: #b1191a;}
+        #top .cen .dz .city2{color:white;}
+        #top .cen .dz .kong{width:100px;height:5px;background: white;display: none;z-index: 9;position: absolute;top:29px;left: 0;}
+        #top .cen .zhuce{width: 820px;height: 100%;float:right;line-height: 30px;}
+        #top .cen .zhuce a{margin:0 5px;}
+        #top .cen .zhuce .wdjd{width: 80px;height: 100%;margin-left: 10px;margin-right: 10px;line-height:30px;display: inline-block;position: relative;}
+        #top .cen .zhuce .top{display:inline-block;margin-right: 10px;transition:all 0.2s;}
+        #top .cen .zhuce .wdjd .dl{width: 280px;height: 190px;border: 1px solid #ddd;display: none;position: absolute;}
+        #top .cen .zhuce .wdjd  .fh1{width:15px;height:15px;transition: all 0.2s;display:inline-block;line-height: 15px;margin-left: -10px;}
+        #top .cen .zhuce .wdjd .dl .img{display: inline-block;width: 60px;height: 60px;border-radius: 50%;margin: 10px 10px 0 10px;float: left;}
+        #top .cen .zhuce .wdjd .dl .nihao{width:200px;height:60px;float: left;margin-top: 15px;}
+        #top .cen .zhuce .wdjd .dl ul li{display: inline-block;margin-right: 50px;}
+        #top .cen .zhuce .wdjd .dl ul li a{margin: 5px;}
+        #top .cen .zhuce .wdjd .kong{width:75px;height:5px;background: white;display: none;z-index: 9;position: absolute;top:29px;left: 0;}
+        #top .cen .zhuce .sjjd{height: 30px;display: inline-block;line-height: 30px;}
+        #top .cen .zhuce .sjjd .tp{width: 20px;height: 20px;display: inline-block;margin-top:5px;}
+        #top .cen .zhuce .gzjd{display: inline-block;}
+        #top .cen .zhuce .khfw{display: inline-block;}
+        #top .cen .zhuce .wzdh{display: inline-block;}
+/*guanggao.css部分*/        
+        #guanggao{width: 100%;height: 80px;background:url('images/guanggao.jpg') no-repeat;position:relative;}
+        #guanggao .close{width: 19px;height: 19px;background: #ddd;color: #fff;position: absolute;top:5px;right:30px;text-align: center;line-height: 19px;cursor: pointer;}
+/*sousuo.css部分*/
+        #sosuo{width: 1210px;height: 100px;margin: 0 auto;}
+        #sosuo .logo{width:360px;height: 100px;display: inline-block;float: left;}
+        #sosuo .logo img{margin:25px 0;}
+        #sosuo .text{width: 450px;height: 35px;display: inline-block;float: left;margin: 30px 0;color:}
+        #sosuo .text .text1{width: 100%;height: 100%;border: 2px solid #b1191a;display: inline-block;color:#ddd;}
+        #sosuo .anniu{width: 80px;height: 39px;float: left;}
+        #sosuo .anniu button{width:100%;height: 100%;background: #b1191a;border:0;margin-top:30px;font-size: 16px;color: white;}
+        #sosuo .gwc{width: 141px;height: 36px;float: left;margin: 32px 0 0 100px;border:1px solid #DFDFDF;background: #F9F9F9;position: relative;}
+        #sosuo .gwc .tupian{width: 18px;height: 14px;margin: 10px 0 0 20px;float: left;}
+        #sosuo .gwc .gwc1{margin-top:10px;}
+        #sosuo .gwc .gwc-number{width: 16px;height: 14px;border-radius:50% 50% 50% 0;position: absolute;top:-5px;left: 105px;background: #c81623;color: white;text-align:center;}
+/*head.css部分*/
+        #head{width: 100%;height: 45px;border-bottom: 2px solid #b1191a;}
+        #head .header{width:1210px;height: 45px;margin: 0 auto;}
+        #head .header .left{width:210px;height:45px;background:#b1191a;display:inline-block;float:left;}
+        #head .header .left .sp{font-size: 18px;color:white;margin-left:10px;line-height: 45px;}
+        #head .header .caidan{float: left;}
+        #head .header ul li{display: inline-block;font-size: 18px;}
+        #head .header ul li a{margin: 0 15px;color: #333;line-height: 45px;}
+        #head .header .right{width:250px;height: 45px;display:inline-block;float: left;margin-left: 10px;}
+/*main.css部分*/
+        #main{width: 100%;height: 650px;/*background: url('images/main-bg.jpg');*/}
+        #main .main1{width: 1210px;height: 650px;margin: 0 auto;}
+        #main .main1 .left{width:210px;height: 465px;background:#c81623;float: left;position: relative;}
+        #main .main1 .left ul li{width: 100%;height: 31px;border-left: 1px solid #c81623;}    
+        #main .main1 .left a{font-size: 14px;color:white;line-height: 31px;margin-left: 10px;}
+        #main .main1 .left .float_img{width: 990px;height: 464px;position: absolute;top: 0px;left: 210px;z-index: 5;cursor:pointer;display: none;}
+        #main .main1 .left .float_img li{display: none;}
+
+        #main .main1 .cent{width: 730px;height: 454px;float: left;margin: 11px 0 0 9px;overflow: hidden;position: relative;cursor: pointer;}
+        #main .main1 .cent .cent_img{width: 2190px;height: 454px;position: absolute;/*animation: myplay 20s infinite;*/}
+        #main .main1 .cent .cent_img li{float: left;}
+        #main .main1 .cent .cent_num{font-size: 15px;color:#fff;width:100px;position: absolute;top:420px;left: 315px;}
+        #main .main1 .cent .cent_num li{float: left;margin-left:10px;width: 20px;height: 20px;border-radius:50%;text-align: center;line-height: 20px;}
+        #main .main1 .cent button{position: absolute;top:200px;font-size: 30px;padding: 5px 2px;border:none;background: rgba(0,0,0,0.3);color:#fff;display:none;cursor: pointer;}
+        #main .main1 .cent #prev{left: 10px;}
+        #main .main1 .cent #next{right: 10px;}
+        /*@keyframes myplay{
+        0%{top:0;left:0;}
+        50%{top:0;left: -730px;}
+        100%{top:0;left: -1460px;}
+        }*/
+        #right{width: 250px;height: 452px;border: 1px solid #DFDFDF;float: left;margin:11px 0 0 9px;}
+        #right .top{width: 100%;height: 164px;}
+        #right .top .up{width: 100%;height: 35px;font-size: 16px;line-height: 35px;}
+        #right .top .up a{font-size: 13px;margin-left: 120px;}
+        #right .top .downs{width: 100%;height: 127px;border-top: 1px dotted #DFDFDF;}
+        #right .top .downs ul li{margin: 10px 0 0 15px;}
+        #right .main{width: 100%;height: 210px;border-top: 1px solid #dfdfdf;border-bottom: 1px solid #dfdfdf;}
+        #right .main img{width: 100%;height: 100%;}
+        #right .main .tab{width: 251px;height: 210px;}
+        #right .main .tab .title{width: 100%;height: 30px;}
+        #right .main .tab .title li{width: 62px;height:27px;float: left;text-align: center;border-bottom: 1px solid #dfdfdf;border-left: 1px solid #dfdfdf;border-top: 2px solid #fff;line-height: 28px;}
+        #right .main .tab .content{width: 100%;height: 180px;padding:5px;}
+        #right .main .tab .content ul{display: none;}
+        #right .down{width: 100%;height: 75px;margin-top: 5px;}
+/*猜你喜欢floor1.css部分*/
+        #floor1{width: 100%;height: 716px;}
+        #floor1 .cent1{width: 1210px;height: 100%;margin: 0 auto;}
+        #floor1 .cent1 .cnxh{width: 100%;height: 36px;line-height: 36px;}
+        #floor1 .cent1 .cnxh .title{font-size: 23px;color: black;margin-right: 10px;}
+        #floor1 .cent1 .tjsp{width: 1208px;height: 233px;border: 1px solid #DFDFDF;position: relative;}
+        #floor1 .cent1 .tjsp .move{width:1208px;height:1px;background:#d1d1d1;margin:-1px auto;}
+        #floor1 .cent1 .tjsp .move i{width:365px;height:10px;position:absolute;top:-6px;left: 835px;background:url('images/floor1_move.png')no-repeat;}
+        #floor1 .cent1 .tjsp ul li{display: inline-block;}
+        #floor1 .cent1 .tjsp .tupian{width: 195px;height: 130px;margin-top: 20px;}
+        #floor1 .cent1 .tjsp .tupian a{margin-left:33px;}
+        #floor1 .cent1 .tjsp .jiage{width: 145px;height:61px;padding: 0 25px;margin-top: 10px;}
+        #floor1 .cent1 .tjsp .jiage .qian{font-size: 18px;}
+        #floor1 .cent1 .pzsh{width: 100%;height: 36px;line-height: 36px;}
+        #floor1 .cent1 .pzsh .title1{font-size: 23px;color: black;}
+        #floor1 .cent1 .jdpzsh{width: 100%;height: 407px;border: 1px solid #dfdfdf;}
+/*hengfu.css部分*/
+        .hengfu{width: 100%;height: 140px;}
+        .hengfu .hengfutp{width: 1200px;height: 140px;margin: 20px auto;}
+/*floor2.css*/
+        #floor2{width: 100%;height:680px;}
+        #floor2 .cent{width: 1210px;height:100%;}
+        #floor2 .cent .top{width: 1210px;height: 37px;}
+        #floor2 .cent .top span{width:590px;margin-top:1px;font-size: 20px;font-color:black;line-height: 35px;border-bottom: 1px solid #b1191a;display: inline-block;}
+        #floor2 .cent .top .toprt{width: 618px;height: 35px;float: right;margin-top:1px;border-top:1px solid #dfdfdf;border-left:1px solid #dfdfdf;border-right :1px solid #dfdfdf;}
+        #floor2 .cent .top .toprt li{float:left;padding:9px 0 8px 5px;border-top:2px solid #fff;border-left:1px solid #fff;border-right:1px solid #fff;border-bottom:1px solid #b1191a;}
+        #floor2 .cent .top .toprt li a{padding: 0 12px;border-right:1px solid #dfdfdf;display: inline-block;}
+        #floor2 .cent .left{width: 330px;height: 629px;float: left;}
+        #floor2 .cent .left .top2{width: 330px;height: 471px;}
+        #floor2 .cent .left .top2 img{width: 330px;height: 471px;}
+        #floor2 .cent .left .down2{width:329px;height:158px;border-left: 1px solid #dfdfdf;border-top: 1px solid #dfdfdf;border-bottom: 1px solid #dfdfdf;}
+        #floor2 .cent .left .down2 img{width:329px;height:158px;}
+        #floor2 .cent .right{width: 878px;height: 630px;border-left: 1px solid #dfdfdf;border-right: 1px solid #dfdfdf;border-bottom: 1px solid #dfdfdf;float:left;}
+        #floor2 .cent .right .right_img img{width: 878px;height: 630px;}
+     
+        .hengfu2{width: 100%;height: 66px;}
+        .hengfu2 .tupian{width: 1210px;height: 66px;}
+/*floor3-floor13部分*/
+        #floor3{width: 100%;height: 600px;}
+        #floor3 .cent{width:1210px;height: 600px;}
+        #floor3 .cent img{width:1210px;height:600px;}
+        #floor4{width: 100%;height: 600px;}
+        #floor4 .cent{width:1210px;height: 600px;}
+        #floor4 .cent img{width:1210px;height:600px;}
+        #floor5{width: 100%;height: 600px;}
+        #floor5 .cent{width:1210px;height: 600px;}
+        #floor5 .cent img{width:1210px;height:600px;}
+        #floor6{width: 100%;height: 600px;}
+        #floor6 .cent{width:1210px;height: 600px;}
+        #floor6 .cent img{width:1210px;height:600px;}
+        #floor7{width: 100%;height: 600px;}
+        #floor7 .cent{width:1210px;height: 600px;}
+        #floor7 .cent img{width:1210px;height:600px;}
+        #floor8{width: 100%;height: 600px;}
+        #floor8 .cent{width:1210px;height: 600px;}
+        #floor8 .cent img{width:1210px;height:600px;}
+        #floor9{width: 100%;height: 600px;}
+        #floor9 .cent{width:1210px;height: 600px;}
+        #floor9 .cent img{width:1210px;height:600px;}
+        #floor10{width: 100%;height: 600px;}
+        #floor10 .cent{width:1210px;height: 600px;}
+        #floor10 .cent img{width:1210px;height:600px;}
+        #floor11{width: 100%;height: 600px;}
+        #floor11 .cent{width:1210px;height: 600px;}
+        #floor11 .cent img{width:1210px;height:600px;}
+        #floor12{width: 100%;height: 600px;}
+        #floor12 .cent{width:1210px;height: 600px;}
+        #floor12 .cent img{width:1210px;height:600px;}
+        #floor13{width: 100%;height: 600px;}
+        #floor13 .cent{width:1210px;height: 600px;}
+        #floor13 .cent img{width:1210px;height:600px;}
+/*footer.css部分*/
+        #footer{width:100%;height: 796px;margin-top:20px;}
+        #footer .cent{width:1210px;height: 796px;}
+        #footer .cent .top{width:1210px;height: 339px;}        
+        #footer .cent .top .head{width:1210px;height: 36px;}
+        #footer .cent .top .head .L{width:900px;height:100%;float: left;font-size:25px;}
+        #footer .cent .top .head .R{width: 310px; height: 100%;float: left;font-size: 25px;}
+        #footer .cent .top .bod{width: 100%;height: 283px;border:1px solid #dfdfdf;}
+        #footer .cent .top .bod .bodl{width:900px;height:283px;float: left;}
+        #footer .cent .top .bod .bodl .left1{width: 239px;height: 283px;border-right: 1px solid #dfdfdf;}
+        #footer .cent .top .bod .bodl .left1 .tp{width: 219px;height: 180px;text-align: center;margin-top:30px;}
+        #footer .cent .top .bod .bodl .left1 .dw{width: 200px;height: 47px;margin-left: 20px;margin: 20px;}
+        #footer .cent .top .bod .bodl .left1 .dw span{color:red;font-size: 18px;}
+        #footer .cent .top .bod .bodl .left2{width: 900px;height: 283px;}
+        #footer .cent .top .bod .bodl .left2 ul li{width:213px; height:141px;display: inline-block;border-right: 1px solid #dfdfdf;}
+        #footer .cent .top .bod .bodl .left2 .rt{width: 100px;height: 100px;float: left;margin-top:5px;}
+        #footer .cent .top .bod .bodl .left2 .rd{width: 94px;height: 65px;float: left;margin-left: 5px;margin-top:5px;}
+        #footer .cent .top .bod .bodl .left2 div{display: inline-block;}
+        #footer .cent .top .bod .bodl .left2 .rd p{color:red;font-size: 18px;}
+        #footer .cent .top .bod .bodr{width:310px;height: 283px;float: left;}
+        #footer .cent .top .bod .bodr .centr{width: 280px; height: 240px;overflow: hidden;position: relative;margin:10px;}
+        #footer .cent .top .bod .bodr .centr ul{width: 280px;height: 720px;position: absolute;animation:play3 5s infinite;}
+        #footer .cent .top .bod .bodr .centr ul li{display: inline-block;}
+        #footer .cent .top .bod .bodr .centr ul li img{width: 280px;height: 240px;}
+        @keyframes play3{
+            0%{top: 0px;left: 0;}
+            50%{top: -240px;left: 0;}
+            100%{top:-480px;left:0;}
+        }
+        #footer .cent .down{width: 1210px;height: 457px; background: yellow;}
+        #footer .cent .down .hengfu3{width:100%;height: 94px;}
+        #footer .cent .down .hengfu33{width:1210px;height: 100%;}
+        #footer .cent .down .fr img{width:1210px;height: 363px;}
+/*这一段不知道什么鬼,重复的,还不能删除,一动就全乱了*/
+        #footer{
+            width: 100%;
+            height: 164px;
+            float: left;
+            margin-top: 10px;
+            }
+            #footer .left1{
+            width: 210px;
+            height: 100%;
+            float: left;
+            }
+            #footer .right{
+            width:100px;
+            height: 100px;
+            float: left;
+            }
+        /*什么鬼*/
+/*dingwei.css部分*/
+        .dingwei1{width:5px;height:100%;position: fixed;right:0;bottom: 0;background:#7a6e6e;}
+        .dingwei3{width:87px; height:440px;position: fixed;right: 0;/*top:20px;*/cursor: pointer;line-height: 35px;color:#fff;z-index:99;}
+        .dingwei3 .dw1{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw2{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw3{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw4{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw5{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw6{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei3 .dw7{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top:150px;display: none;}
+        .dingwei3 .dw8{padding-left:10px;width: 87px;height: 35px;background:#7a6e6e;border-radius: 5px;margin-top: 1px;display: none;}
+        .dingwei2{position: fixed;right: 0;bottom: 0;cursor: pointer;z-index: 999;}
+        .dingwei2 .dw1{width: 35px;height: 35px;background:#7a6e6e url('images/toolbars.png')no-repeat -87px -175px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw2{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px 0px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw3{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px -49px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw4{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px -99px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw5{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -188px -149px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw6{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px -149px;border-radius: 5px;margin-top:1px;}
+        .dingwei2 .dw7{margin-top:150px;width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px -249px;border-radius: 5px;}
+        .dingwei2 .dw8{width: 35px;height: 35px;background: #7a6e6e url('images/toolbars.png')no-repeat -49px -299px;border-radius: 5px;margin-top:1px;}
+        
+        .dingwei0{width:35px;height:348px;position:fixed;top:150px;left:0;cursor:pointer;font-size:14px;font-family:Arial;line-height:30px;text-align:center;display:none;}
+        .dingwei0 ul li{width:30px;height:30px;color:#625351;}
+        .dingwei0 .gc{background:url('images/gc.png');}
+        .dingwei0 .titler{display:none;font-size:12px}
+
+        .dingwei0 ul li:hover{background:#B61D1D;}
+        .dingwei0 ul li:hover a{color:#fff;}
+/*top :hover属性*/
+        #top .cen .dz:hover{background: white;border-left: 1px solid #ddd;border-right: 1px solid #ddd;top:0px;left:-1px;}
+        #top .cen .dz:hover .fh{transform: rotate(180deg);}
+        #top .cen .dz:hover .city{display:block;background: white;top:30px;left:-1px;}
+        #top .cen .dz ul li:hover{background: #f1f1f1;}
+        #top .cen .dz ul li a:hover{color: #b1191a;}
+        #top .cen .dz:hover .kong{display: block;}
+        #top .cen .zhuce .wdjd:hover{background: white;border-left:1px solid #ddd; border-right:1px solid #ddd;top: 0;left: -1px;margin-right: 8px;}
+        #top .cen .zhuce .wdjd:hover .fh1{transform:rotate(180deg);}
+        #top .cen .zhuce .wdjd:hover .dl{display:block;background: white;top:30px;left:-1px;}
+        #top .cen .zhuce .wdjd:hover .kong{display: block;}
+        #top .cen .zhuce .wdjd a:hover .top{transform:rotate(180deg);}
+/*main.hover*/
+        #main .main1 .left ul li:hover{background: white;}
+        #main .main1 .left ul li:hover a{color:#c81623;}
+/*footer:hover*/
+        #footer .cent .top .bod .bodl .left1:hover .tp{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(1):hover img{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(2):hover img{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(3):hover img{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(4):hover img{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(5):hover img{margin-left:-5px;}
+        #footer .cent .top .bod .bodl .left2 ul li:nth-child(6):hover img{margin-left:-5px;}
+/*dingwei.hover*/
+        /*.dingwei0 ul li:nth-child(1):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(2):hover a{background: #c81623;color:white;}
+        .dingwei0 ul li:nth-child(3):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(4):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(5):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(6):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(7):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(8):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(9):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(10):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(11):hover a{background: #c81623;color: white;}
+        .dingwei0 ul li:nth-child(12):hover a{background: #c81623;color: white;}*/
+    </style>
+</head>
+<body>
+    <div id="top" class="bg1">
+        <div class="cen cent">
+            <div class="dz">                    
+                <div class="dz1">送至:北京</div>
+                <div class="fh">∨</div>
+
+                <div class="kong"></div>             
+                <ul class="city">
+                    <li class="city1"><a href="list.html" class="city2">北京</a></li>
+                    <li><a href="list.html">江苏</a></li>
+                    <li><a href="list.html">上海</a></li>
+                    <li><a href="list.html">天津</a></li>
+                    <li><a href="list.html">重庆</a></li>
+                    <li><a href="list.html">河北</a></li>
+                    <li><a href="list.html">山西</a></li>
+                    <li><a href="list.html">河南</a></li>
+                    <li><a href="list.html">广东</a></li>
+                    <li><a href="list.html">浙江</a></li>
+                    <li><a href="list.html">陕西</a></li>
+                    <li><a href="list.html">宁夏</a></li>
+                    <li><a href="list.html">山东</a></li>
+                    <li><a href="list.html">四川</a></li>
+                    <li><a href="list.html">吉林</a></li>
+                    <li><a href="list.html">福建</a></li>
+                    <li><a href="list.html">辽宁</a></li>
+                    <li><a href="list.html">安徽</a></li>
+                    <li><a href="list.html">湖南</a></li>
+                    <li><a href="list.html">海南</a></li>
+                    <li><a href="list.html">青海</a></li>
+                    <li><a href="list.html">西藏</a></li>
+                    <li><a href="list.html">甘肃</a></li>
+                    <li><a href="list.html">贵州</a></li>
+                </ul>  
+            </div>
+            <div class="zhuce">
+                <a href="list.html">你好,请登录</a><a href="list.html" class="color1">免费注册</a><span>|</span><a href="list.html">我的订单</a><span>|</span><div class="wdjd"><a href="list.html" class="">
+                    我的京东</a>
+                    <div class="fh1">∨</div>
+                    <div class="kong"></div>
+                    <div class="dl">
+                        <img src="images/wdjd.jpg" class="img">
+                        <div class="nihao">
+                        <a href="list.html"><b>你好,请登录</b></a><br>
+                        <a href="list.html">优惠券</a><span>|</span><a href="list.html">消息</a>
+                        </div>
+                        <ul>
+                            <li><a href="list.html">待处理订单</a></li>
+                            <li><a href="list.html">我的关注</a></li>
+                            <li><a href="list.html">咨询回复</a></li>
+                            <li><a href="list.html">&nbsp;我的京豆</a></li>
+                            <li><a href="list.html">降价商品</a></li>
+                            <li><a href="list.html">&nbsp;我的理财</a></li>
+                            <li><a href="list.html">返修退换货</a></li>
+                            <li><a href="list.html">京东白条</a></li>
+                        </ul>
+                    </div>
+                </div><!-- <div class="top">∨</div> --><span>|</span><a href="list.html">京东会员</a><span>|</span><a href="list.html">企业采购</a><span>|</span><div class="sjjd"><!-- <div class="tp">
+                <img src="images/shouji.jpg"></div> --><a href="list.html">手机京东∨</a><span>|</span>
+                </div>
+                <div class="gzjd"><a href="list.html">关注京东∨</a></div><span>|</span>
+                <div class="khfw"><a href="list.html">客户服务∨</a></div><span>|</span>
+                <div class="wzdh"><a href="list.html">网站导航∨</a></div><span>|</span>
+            </div>
+        </div>
+    </div>
+    <div id="guanggao">
+        <div class="close">×</div>
+    </div>
+    <div id="sosuo">
+        <div class="logo">
+            <img src="images/logo.jpg">            
+        </div>
+        <div class="text"><input type="text" value="飞利浦剃须刀" class="text1 color2"></div>
+        <div class="anniu"><button><b>搜索</b></button></div>
+        <div class="gwc">
+            <div class="tupian">
+                <img src="images/gouwuche.jpg">
+            </div>
+            <div class="gwc1">
+                <a href="gouwuche.html">我的购物车 &nbsp;></a>
+            </div>
+            <div class="gwc-number">1</div>
+        </div>
+    </div>
+    <div id="head">
+        <div class="header">
+            <div class="left"><a href="list.html" class="sp">全部商品分类</a></div>
+            <ul class="caidan">
+                <li><a href="list.html">服装城</a></li>
+                <li><a href="list.html">美妆馆</a></li>
+                <li><a href="list.html">京东超市</a></li>
+                <li><a href="list.html">生鲜</a></li>
+                <li><a href="list.html">全球购</a></li>
+                <li><a href="list.html">闪购</a></li>
+                <li><a href="list.html">团购</a></li>
+                <li><a href="list.html">拍卖</a></li>
+                <li><a href="list.html">金融</a></li>
+            </ul>
+            <div class="right"><a href="list.html"><img src="images/aoyun.jpg"></a></div>
+        </div>
+    </div>
+    <div id="main">
+        <div class="main1">
+            <div class="left">
+                <ul>
+                    <li><a href="list.html">家用电器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">手机、数码、京东通信&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">电脑、办公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">家居、家具、家装、厨具&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">男装、女装、童装、内衣&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">个性化妆、清洁用品、宠物&nbsp;></a></li>
+                    <li><a href="list.html">鞋靴、箱包、珠宝、奢侈品&nbsp;></a></li>
+                    <li><a href="list.html">运动户外、钟表&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">汽车、汽车用品&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">母婴、玩具乐器&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">食品、酒类、生鲜、特产&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">医药保健&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">图书、音像、电子书&nbsp;&nbsp;&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">彩票、旅行、充值、票务&nbsp;&nbsp;></a></li>
+                    <li><a href="list.html">理财、众筹、白条、保险&nbsp;&nbsp;></a></li>
+                </ul>
+                <ol class="float_img">
+                    <li><img src="images/left_img5.jpg" alt=""></li>
+                    <li><img src="images/left_img2.jpg" alt=""></li>
+                    <li><img src="images/left_img3.jpg" alt=""></li>
+                    <li><img src="images/left_img4.jpg" alt=""></li>
+                    <li><img src="images/left_img5.jpg" alt=""></li>
+                    <li><img src="images/left_img3.jpg" alt=""></li>
+                    <li><img src="images/left_img2.jpg" alt=""></li>
+                    <li><img src="images/left_img3.jpg" alt=""></li>
+                    <li><img src="images/left_img4.jpg" alt=""></li>
+                    <li><img src="images/left_img5.jpg" alt=""></li>
+                    <li><img src="images/left_img3.jpg" alt=""></li>
+                    <li><img src="images/left_img2.jpg" alt=""></li>
+                    <li><img src="images/left_img3.jpg" alt=""></li>
+                    <li><img src="images/left_img4.jpg" alt=""></li>
+                    <li><img src="images/left_img5.jpg" alt=""></li>
+                </ol>
+            </div>
+            <div class="cent">  
+                <ul class="cent_img">
+                    <li><img src="images/move1.jpg"></li>
+                    <li><img src="images/move2.jpg"></li>
+                    <li><img src="images/move3.jpg"></li>
+                </ul>
+                <ol class="cent_num">
+                    <li class="bg4 bg5">1</li>
+                    <li class="bg4">2</li>
+                    <li class="bg4">3</li>
+                </ol>
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+            <div id="right">
+                <div class="top">
+                    <div class="up">
+                        京东快报
+                        <a href="list.html">更多&gt;</a>
+                    </div>
+                    <div class="downs">
+                        <ul>
+                            <li><a href="list.html"><b>[特惠]</b>浙江温州,浙江温州!</a></li>
+                            <li><a href="list.html"><b>[公告]</b>江南最大皮革厂倒闭了!</a></li>
+                            <li><a href="list.html"><b>[特惠]</b>王八蛋黄鹤吃喝嫖赌!</a></li>
+                            <li><a href="list.html"><b>[公告]</b>欠下了3.5个亿!</a></li>
+                            <li><a href="list.html"><b>[特惠]</b>带着他的小姨子跑了!</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main">
+                    <a href="list.html"><img class="main_img" src="images/right-tp.jpg"></a>
+                    <div class="tab">
+                        <ul class="title">
+                            <li style="margin-left:-1px;border-top-color:#c81623;border-bottom-color:#fff" ><a href="list.html" alt="">话费</a></li>
+                            <li><a href="list.html" alt="">机票</a></li>
+                            <li><a href="list.html" alt="">电影票</a></li>
+                            <li><a href="list.html" alt="">游戏</a></li>
+                        </ul>
+                        <div class="content">
+                            <ul style="display:block">
+                                
+                                <li><img src="images/right_img1.jpg" alt=""></li>
+                            </ul>
+                            <ul>
+                                
+                                <li><img src="images/right_img2.jpg" alt=""></li>
+                            </ul>
+                            <ul>
+                                
+                                <li><img src="images/right_img3.jpg" alt=""></li>
+                            </ul>
+                            <ul>
+                                
+                                <li><img src="images/right_img4.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="down"><a href="list.html"><img src="images/rt-down.jpg"></a></div>
+            </div>
+            <div id="footer">
+                <div class="left1"><a href="list.html"><img src="images/down-tp.jpg"></a></div>
+                <div class="right"><a href="list.html"><img src="images/down1-tp.jpg"></a></div>
+            </div>
+        </div>
+    </div>
+    <div id="floor1">
+        <div class="cent1">
+            <div class="cnxh">
+                <span class="title"><b>猜你喜欢</b></span><span>根据你的喜好精心为你推荐!</span>
+            </div>
+            <div class="tjsp">
+                <div class="move">
+                    <i></i>
+                </div>
+                <ul>
+                    <li><div class="tupian"><a href="list.html"><img src="images/wlj.jpg"></a></div></li>
+                    <li><div class="tupian"><a href="list.html"><img src="images/tcl.jpg"></a></div></li>
+                    <li><div class="tupian"><a href="list.html"><img src="images/mmyx.jpg"></a></div></li>
+                    <li><div class="tupian"><a href="list.html"><img src="images/qy.jpg"></a></div></li>
+                    <li><div class="tupian"><a href="list.html"><img src="images/hp.jpg"></a></div></li>
+                    <li><div class="tupian"><a href="list.html"><img src="images/rs.jpg"></a></div></li>
+                    <li><div class="jiage bd"><a href="list.html">[京东超市]王老吉,走过路过不要错过啊</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                    <li><div class="jiage bd"><a href="list.html">[京东超市]我也忘了这是啥牌子,反正不要钱</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                    <li><div class="jiage bd"><a href="list.html">[京东超市]妈妈牌洗衣液,应该没有妈妈的味道</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                    <li><div class="jiage bd"><a href="list.html">[京东超市]不知道啥饮料,好像是咖啡</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                    <li><div class="jiage bd"><a href="list.html">[京东超市]某品牌的电脑,看样子LOL不错</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                    <li><div class="jiage"><a href="list.html">[京东超市]这个三层的冰箱有点丑,送我我就要</a><div class="qian color1"><b>¥8888.00</b></div></div></li>
+                </ul>
+            </div>
+            <div class="pzsh"><div class="title1"><b>京东·品质生活</b></div></div>
+            <div class="jdpzsh"><a href="list.html"><img src="images/jdpzsh.jpg"></a></div>
+        </div>
+    </div>
+    <div class="hengfu">
+        <div class="hengfutp"><a href="list.html"><img src="images/hengfutp.jpg"></a></div>
+    </div>
+    <div id="floor2">
+        <div class="cent">
+            <div class="top">
+                <span><b>1F服装鞋包</b></span>
+                <ul class="toprt">
+                    <li style="border-color:#b1191a #b1191a #fff #b1191a"   ><a href="list.html">大牌</a></li>
+                    <li><a href="list.html">男装</a></li>
+                    <li><a href="list.html">女装</a></li>
+                    <li><a href="list.html">鞋靴</a></li>
+                    <li><a href="list.html">箱包</a></li>
+                    <li><a href="list.html">内衣配饰</a></li>
+                    <li><a href="list.html">珠宝首饰</a></li>
+                    <li><a href="list.html">奢品礼品</a></li>
+                    <li><a style="border:0;padding-left:5px" href="list.html">奢华腕表</a></li>
+                </ul>
+            </div>
+            <div class="left">
+                <div class="top2"><a href="list.html"><img src="images/fl2-left.jpg"></a></div>
+                <div class="down2"><a href="list.html"><img src="images/fl2-left1.jpg"></a></div>
+            </div>
+            <div class="right">
+                <ul class="right_img">
+                    <li><img src="images/floor2_img1.jpg" alt=""></li>
+                    <li><img src="images/floor2_img2.jpg" alt=""></li>
+                    <li><img src="images/floor2_img3.jpg" alt=""></li>
+                    <li><img src="images/floor2_img4.jpg" alt=""></li>
+                    <li><img src="images/floor2_img5.jpg" alt=""></li>
+                    <li><img src="images/floor2_img6.jpg" alt=""></li>
+                    <li><img src="images/floor2_img7.jpg" alt=""></li>
+                    <li><img src="images/floor2_img8.jpg" alt=""></li>
+                    <li><img src="images/floor2_img9.jpg" alt=""></li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    <div class="hengfu2"><div class="tupian cent"><a href="list.html"><img src="images/hengfu2.jpg"></a></div></div>
+    <div id="floor3"><div class="cent mg20"><a href="list.html"><img src="images/2L.bmp"></a></div></div>
+    <div id="floor4"><div class="cent mg20"><a href="list.html"><img src="images/3L.bmp"></a></div></div>
+    <div id="floor5"><div class="cent mg20"><a href="list.html"><img src="images/4L.bmp"></a></div></div>
+    <div id="floor6"><div class="cent mg20"><a href="list.html"><img src="images/5L.bmp"></a></div></div>
+    <div id="floor7"><div class="cent mg20"><a href="list.html"><img src="images/6L.bmp"></a></div></div>
+    <div id="floor8"><div class="cent mg20"><a href="list.html"><img src="images/7L.bmp"></a></div></div>
+    <div id="floor9"><div class="cent mg20"><a href="list.html"><img src="images/8L.bmp"></a></div></div>
+    <div id="floor10"><div class="cent mg20"><a href="list.html"><img src="images/9L.bmp"></a></div></div>
+    <div id="floor11"><div class="cent mg20"><a href="list.html"><img src="images/10L.bmp"></a></div></div>
+    <div id="floor12"><div class="cent mg20"><a href="list.html"><img src="images/11L.bmp"></a></div></div>
+    <div id="floor13"><div class="cent mg20"><a href="list.html"><img src="images/12L.bmp"></a></div></div>
+    <div id="footer">
+        <div class="cent">
+            <div class="top">
+                <div class="head">
+                    <div class="L"><b>天天低价</b></div>
+                    <div class="R"><b>热门晒单</b></div>
+                </div>
+                <div class="bod">
+                    <div class="bodl">
+                        <div class="left1">
+                            <div class="tp"><a href="list.html"><img src="images/ttdj1.jpg"></a></div>
+                            <div class="dw"><a href="list.html">【买三得三】反正也不是我的东西</a><span><b>¥66.66</b></span></div>
+                        </div>
+                        <div class="left2">
+                            <ul>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj2.jpg"></a></div>
+                            <div class="rd"><a href="list.html">来瞧一瞧看一看了啊</a><p><b>¥66.66</b></p></div></li>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj3.jpg"></a></div>
+                            <div class="rd"><a href="list.html">走过路过千万不要错过</a><p><b>¥66.66</b></p></div></li>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj4.jpg"></a></div>
+                            <div class="rd"><a href="list.html">一百块你买不了吃亏</a><p><b>¥66.66</b></p></div></li>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj5.jpg"></a></div>
+                            <div class="rd"><a href="list.html">你买不了上当</a><p><b>¥66.66</b></p></div></li>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj6.jpg"></a></div>
+                            <div class="rd"><a href="list.html">你不买是你的损失</a><p><b>¥66.66</b></p></div></li>
+                                <li><div class="rt"><a href="list.html"><img src="images/ttdj7.jpg"></a></div>
+                            <div class="rd"><a href="list.html">抓紧时间赶紧抢购吧</a><p><b>¥66.66</b></p></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bodr">
+                        <div class="centr">                
+                            <ul>
+                                <li><img src="images/ttdj8.jpg"></li><li>
+                                <img src="images/ttdj9.jpg"></li><li>
+                                <img src="images/ttdj8.jpg"></li>
+                            </ul>                
+                        </div>
+                    </div>
+                </div>                
+            </div>
+            <div class="down">
+                <div class="hengfu3">
+                    <div class="hengfu33"><a href="list.html"><img src="images/ft.jpg"></a></div>
+                </div>
+                <div class="fr"><img src="images/footer.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="dingwei1"></div>
+    <ul class="dingwei3">
+        <li class="dw1">京东会员</li>
+        <li class="dw2">购物车</li>
+        <li class="dw3">我的关注</li>
+        <li class="dw4">我的足迹</li>
+        <li class="dw5">我的消息</li>
+        <li class="dw6">咨询ZIMI</li>
+        <li class="dw7">顶部</li>
+        <li class="dw8">反馈</li>
+    </ul>
+    <ul class="dingwei2">
+        <li class="dw1"></li>
+        <li class="dw2"></li>
+        <li class="dw3"></li>
+        <li class="dw4"></li>
+        <li class="dw5"></li>
+        <li class="dw6"></li>
+        <li class="dw7"></li>
+        <li class="dw8"></li>
+    </ul>
+    <div class="dingwei0">
+        <ul>
+            <li><a href="#floor2"  class="hover">1F</a><a href="#floor2" class="titler">服饰</a></li>
+            <li class="gc"><a href="#floor3" class="hover">2F</a><a href="#floor3" class="titler">美妆</a></li>
+            <li class="gc"><a href="#floor4" class="hover">3F</a><a href="#floor4" class="titler">手机</a></li>
+            <li class="gc"><a href="#floor5" class="hover">4F</a><a href="#floor5" class="titler">家电</a></li>
+            <li class="gc"><a href="#floor6" class="hover">5F</a><a href="#floor6" class="titler">数码</a></li>
+            <li class="gc"><a href="#floor7" class="hover">6F</a><a href="#floor7" class="titler">运动</a></li>
+            <li class="gc"><a href="#floor8" class="hover">7F</a><a href="#floor8" class="titler">居家</a></li>
+            <li class="gc"><a href="#floor9" class="hover">8F</a><a href="#floor9" class="titler">母婴</a></li>
+            <li class="gc"><a href="#floor10" class="hover">9F</a><a href="#floor10" class="titler">食品</a></li>
+            <li class="gc"><a href="#floor11" class="hover">10F</a><a href="#floor11" class="titler">图书</a></li>
+            <li class="gc"><a href="#floor12" class="hover">11F</a><a href="#floor12" class="titler">车品</a></li>
+            <li class="gc"><a href="#floor13" class="hover">12F</a><a href="#floor13" class="titler">服务</a></li>
+        </ul>
+    </div>
+    <script>
+        //顶部banner关闭按钮
+            $('#guanggao .close').click(function(){
+                $('#guanggao').fadeOut(400);
+            })
+        //左侧楼层定位
+            // var arr=['1F','2F','3F','4F','5F','6F','7F','8F','9F','10F','11F','12F'];
+            // var arr1=['服饰','美妆','手机','家电','数码','运动','居家','母婴','食品','图书','居家','服务'];
+            // $('.dingwei0 .div a').mouseover(function(){
+            //     $(this).text(arr1[$(this).index()]);
+            //     $(this).css({background:'#c81623',color:'#fff'});
+            // }).mouseout(function(){
+            //     $(this).text(arr[$(this).index()]);
+            //     $(this).css({background:'#fff',color:'#666'});
+            // })
+            
+        //main轮播图部分
+            firstImg=$('.cent_img li').first().clone();
+            $('.cent_img').append(firstImg).width($('.cent_img li').length*$('.cent_img img').width());
+            var i=0;
+            var imgW=$('.cent_img li img').width();
+            //下一张
+            $('#next').click(function(){
+                moveImg(++i);
+            })
+            //上一张
+            $('#prev').click(function(){
+                moveImg(--i);
+            })
+            //移动到指定图片
+            function moveImg(){
+                if(i==$('.cent_img li').length){
+                    $('#main .cent_img').css({left:0})
+                    i=1;
+                }
+                if(i==-1){
+                    i=$('.cent_img li').length-2;
+                    $('.cent_img').css({left:($('.cent_img li').length-1)*imgW});
+                }
+                // 移动图片动画
+                $('.cent_img').stop().animate({left:i*-imgW},400);
+                if(i==($('.cent_img li').length-1)){
+                    $('.cent_num li').eq(0).addClass('bg5').siblings().removeClass('bg5');
+                }else{
+                    $('.cent_num li').eq(i).addClass('bg5').siblings().removeClass('bg5');
+                }
+            }
+            // 点击小图片，跳转到指定的图片
+            $('.cent_num li').click(function(){
+                i = $(this).index();
+                moveImg();
+            });
+            function autoPlay(){
+                timer = setInterval(function(){
+                    i++;
+                    moveImg();
+                },3000);
+            }
+            autoPlay();
+            // 鼠标移入幻灯片清除定时器
+            $('#main .cent').mouseover(function(){
+                $('#main .cent button').show();
+                clearInterval(timer)
+            }).mouseout(function(){
+                // 鼠标离开重新播放
+                autoPlay();
+                $('#main .cent button').hide();
+            })
+        //main侧边栏
+            $('#main .main1 .left ul li').mouseover(function(){
+                var index=$(this).index();
+                $('#main .main1 .left .float_img').css('display','block');
+                $('#main .main1 .left .float_img li').eq(index).css('display','block').siblings().css('display','none');
+            })
+            $('#main .main1 .left .float_img').mouseout(function(){
+                $('#main .main1 .left .float_img li').css('display','none');
+                $('#main .main1 .left .float_img').css('display','none');
+            });
+        // main右侧tab选项卡
+            $('#right .main .main_img').mouseover(function(){
+                $('#right .main .main_img').slideUp(300);
+            })
+            $('#right .main .tab .title li').mouseover(function(){
+                $('#right .main .tab .title li').css({'border-top-color':'#fff','border-bottom-color':'#dfdfdf'});
+                $(this).css({'border-top-color':'#c81623','border-bottom-color':'#fff'});
+                $('#right .main .tab .content ul').css('display','none');
+                $('#right .main .tab .content ul').eq($(this).index()).css('display','block');
+                $('#right .main .tab .content ul li img').eq($(this).index()).css('display','block');
+            })
+        //floor1顶部移动的线条
+            $('#floor1').mouseover(function(){
+                $('#floor1 .cent1 .tjsp .move i').animate({left:'0px'},1)
+                      .animate({left:'835px'},1000)
+                      .animate({left:'835px'},5000)
+            }).mouseout(function(){
+                $('#floor1').stop(true);
+            });
+        //左侧浮动楼层定位
+            $('.dingwei0 ul li a').mouseover(function(){
+                             
+            })
+        //floor2 tab选项卡部分
+            $('#floor2 .toprt li').mouseover(function(){
+                $(this).css('border-color','#b1191a #b1191a #fff #b1191a').siblings().css('border-color','#fff #fff #b1191a #fff');
+                $('#floor2 .right .right_img li').eq($(this).index()).css('display','block').siblings().css('display','none');
+            })
+        //获取滚动条位置
+            // $(window).scroll(function(){
+            //     var scrollValue=$(window).scrollTop();
+            //     console.log(scrollValue);
+            //     console.log($('#floor2').offset().top)
+            //     var i=0;
+            //     if(scrollValue>1500 && scrollValue<2200){
+            //         $('.dingwei0 .div a').eq(0).text(arr1[0]);
+            //         $('.dingwei0 .div a').eq(0).css({background:'#c81623',color:'#fff'});
+            //     }else if(scrollValue>2200){
+            //         $('.dingwei0 .div a').eq(1).text(arr1[1]);
+            //         $('.dingwei0 .div a').eq(1).css({background:'#c81623',color:'#fff'});
+            //     }else{
+            //         $('.dingwei0 .div a').eq(0).text(arr[0]);
+            //         $('.dingwei0 .div a').eq(0).css({background:'#fff',color:'#666'});
+            //     }
+            // }) 
+            
+            //鼠标移入移切换不同的内容
+        //鼠标移入,楼层样式更改
+            var j;
+            $('.dingwei0 ul li').mouseover(function(){
+                j=$(this).index();
+                $('.dingwei0 ul li:eq('+j+') .hover').hide();
+                $('.dingwei0 ul li:eq('+j+') .titler').css('color','#fff').show();
+            }).mouseout(function(){
+                $('.dingwei0 ul li:eq('+j+') .titler').hide();
+                $('.dingwei0 ul li:eq('+j+') .hover').show();
+            });
+        //侧边导航显示滚动条所在的相应的楼层
+            $(window).scroll(function(){
+                for(var z=2;z<=13;z++){
+                    var k=z+1;var p=z-1;
+                     if($(window).scrollTop()>($('#floor'+z).offset().top-250)&&($(window).scrollTop())<($('#floor'+k).offset().top-250)){
+                        $('.dingwei0 ul li:eq('+p+') .hover').hide();
+                        $('.dingwei0 ul li:eq('+p+') .titler').show().css('color','#B61D1D');
+                    }
+                    else{
+                        $('.dingwei0 ul li:eq('+p+') .titler').hide();
+                        $('.dingwei0 ul li:eq('+p+') .hover').show();
+                    }
+                }
+            });
+        //侧边导航何时出现
+            $(window).scroll(function (){
+                if($(window).scrollTop()>1200&&($(window).scrollTop()<9300)){
+                    $('.dingwei0').css('display','block');
+                }else{
+                    $('.dingwei0').css('display','none');
+                }
+            });
+        //右侧导航
+        $('.dingwei2 li').mouseover(function(){
+            var ind=$(this).index()
+            $(this).css('background-color','#C81623').siblings().css('background-color','#7a6e6e');
+            // $('.dingwei3 li').eq(ind).show();
+            console.log($(this).index())
+        })
+    </script>
+</body>
+</html>

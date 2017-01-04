@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>我的购物车 - 京东商城</title>
+        <link type="text/css" rel="stylesheet" href="cart.action_files/a_003.css">
+        <script src="cart.action_files/wl.js" async="" type="text/javascript"></script><script src="cart.action_files/idigger.js" async="" type="text/javascript"></script><script type="text/javascript" src="cart.action_files/jquery-1.js"></script>
+        <script type="text/javascript" src="cart.action_files/base.js"></script>
+                <link source="widget" href="cart.action_files/a.css" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="cart.action_files/a_002.css" source="widget">
+        
+<script type="text/javascript">
+   try{	
+            window._alysAA =  window._alysAA || [];
+            var _alysAA = window._alysAA;
+            _alysAA.push( [ 'init',  'ifc', 'T-000014-01' ] );
+            ;(function() {
+            var idgJsPath = "//misc.360buyimg.com/lib/js/2012";  
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = idgJsPath + '/idigger.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+            })();
+     }catch(err) {
+	}
+</script>
+<link href="cart.action_files/area.css" rel="stylesheet" charset="utf-8"><style type="text/css">.fixed-bottom{position:fixed;bottom:0px;z-index:999}</style><link href="cart.action_files/tips.css" rel="stylesheet" charset="utf-8"><link href="cart.action_files/common.css" rel="stylesheet" charset="utf-8"><style type="text/css">.jdm-toolbar .jdm-toolbar-footer .jdm-tbar-tab-survey .tab-ico {display: none;_display:none;}.jdm-toolbar .jdm-toolbar-footer .jdm-tbar-tab-survey .tab-text {left: 0px;width: 35px;height:30px;padding:2px 0 3px;line-height: 15px;background: #c81623;_display:block;</style><style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+/** reset styling **/
+.firebugResetStyles {
+    z-index: 2147483646 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: fixed !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent none !important;
+    pointer-events: none !important;
+    white-space: normal !important;
+}
+
+.firebugBlockBackgroundColor {
+    background-color: transparent !important;
+}
+
+.firebugResetStyles:before, .firebugResetStyles:after {
+    content: "" !important;
+}
+/**actual styling to be modified by firebug theme**/
+.firebugCanvas {
+    display: none !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    width: auto !important;
+    position: static !important;
+}
+
+.firebugLayoutBoxOffset {
+    opacity: 0.8 !important;
+    position: fixed !important;
+}
+
+.firebugLayoutLine {
+    opacity: 0.4 !important;
+    background-color: #000000 !important;
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    width: 1px !important;
+    height: 100% !important;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    width: 100% !important;
+    height: 1px !important;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px !important;
+    border-top: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px !important;
+    border-left: 1px solid #999999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxParent {
+    border-top: 0 none !important;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none !important;
+    position: fixed !important;
+    width: auto !important;
+}
+
+.firebugRuler{
+    position: absolute !important;
+}
+
+.firebugRulerH {
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 14px !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x !important;
+    border-top: 1px solid #BBBBBB !important;
+    border-right: 1px dashed #BBBBBB !important;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.firebugRulerV {
+    top: 0 !important;
+    left: -15px !important;
+    width: 14px !important;
+    height: 100% !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px dashed #BBBBBB !important;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0 !important;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.fbProxyElement {
+    position: fixed !important;
+    pointer-events: auto !important;
+}
+</style></head>
+<body>
+<div id="shortcut-2014">
+	<div class="w">
+    	<ul class="fl">
+    		<li class="dorpdown" id="ttbar-mycity">			<div class="dt cw-icon ui-areamini-text-wrap" style="">				<i class="ci-right"><s>◇</s></i>				送至：<span title="北京" data-id="1" class="ui-areamini-text">北京</span> 			</div>			<div class="dd dorpdown-layer">				<div class="dd-spacer"></div>				<div class="ui-areamini-content-wrap"> 					<div class="ui-areamini-content"><div class="ui-areamini-content-list"><div class="item"><a class="selected" data-id="1" href="javascript:void(0)">北京</a></div><div class="item"><a data-id="2" href="javascript:void(0)">上海</a></div><div class="item"><a data-id="3" href="javascript:void(0)">天津</a></div><div class="item"><a data-id="4" href="javascript:void(0)">重庆</a></div><div class="item"><a data-id="5" href="javascript:void(0)">河北</a></div><div class="item"><a data-id="6" href="javascript:void(0)">山西</a></div><div class="item"><a data-id="7" href="javascript:void(0)">河南</a></div><div class="item"><a data-id="8" href="javascript:void(0)">辽宁</a></div><div class="item"><a data-id="9" href="javascript:void(0)">吉林</a></div><div class="item"><a data-id="10" href="javascript:void(0)">黑龙江</a></div><div class="item"><a data-id="11" href="javascript:void(0)">内蒙古</a></div><div class="item"><a data-id="12" href="javascript:void(0)">江苏</a></div><div class="item"><a data-id="13" href="javascript:void(0)">山东</a></div><div class="item"><a data-id="14" href="javascript:void(0)">安徽</a></div><div class="item"><a data-id="15" href="javascript:void(0)">浙江</a></div><div class="item"><a data-id="16" href="javascript:void(0)">福建</a></div><div class="item"><a data-id="17" href="javascript:void(0)">湖北</a></div><div class="item"><a data-id="18" href="javascript:void(0)">湖南</a></div><div class="item"><a data-id="19" href="javascript:void(0)">广东</a></div><div class="item"><a data-id="20" href="javascript:void(0)">广西</a></div><div class="item"><a data-id="21" href="javascript:void(0)">江西</a></div><div class="item"><a data-id="22" href="javascript:void(0)">四川</a></div><div class="item"><a data-id="23" href="javascript:void(0)">海南</a></div><div class="item"><a data-id="24" href="javascript:void(0)">贵州</a></div><div class="item"><a data-id="25" href="javascript:void(0)">云南</a></div><div class="item"><a data-id="26" href="javascript:void(0)">西藏</a></div><div class="item"><a data-id="27" href="javascript:void(0)">陕西</a></div><div class="item"><a data-id="28" href="javascript:void(0)">甘肃</a></div><div class="item"><a data-id="29" href="javascript:void(0)">青海</a></div><div class="item"><a data-id="30" href="javascript:void(0)">宁夏</a></div><div class="item"><a data-id="31" href="javascript:void(0)">新疆</a></div><div class="item"><a data-id="52993" href="javascript:void(0)">港澳</a></div><div class="item"><a data-id="32" href="javascript:void(0)">台湾</a></div><div class="item"><a data-id="84" href="javascript:void(0)">钓鱼岛</a></div><div class="item"><a href="https://en.jd.com/" target="_blank" data-onchange="1">海外</a></div></div></div> 				</div> 			</div>		</li>
+    	</ul>
+    	<ul class="fr">
+			<li class="fore1" id="ttbar-login"><a href="javascript:login();" class="link-login">你好，请登录</a>&nbsp;&nbsp;<a href="javascript:regist();" class="link-regist style-red">免费注册</a></li>
+			<li class="spacer"></li>
+			<li class="fore2">
+				<div class="dt">
+					<a target="_blank" href="https://order.jd.com/center/list.action">我的订单</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore3 dorpdown" id="ttbar-myjd">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>
+					<a target="_blank" href="https://home.jd.com/">我的京东</a>
+				</div>
+				<div class="dd dorpdown-layer"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div></div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore4">
+				<div class="dt">
+					<a target="_blank" href="https://vip.jd.com/">京东会员</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore5">
+				<div class="dt">
+					<a target="_blank" href="https://b.jd.com/">企业采购</a>
+				</div>
+			</li>
+			<li class="spacer"></li>
+			<li aid="2_955_6342" class="fore6 dorpdown" id="ttbar-apps">
+				<div class="dt cw-icon">
+					<i class="ci-left"></i>
+					<i class="ci-right"><s>◇</s></i>
+					<a target="_blank" href="https://app.jd.com/">手机京东</a>
+				</div>
+						<div class="dd dorpdown-layer">				<div class="dd-spacer"></div>				<div class="dd-inner" id="ttbar-apps-main"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div>				</div>			</div>		</li>
+			<li class="spacer"></li>
+			<li aid="2_955_6494" class="fore7 dorpdown" id="ttbar-atte">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>关注京东
+				</div>	
+						<div class="dd dorpdown-layer">				<div class="dd-spacer"></div>				<div class="dd-inner" id="ttbar-atte-main"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div>				</div>			</div>		</li>
+			<li class="spacer"></li>
+			<li class="fore8 dorpdown" id="ttbar-serv">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>客户服务
+				</div>
+				<div class="dd dorpdown-layer"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div></div>
+			</li>
+			<li class="spacer"></li>
+			<li class="fore9 dorpdown" id="ttbar-navs">
+				<div class="dt cw-icon">
+					<i class="ci-right"><s>◇</s></i>网站导航
+				</div>
+				<div class="dd dorpdown-layer"><div class="dd-spacer"></div><div class="dd-inner"><span class="loading"></span></div></div>
+			</li>
+    	</ul>
+		<span class="clr"></span>
+    </div>
+</div>
+<div id="o-header-2013"><div id="header-2013" style="display:none;"></div></div>
+<div class="w w1 header clearfix">
+	<div id="logo">
+		<a href="https://www.jd.com/" class="link1"><img src="cart.action_files/logo-201305.png" alt="京东商城"></a>
+		<a href="#none" class="link2"><b></b>购物车</a>
+
+	</div>
+	
+
+	<div class="cart-search">
+		<div class="form">
+			<input value="自营" style="color: rgb(153, 153, 153);" id="key" class="itxt" autocomplete="off" accesskey="s" type="text">
+			<input class="button" value="搜索" clstag="clickcart|keycount|xincart|cart_search" onclick="javascript:void(0);" type="button">
+		</div>
+	</div>
+</div>
+
+
+<!-- main -->
+<div id="container" class="cart">
+			<div class="w">
+			<div id="chunjie" class="mb10"></div>
+	<div class="nologin-tip">
+		<span class="wicon"></span>
+		您还没有登录！登录后购物车的商品将保存到您账号中
+		<a class="btn-1 ml10" href="#none" clstag="clickcart|keycount|xincart|cart_pageTopLogin">立即登录</a>
+	</div>
+<div class="cart-filter-bar">
+	<ul class="switch-cart">
+		<li class="switch-cart-item curr">
+			<a href="#none">
+				<em>全部商品</em>
+				<span class="number">1</span>
+			</a>
+		</li>
+		            <li class="switch-cart-item ui-switchable-selected">
+                <a class="" href="https://cart.yiyaojd.com/cart">
+                    <em>京东大药房</em>
+                </a>
+            </li>
+			</ul>
+	<div class="cart-store">
+		<input id="hiddenLocationId" type="hidden">
+		<input id="hiddenLocation" type="hidden">
+		<span class="label">配送至：</span>
+		<div id="jdarea" class="ui-area-wrap">
+			<div class="ui-area-text-wrap">
+				<div title="北京朝阳区管庄" data-id="1-72-4137" class="ui-area-text">北京朝阳区管庄</div>
+				<b>
+				</b>
+			</div>
+			<div style="" class="ui-area-content-wrap">
+				<div class="ui-area-tab"><a style="max-width: 105px;" class="ui-switchable-item" data-id="1" title="北京"><em>北京</em><i></i></a><a style="max-width: 105px;" class="ui-switchable-item" data-id="72" title="朝阳区"><em>朝阳区</em><i></i></a><a style="max-width: 105px;" class="ui-switchable-item ui-area-current" data-id="4137" title="管庄"><em>管庄</em><i></i></a></div>
+				<div class="ui-area-content" clstag="clickcart|keycount|xincart|cart_changeArea"><div style="display: none;" class="ui-switchable-panel" data-index="0"><ul class="ui-area-content-list"><li><a data-id="1" href="javascript:void(0)">北京</a></li><li><a data-id="2" href="javascript:void(0)">上海</a></li><li><a data-id="3" href="javascript:void(0)">天津</a></li><li><a data-id="4" href="javascript:void(0)">重庆</a></li><li><a data-id="5" href="javascript:void(0)">河北</a></li><li><a data-id="6" href="javascript:void(0)">山西</a></li><li><a data-id="7" href="javascript:void(0)">河南</a></li><li><a data-id="8" href="javascript:void(0)">辽宁</a></li><li><a data-id="9" href="javascript:void(0)">吉林</a></li><li><a data-id="10" href="javascript:void(0)">黑龙江</a></li><li><a data-id="11" href="javascript:void(0)">内蒙古</a></li><li><a data-id="12" href="javascript:void(0)">江苏</a></li><li><a data-id="13" href="javascript:void(0)">山东</a></li><li><a data-id="14" href="javascript:void(0)">安徽</a></li><li><a data-id="15" href="javascript:void(0)">浙江</a></li><li><a data-id="16" href="javascript:void(0)">福建</a></li><li><a data-id="17" href="javascript:void(0)">湖北</a></li><li><a data-id="18" href="javascript:void(0)">湖南</a></li><li><a data-id="19" href="javascript:void(0)">广东</a></li><li><a data-id="20" href="javascript:void(0)">广西</a></li><li><a data-id="21" href="javascript:void(0)">江西</a></li><li><a data-id="22" href="javascript:void(0)">四川</a></li><li><a data-id="23" href="javascript:void(0)">海南</a></li><li><a data-id="24" href="javascript:void(0)">贵州</a></li><li><a data-id="25" href="javascript:void(0)">云南</a></li><li><a data-id="26" href="javascript:void(0)">西藏</a></li><li><a data-id="27" href="javascript:void(0)">陕西</a></li><li><a data-id="28" href="javascript:void(0)">甘肃</a></li><li><a data-id="29" href="javascript:void(0)">青海</a></li><li><a data-id="30" href="javascript:void(0)">宁夏</a></li><li><a data-id="31" href="javascript:void(0)">新疆</a></li><li><a data-id="52993" href="javascript:void(0)">港澳</a></li><li><a data-id="32" href="javascript:void(0)">台湾</a></li><li><a data-id="84" href="javascript:void(0)">钓鱼岛</a></li></ul></div><div style="display: none;" class="ui-switchable-panel" data-index="1"><ul class="ui-area-content-list"><li><a data-id="72" href="javascript:void(0)">朝阳区</a></li><li><a data-id="2800" href="javascript:void(0)">海淀区</a></li><li><a data-id="2801" href="javascript:void(0)">西城区</a></li><li><a data-id="2802" href="javascript:void(0)">东城区</a></li><li><a data-id="2803" href="javascript:void(0)">崇文区</a></li><li><a data-id="2804" href="javascript:void(0)">宣武区</a></li><li><a data-id="2805" href="javascript:void(0)">丰台区</a></li><li><a data-id="2806" href="javascript:void(0)">石景山区</a></li><li><a data-id="2807" href="javascript:void(0)">门头沟</a></li><li><a data-id="2808" href="javascript:void(0)">房山区</a></li><li><a data-id="2809" href="javascript:void(0)">通州区</a></li><li><a data-id="2810" href="javascript:void(0)">大兴区</a></li><li><a data-id="2812" href="javascript:void(0)">顺义区</a></li><li><a data-id="2814" href="javascript:void(0)">怀柔区</a></li><li><a data-id="2816" href="javascript:void(0)">密云区</a></li><li><a data-id="2901" href="javascript:void(0)">昌平区</a></li><li><a data-id="2953" href="javascript:void(0)">平谷区</a></li><li><a data-id="3065" href="javascript:void(0)">延庆县</a></li></ul></div><div style="" class="ui-switchable-panel ui-switchable-panel-selected" data-index="2"><ul class="ui-area-content-list"><li class="long-area"><a data-id="2819" href="javascript:void(0)">三环到四环之间</a></li><li class="long-area"><a data-id="2839" href="javascript:void(0)">四环到五环之间</a></li><li class="long-area"><a data-id="2840" href="javascript:void(0)">五环到六环之间</a></li><li><a data-id="4137" href="javascript:void(0)">管庄</a></li><li><a data-id="4139" href="javascript:void(0)">北苑</a></li><li><a data-id="4211" href="javascript:void(0)">定福庄</a></li><li><a data-id="2799" href="javascript:void(0)">三环以内</a></li></ul></div></div>
+			</div>
+		</div>
+	</div>
+	<div class="clr"></div>
+	<div class="w-line">
+		<div style="width: 82px; left: 0px;" class="floater"></div>
+	</div>
+	<div style="display: block;" class="tab-con ui-switchable-panel-selected"></div>
+	<div style="display: none;" class="tab-con hide"></div>
+</div>		</div>
+		<div class="cart-warp">
+			<div class="w">	
+				<div id="jd-cart">
+	<div class="cart-main cart-main-new">
+		<div class="cart-thead">
+			<div class="column t-checkbox">
+				<div class="cart-checkbox">
+					<input checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_allCheck" type="checkbox">
+					<label class="checked" for="">勾选全部商品</label>
+				</div>
+				全选
+			</div>
+			<div class="column t-goods">商品</div>
+			<div class="column t-props"></div>
+			<div class="column t-price">单价(元)</div>
+			<div class="column t-quantity">数量</div>
+			<div class="column t-sum">小计(元)</div>
+			<div class="column t-action">操作</div>
+		</div>
+		<div id="cart-list">
+				<input id="allSkuIds" value="2537829" type="hidden">
+	<input id="outSkus" value="" type="hidden">
+	<input id="isLogin" value="0" type="hidden">
+	<input id="isNoSearchStockState" value="0" type="hidden">
+	<input id="isNoDD" value="0" type="hidden">
+	<input id="isNoCoupon" value="0" type="hidden">
+	<input id="isFavoriteDowngrade" value="0" type="hidden">
+	<input id="isUnmarketDowngrade" value="1" type="hidden">
+	<input id="isPriceNoticeDowngrade" value="0" type="hidden">
+	<input id="isNoZYCoupon" value="0" type="hidden">
+	<input id="isNoVenderFreight" value="0" type="hidden">
+	<input id="isNoDeliveryService" value="0" type="hidden">
+	<input id="isNoSamReplace" value="0" type="hidden">
+	<input id="hiddenLocationId" type="hidden">
+	<input id="hiddenLocation" type="hidden">
+	<input id="ids" value="2537829" type="hidden">
+	<input id="isNgsdg" value="0" type="hidden">
+	<!-- 修改数量之前的值 -->
+	<input id="changeBeforeValue" value="" type="hidden">
+	<input id="changeBeforeId" value="" type="hidden">
+	<input value="1" id="checkedCartState" type="hidden">
+	<input value="" id="venderIds" type="hidden">
+	<input value="2537829_1105_1" id="zySkuCid" type="hidden">
+	<input value="8888" id="venderFreightIds" type="hidden">
+	<input value="5699.00" id="venderTotals" type="hidden">
+	<input value="0" id="uclass" type="hidden">
+							<div class="cart-item-list" id="cart-item-list-01">
+				<div class="cart-tbody" id="vender_8888">
+	<div class="shop">
+		<div class="cart-checkbox">
+						<input checked="checked" name="checkShop" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_checkOn_shop" type="checkbox">
+			<label for="">勾选店铺内全部商品</label>
+					</div>
+		<span class="shop-txt">
+												<a class="shop-name self-shop-name" href="javascript:;" id="venderId_8888" clstag="clickcart|keycount|xincart|cart_shopNameJD">京东自营</a>
+									</span>
+		 			 <div venderfreighttype="1" freightpattern="1" venderid="8888" freeshippingprice="99.00" venderfreight="6.00" totalprice="5699.00" class="shop-extra-r" id="shop-extra-r_8888" checkedskuids="2537829">钻石会员满￥79.00免运费，其他会员满￥99.00免运费<span class="tips-icon omu-tips" data-tips="部分超重超大商品运费单独收取，不在本功能范围内，准确运费以结算页为准"></span></div>
+		 	</div>
+	<div class="item-list">
+				 <!-- 满赠 -->
+						<!-- 满赠 -->
+		<div class="item-give item-full " id="product_promo_191942253">
+					<input value="meet-give" type="hidden">
+				<div class="item-header">
+			<div class="f-txt">
+													<a href="http://sale.jd.com/act/b8apRulePO.html" clstag="clickcart|keycount|xincart|cart_huodong_link" target="_blank">
+																								<span class="full-icon">换购<b></b></span>
+																								活动商品已购满2999.00元
+																												，可加价换购商品1件
+												&gt;</a>
+						<a class="trade-btn btn-1 ml20" href="javascript:void(0);" id="select-gift_191942253" clstag="clickcart|keycount|xincart|cart_huanGou">换购商品</a>
+																		<a href="https://search.jd.com/Search?activity_id=191942253" target="_blank" clstag="clickcart|keycount|xincart|cart_couDan" class="ftx-05">&nbsp;去凑单&nbsp;&gt;</a>
+							</div>
+			<div class="f-price">
+				<strong>5699.00</strong>
+							</div>
+		</div>
+		
+		<!--已选赠品展示开始-->
+				<!--已选赠品展示结束-->
+		
+		
+					<!-- 单品-->
+			<div class=" item-last item-item item-selected  " id="product_2537829">
+		<div class="item-form">
+			<div class="cell p-checkbox">
+				<div class="cart-checkbox">
+					 <!-- 满赠 -->
+						<input p-type="2537829_13" manfanzeng="1" name="checkItem" value="2537829_13_191942253" checked="checked" class="jdcheckbox" data-bind="cbid" clstag="clickcart|keycount|xincart|cart_checkOn_sku" type="checkbox">
+										<label for="" class="checked">勾选商品</label>
+					<span class="line-circle"></span>
+				</div>
+			</div>
+			<div class="cell p-goods">
+				<div class="goods-item">
+					<div class="p-img">
+						<a href="https://item.jd.com/2537829.html" target="_blank" class="J_zyyhq_2537829"><img alt="华硕(ASUS) 飞行堡垒旗舰版FX-PRO 15.6英寸游戏本(i5-6300HQ 8G 1TB GTX960M 4G独显 FHD)" clstag="clickcart|keycount|xincart|cart_sku_pic" src="cart.action_files/5776028cN5c9f49ad.jpg"></a>
+					</div>
+					<div class="item-msg">
+						<div class="p-name">
+							<a clstag="clickcart|keycount|xincart|cart_sku_name" href="https://item.jd.com/2537829.html" target="_blank">华硕(ASUS) 飞行堡垒旗舰版FX-PRO 15.6英寸游戏本(i5-6300HQ 8G 1TB GTX960M 4G独显 FHD)</a>
+						</div>
+						<div class="p-extend">
+							<span class="promise" _giftcard="giftcard_2537829">
+							</span>
+							<!-- 满赠 -->
+																						<span class="promise" _yanbao="yanbao_2537829_191942253"><i class="jd-service-icon"></i><a data-tips="购买增值保障" class="ftx-03 jd-service" href="#none">购买增值保障</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cell p-props p-props-new">
+													<div class="props-txt" title="Intel 六代i5">尺码：Intel 六代i5</div>
+							</div>
+			<div class="cell p-price">
+									<strong>5699.00</strong>
+																							<a class="sales-promotion" href="#none" clstag="clickcart|keycount|xincart|cart_youHui" data-tips="促销优惠">
+						促销优惠<b></b>
+					</a>
+					<div id="sales-promotion_2537829" class="promotion-tips">
+						<div class="promotion-tit">促销信息<b></b></div>
+						<div class="promotion-cont">
+							<ul>
+                			                				                			              
+  				                			                					                				<!-- 满赠 -->
+									<li><input multipromotion="0" name="radioPromotion_2537829" value="8888_191942253_2537829_13_191942253" title="满999.00、2999.00可换购商品" checked="checked" type="radio">满999.00、2999.00可换购商品</li>
+	                    			                    			                			                					                				<!-- 满赠 -->
+									<li><input multipromotion="0" name="radioPromotion_2537829" value="8888_-300_2537829_13_191942253" title="不使用活动优惠" type="radio">不使用活动优惠</li>
+	                    			                    			                										</ul>
+							<div class="op-btns ac mt20">
+								<a href="#none" class="btn-1 select-promotion" clstag="clickcart|keycount|xincart|cart_youHuiChange">确定</a>
+								<a href="#none" class="btn-9 ml10 del cancel-promotion">取消</a>
+							</div>
+						</div>
+					</div>
+																	                	            										                            				</div>
+			<div class="cell p-quantity">
+				 <!-- 满赠 -->
+					<div class="quantity-form" promoid="191942253">
+						<a href="javascript:void(0);" clstag="clickcart|keycount|xincart|cart_num_down" class="decrement disabled" id="decrement_8888_2537829_1_13_191942253">-</a>
+						<input autocomplete="off" class="itxt" value="1" id="changeQuantity_8888_2537829_1_13_0_191942253" type="text">
+						<a href="javascript:void(0);" clstag="clickcart|keycount|xincart|cart_num_up" class="increment" id="increment_8888_2537829_1_13_0_191942253">+</a>
+					</div>
+								<div class="ac ftx-03 quantity-txt" _stock="stock_2537829">有货</div>
+			</div>
+			<div class="cell p-sum">
+									<strong>5699.00</strong>
+										            	            			</div>
+			<div class="cell p-ops">
+				 <!-- 满赠 -->
+					<a id="remove_8888_2537829_13_191942253" clstag="clickcart|keycount|xincart|cart_sku_del" data-name="华硕(ASUS) 飞行堡垒旗舰版FX-PRO 15.6英寸..." data-more="removed_5699.00_1" class="cart-remove" href="javascript:void(0);">删除</a>
+											<a href="javascript:void(0);" class="cart-follow" id="follow_8888_2537829_13_191942253" clstag="clickcart|keycount|xincart|cart_sku_guanzhu">移到我的关注</a>
+																	</div>
+		</div>
+		<div class="item-extra">
+									<!-- 落地配服务 -->
+															<div class="unmarket-items" _unmarket="unmarket_2537829" data="670;671;1105;2537829;0"><div class="unmarket-item">    <i class="unmarket-icon mr5"></i>    <div class="unmarket-info fl mr10">        <a title="“买游戏本还送499元RGB机械键盘？雷神在召唤！”提到该商品" target="_blank" clstag="pageclick|keycount|cart_201608302|1" href="https://sale.jd.com/act/13v2ETmoFz.html">            “买游戏本还送499元RGB机械键盘？雷神在召唤！”提到该商品        </a>    </div></div></div>
+					</div>
+		<div class="item-line"></div>
+	</div>
+				
+		<!--满赠赠品弹层开始-->
+		<div style="display: none;" class="gift-box" id="gift_box_191942253">
+			<div class="gift-arr"></div>
+			<input id="gift_num_191942253" value="1" type="hidden">
+        	<div class="gift-mt">
+				可换购最多1件，已选<em class="num">0</em>件
+				<strong class="close">X</strong>
+			</div>
+        	<div class="gift-goods">
+				            		<!--<div class="gift-tit">
+            			<h3>满<span class="ftx-01">2999.00</span>可换购（还差 <span class="ftx-01">169.00</span>）</h3>
+            			<div class="extra-r">
+            				<a href="//www.jd.com" class="ftx-05">继续购物</a>
+            			</div>
+            		</div>-->
+																			<div class="item-gift">
+                			<div class="p-checkbox">
+                				<div class="cart-checkbox ">
+																			<input id="1165967" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_checkOn_sku" type="checkbox">
+										<label for="">勾选商品</label>
+									                				</div>
+                			</div>
+                			<div class="p-img">
+                				<a href="https://item.jd.com/1165967.html" target="_blank">
+																			<img clstag="clickcart|keycount|xincart|cart_sku_pic" src="cart.action_files/566529e0Nb4a032ab.jpg" alt="达尔优（dare-u） 执法官 多媒体游戏鼠标 白色">
+																	</a>
+                			</div>
+                			<div class="p-msg">
+                				<div class="p-name">
+                					<a href="https://item.jd.com/1165967.html" target="_blank" title="达尔优（dare-u） 执法官 多媒体游戏鼠标 白色">
+                						达尔优（dare-u） 执法官 多媒体游戏鼠标 ...
+                					</a>
+                					<span class="num">×1</span>
+                				</div>
+                				<div class="p-price">
+                					<strong>
+                						<em>￥69.00</em>
+                					</strong>
+									                				</div>
+                			</div>
+                		</div>
+											<div class="item-gift">
+                			<div class="p-checkbox">
+                				<div class="cart-checkbox ">
+																			<input id="3231690" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_checkOn_sku" type="checkbox">
+										<label for="">勾选商品</label>
+									                				</div>
+                			</div>
+                			<div class="p-img">
+                				<a href="https://item.jd.com/3231690.html" target="_blank">
+																			<img clstag="clickcart|keycount|xincart|cart_sku_pic" src="cart.action_files/577ccfa6Nd6ceea40.jpg" alt="iNSIST Swing pro RGB炫光版有线电竞游戏鼠标 黑色">
+																	</a>
+                			</div>
+                			<div class="p-msg">
+                				<div class="p-name">
+                					<a href="https://item.jd.com/3231690.html" target="_blank" title="iNSIST Swing pro RGB炫光版有线电竞游戏鼠标 黑色">
+                						iNSIST Swing pro RGB炫光版有线电竞游戏鼠...
+                					</a>
+                					<span class="num">×1</span>
+                				</div>
+                				<div class="p-price">
+                					<strong>
+                						<em>￥169.00</em>
+                					</strong>
+									                				</div>
+                			</div>
+                		</div>
+											<div class="item-gift">
+                			<div class="p-checkbox">
+                				<div class="cart-checkbox ">
+																			<input id="1836477" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_checkOn_sku" type="checkbox">
+										<label for="">勾选商品</label>
+									                				</div>
+                			</div>
+                			<div class="p-img">
+                				<a href="https://item.jd.com/1836477.html" target="_blank">
+																			<img clstag="clickcart|keycount|xincart|cart_sku_pic" src="cart.action_files/56d3e31aN453dba44.jpg" alt="雷柏（Rapoo） V500S 背光机械游戏键盘 黑色 黑轴">
+																	</a>
+                			</div>
+                			<div class="p-msg">
+                				<div class="p-name">
+                					<a href="https://item.jd.com/1836477.html" target="_blank" title="雷柏（Rapoo） V500S 背光机械游戏键盘 黑色 黑轴">
+                						雷柏（Rapoo） V500S 背光机械游戏键盘 黑...
+                					</a>
+                					<span class="num">×1</span>
+                				</div>
+                				<div class="p-price">
+                					<strong>
+                						<em>￥169.00</em>
+                					</strong>
+									                				</div>
+                			</div>
+                		</div>
+									        		
+        	</div>
+        
+        	<div class="op-btns ac">
+									<a href="#none" class="btn-1 select-gift" clstag="clickcart|keycount|xincart|cart_huanGouSet">确定</a>
+					<a href="#none" class="btn-9 ml10 del cancel-gift">取消</a>
+				        	</div>
+        </div>
+		<!--满赠赠品弹层结束-->
+	</div>				</div>
+</div>
+			</div>
+					</div>
+	</div>
+</div>
+<div id="cart-floatbar">
+	<div style="width: 990px; height: 52px;" class="ui-ceilinglamp-1"><div style="width: 988px; height: 50px;" class="cart-toolbar">
+		<div class="toolbar-wrap">
+			<div style="display: none;" class="selected-item-list hide">
+			</div>
+			<div class="options-box">
+				<div class="select-all">
+					<div class="cart-checkbox">
+						<input checked="checked" id="toggle-checkboxes_down" name="toggle-checkboxes" class="jdcheckbox" clstag="clickcart|keycount|xincart|cart_allCheckDown" type="checkbox">
+						<label class="checked" for="">勾选全部商品</label>
+					</div>
+					全选
+				</div>
+				<div class="operation">
+					<a href="#none" clstag="clickcart|keycount|xincart|cart_somesku_del" class="remove-batch">删除选中的商品</a>
+											<a href="#none" class="follow-batch" clstag="clickcart|keycount|xincart|cart_somesku_guanzhu">移到我的关注</a>
+																<a class="J_clr_nosale" href="#none" clstag="pageclick|keycount|201508251|23">清除下柜商品</a>
+									</div>
+				<div class="clr"></div>
+				<div class="toolbar-right">
+					<div class="normal">
+						<div class="comm-right">
+							<div class="btn-area">
+								<a data-bind="1" href="javascript:void(0);" onclick="return false;" clstag="clickcart|keycount|xincart|cart_gotoOrder" class="submit-btn">
+								去结算<b></b></a>
+								<!-- <a href="javascript:void(0);" class="submit-btn submit-btn-disabled">
+								去结算<b></b></a> -->
+							</div>
+							<div class="price-sum">
+								<div>
+									<span class="txt txt-new">总价：</span>
+									<span class="price sumPrice"><em>￥5699.00</em></span>
+									<b class="ml5 price-tips"></b>
+									<div class="price-tipsbox" style="display: none; left: 159.85px;">
+										<div class="ui-tips-main">不含运费及送装服务费</div>
+										<span class="price-tipsbox-arrow"></span>
+									</div>
+									<br>
+									<span class="txt">已节省：</span>
+									<span class="price totalRePrice">-￥0.00</span>
+								</div>
+							</div>
+							<div class="amount-sum">
+								已选择<em>1</em>件商品<b class="up" clstag="clickcart|keycount|xincart|cart_thumbnailOpen"></b>
+							</div>
+							<div class="clr"></div>
+						</div>
+					</div>
+					<div style="display: none;" class="combine">
+						<div class="comm-right">
+							<div class="btn-area">
+								<a href="javascript:void(0);" onclick="return false;" clstag="clickcart|keycount|xincart|cart_gotoOrderOut" class="jdInt-submit-btn">
+								去全球购结算<b></b></a>
+								<a href="javascript:void(0);" onclick="return false;" clstag="clickcart|keycount|xincart|cart_gotoOrder" class="common-submit-btn">
+								去京东结算<b></b></a>
+							</div>
+							<div class="price-sum">
+								<div>
+									<span class="txt txt-new">总价：</span>
+									<span class="price sumPrice"><em>￥5699.00</em></span>
+									<b class="ml5 price-tips"></b>
+									<div class="price-tipsbox" style="display: none; left: 159.85px;">
+										<div class="ui-tips-main">不含运费及送装服务费</div>
+										<span class="price-tipsbox-arrow"></span>
+									</div>
+									<br>
+									<span class="txt">已节省：</span>
+									<span class="price totalRePrice">-￥0.00</span>
+								</div>
+							</div>
+							<div class="amount-sum">
+								已选择<em>1</em>件商品<b class="up"></b>
+							</div>
+							<div class="clr"></div>
+						</div>
+						<div class="clr"></div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div></div>
+</div>
+<div class="cart-removed">
+	<div class="r-tit">已删除商品，您可以重新购买或加关注：</div>
+</div>			</div>
+		</div>
+			<div class="w">
+		<div class="m m1" id="c-tabs-new">
+    <div class="mt">
+        <div class="extra-l">
+            <a href="#none" class="c-item curr">猜你喜欢</a>
+                        <a href="#none" class="c-item">我的关注</a>
+                        <a href="#none" class="c-item">最近浏览</a>
+        </div>
+        <div class="extra-r">
+        </div>
+    </div>
+    <div style="position: relative;" class="mc c-panel-main">
+        <div style="position: absolute; z-index: 1; opacity: 1;" class="c-panel ui-switchable-panel-selected" id="guess-products"><div class="goods-list-tab"><a href="#none" class="s-item curr">&nbsp;</a><a href="#none" class="s-item">&nbsp;</a><a href="#none" class="s-item">&nbsp;</a></div>  <div style="position: relative;" class="mc c-panel-main">    <div style="position: absolute; z-index: 1; opacity: 1;" class="goods-list c-panel ui-switchable-panel-selected">      <ul>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=3012698$index=0$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=adef7fb793bce3651a98ce0a8f791a1f396ba32a" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=3012698$index=0$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=adef7fb793bce3651a98ce0a8f791a1f396ba32a')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/3012698.html"><img src="cart.action_files/5795c6ecN8a522f60.jpg" alt="华硕(ASUS) 飞行堡垒升级版FX50VX 15.6英寸游戏本(i5-6300HQ 8G 1TB 7200转 GTX950M 2G独显 雾面屏)" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/3012698.html">华硕(ASUS) 飞行堡垒升级版FX50VX 15.6英寸游戏本(i5-6300HQ 8G 1TB 7200转 GTX950M 2G独显 雾面屏)</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>5299.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="3012698" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=181480$index=1$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=9fa0867d571135e0f2911c1e44d885aed1422c12" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=181480$index=1$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=9fa0867d571135e0f2911c1e44d885aed1422c12')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/181480.html"><img src="cart.action_files/57beac6eNd612f50c.jpg" alt="华硕(ASUS) 原装笔记本电脑包15.6英寸" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/181480.html">华硕(ASUS) 原装笔记本电脑包15.6英寸</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>59.90</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="181480" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2754633$index=2$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=b1e9106361aaea24b72bb13484f5d6aa0550a79f" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2754633$index=2$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=b1e9106361aaea24b72bb13484f5d6aa0550a79f')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/2754633.html"><img src="cart.action_files/57885998Na0753f9d.jpg" alt="微星(MSI) GL62 6QF-626XCN 15.6英寸游戏笔记本电脑(i5-6300HQ 8G 1T GTX960M 2G)黑色" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/2754633.html">微星(MSI) GL62 6QF-626XCN 15.6英寸游戏笔记本电脑(i5-6300HQ 8G 1T GTX960M 2G)黑色</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>5699.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="2754633" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1997083$index=3$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=c75b9444384757ad5d73ffaac54e656132c283a2" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1997083$index=3$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=c75b9444384757ad5d73ffaac54e656132c283a2')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/1997083.html"><img src="cart.action_files/577220a0N770ec0f0.jpg" alt="神舟（HASEE） 战神Z6-SL7D1 15.6英寸游戏笔记本(i7-6700HQ 8G 1T HDD GTX960M 2G独显 1080P)黑色" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/1997083.html">神舟（HASEE） 战神Z6-SL7D1 15.6英寸游戏笔记本(i7-6700HQ 8G 1T HDD GTX960M 2G独显 1080P)黑色</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>5499.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="1997083" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li> </ul></div><div style="position: absolute; z-index: 0; opacity: 0; display: block;" class="goods-list c-panel hide"><ul>        <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=592896$index=4$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=a4b4356f009151e2e155090ea37aca47b53f5d05" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=592896$index=4$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=a4b4356f009151e2e155090ea37aca47b53f5d05')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/592896.html"><img src="cart.action_files/0aa34ef0-cd09-4a24-b092-27a2861a7521.jpg" alt="华硕（Asus）UX300 有线蓝光鼠标 黑色" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/592896.html">华硕（Asus）UX300 有线蓝光鼠标 黑色</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>39.90</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="592896" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=3039654$index=5$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=6e645455aa30a2313554aa581c109169a6d10fee" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=3039654$index=5$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=6e645455aa30a2313554aa581c109169a6d10fee')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/3039654.html"><img src="cart.action_files/5747b0a6Ne0a1411b.jpg" alt="华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/3039654.html">华硕（ASUS）灵耀 U3000 13.3英寸超轻薄笔记本电脑（i7-6500U 8G 512GB SSD 烟棕色 LED雾面防炫目屏）</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>6499.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="3039654" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2369409$index=6$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=b8a8c5af9aadfcc447040f5ec7a6ca1b679ce0f3" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2369409$index=6$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=b8a8c5af9aadfcc447040f5ec7a6ca1b679ce0f3')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/2369409.html"><img src="cart.action_files/57f8aff4Ne1485c5e.jpg" alt="华硕(ASUS) G58VW玩家国度ROG游戏笔记本15.6英寸(i7-6700HQ 8G 1T+128GSSD GTX960M 4G独显 FHD全高清)" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/2369409.html">华硕(ASUS) G58VW玩家国度ROG游戏笔记本15.6英寸(i7-6700HQ 8G 1T+128GSSD GTX960M 4G独显 FHD全高清)</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>7999.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="2369409" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1428753$index=7$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=567b4df4e3f848c8f8e6f22574a5add24885b2b7" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1428753$index=7$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=567b4df4e3f848c8f8e6f22574a5add24885b2b7')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/1428753.html"><img src="cart.action_files/551e293fN2be0b535.jpg" alt="三星(SAMSUNG) 850 EVO 120G M.2 固态硬盘" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/1428753.html">三星(SAMSUNG) 850 EVO 120G M.2 固态硬盘</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>399.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="1428753" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li> </ul></div><div style="position: absolute; z-index: 0; opacity: 0; display: block;" class="goods-list c-panel hide"><ul>        <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2753149$index=8$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=53ad85761dbcf3f4f8053f9e189b55889d3343d4" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2753149$index=8$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=53ad85761dbcf3f4f8053f9e189b55889d3343d4')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/2753149.html"><img src="cart.action_files/57305e52Na129ece6.jpg" alt="机械师(MACHENIKE)T57-D3S 15.6英寸游戏本电脑(i5-6300HQ GTX960M 2G独显 8G 240G SSD)黑色" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/2753149.html">机械师(MACHENIKE)T57-D3S 15.6英寸游戏本电脑(i5-6300HQ GTX960M 2G独显 8G 240G SSD)黑色</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>5399.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="2753149" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1190244$index=9$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=d21004a1fa4162a70620f8de557f55585d2e223b" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1190244$index=9$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=d21004a1fa4162a70620f8de557f55585d2e223b')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/1190244.html"><img src="cart.action_files/5653cb45N1a1ba50b.jpg" alt="SWISSGEAR SA9360BL 15.6英寸笔记本电脑包 男女款商务潮流防水双肩背包书包 黑色" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/1190244.html">SWISSGEAR SA9360BL 15.6英寸笔记本电脑包 男女款商务潮流防水双肩背包书包 黑色</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>129.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="1190244" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1739374857$index=10$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=73ec40b3fb04f6f7abcb779ea92e0418a157031e" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=1739374857$index=10$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=73ec40b3fb04f6f7abcb779ea92e0418a157031e')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/1739374857.html"><img src="cart.action_files/5653faadN5b9d0600.jpg" alt="戴尔DELL灵越5559 Ins15U-3748 15.6英寸六代I7 4G独显笔记本电脑" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/1739374857.html">戴尔DELL灵越5559 Ins15U-3748 15.6英寸六代I7 4G独显笔记本电脑</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>4999.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="1739374857" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>         <li data-clk="//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2293586$index=11$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=98190d4601f30c8201c8f3937cf7e840593482f9" onclick="log('//mercury.jd.com/log.gif?t=rec.205000&amp;v=src=rec$action=1$reqsig=f60704f3b0f83767eeafddf244b0f6d1888a3900$enb=1$sku=0$skus=2537829$p=205000$pin=$uuid=1934880336$csku=2293586$index=11$st=0$adcli=$expid=0$im=&amp;rid=8296289547302086421&amp;ver=1&amp;sig=98190d4601f30c8201c8f3937cf7e840593482f9')">          <div class="item">            <div class="p-img" clstag="pageclick|keycount|201601152|16">              <a target="_blank" href="https://item.jd.com/2293586.html"><img src="cart.action_files/571738b8Nc22fd700.jpg" alt="雷神（ThundeRobot）G150T炫速Ⅱ 15.6英寸游戏本（i5-6300HQ 4G 128G+1TB GTX960M 2G独显 win10 FHD）灰" height="160" width="160"></a>            </div>            <div class="p-name" clstag="pageclick|keycount|201601152|17">              <a target="_blank" href="https://item.jd.com/2293586.html">雷神（ThundeRobot）G150T炫速Ⅱ 15.6英寸游戏本（i5-6300HQ 4G 128G+1TB GTX960M 2G独显 win10 FHD）灰</a>            </div>            <div class="p-price">              <strong><em>￥</em><i>5299.00</i></strong>            </div>            <div class="p-btn" clstag="pageclick|keycount|cart__201503041|1">              <a href="#none" _pid="2293586" class="btn-append"><b></b>加入购物车</a>            </div>          </div>        </li>      </ul>    </div>    <div class="c-page">      <a href="javascript:void(0)" class="c-prev">&lt;</a>       <a href="javascript:void(0)" class="c-next">&gt;</a>     </div>  </div></div>
+                <div style="position: absolute; z-index: 0; opacity: 0; height: 247px; line-height: 247px;" class="c-panel" id="favorite-products"><div class="ac mt10"><a href="javascript:void(0);" class="ftx-05 login-in">登录</a>后将显示您之前关注的商品</div></div>
+                <div style="position: absolute; z-index: 0; opacity: 0; height: 247px; line-height: 247px;" class="c-panel" id="history-products"><div class="ac mt10">暂时无结果</div></div>
+    </div>
+</div>	</div>
+		<div class="w">
+	</div>
+	
+</div>
+<!-- /main -->
+
+<div id="service-2014">
+	<div class="slogen">
+		<span class="item fore1">
+			<i></i><b>多</b>品类齐全，轻松购物
+		</span>
+		<span class="item fore2">
+			<i></i><b>快</b>多仓直发，极速配送
+		</span>
+		<span class="item fore3">
+			<i></i><b>好</b>正品行货，精致服务
+		</span>
+		<span class="item fore4">
+			<i></i><b>省</b>天天低价，畅选无忧
+		</span>
+	</div>
+	<div class="w">
+		<dl class="fore1">
+			<dt>购物指南</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-29.html">购物流程</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-151.html">会员介绍</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-297.html">生活旅行/团购</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue.html">常见问题</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-136.html">大家电</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/index.html">联系客服</a></div>
+			</dd>
+		</dl>
+		<dl class="fore2">		
+			<dt>配送方式</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-81-100.html">上门自提</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-81.html">211限时达</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/103-983.html">配送服务查询</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/109-188.html">配送费收取标准</a></div>				
+				<div><a target="_blank" href="https://en.jd.com/chinese.html">海外配送</a></div>
+			</dd>
+		</dl>
+		<dl class="fore3">
+			<dt>支付方式</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-172.html">货到付款</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-173.html">在线支付</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-176.html">分期付款</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-174.html">邮局汇款</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-175.html">公司转账</a></div>
+			</dd>
+		</dl>
+		<dl class="fore4">		
+			<dt>售后服务</dt>
+			<dd>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/321-981.html">售后政策</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-132.html">价格保护</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/130-978.html">退款说明</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://myjd.jd.com/repair/repairs.action">返修/退换货</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://help.jd.com/user/issue/list-50.html">取消订单</a></div>
+			</dd>
+		</dl>
+		<dl class="fore5">
+			<dt>特色服务</dt>
+			<dd>		
+				<div><a target="_blank" href="https://help.jd.com/user/issue/list-133.html">夺宝岛</a></div>
+				<div><a target="_blank" href="https://help.jd.com/user/issue/list-134.html">DIY装机</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://fuwu.jd.com/">延保服务</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://o.jd.com/market/index.action">京东E卡</a></div>				
+				<div><a rel="nofollow" target="_blank" href="https://mobile.jd.com/">京东通信</a></div>
+				<div><a rel="nofollow" target="_blank" href="https://s.jd.com/">京东JD+</a></div>
+			</dd>
+		</dl>
+		<span class="clr"></span>
+	</div>
+</div>
+<div class="w">
+	<div id="footer-2014">
+		<div class="links"><a rel="nofollow" target="_blank" href="https://www.jd.com/intro/about.aspx">关于我们</a>|<a rel="nofollow" target="_blank" href="https://www.jd.com/contact/">联系我们</a>|<a rel="nofollow" target="_blank" href="https://www.jd.com/contact/joinin.aspx">商家入驻</a>|<a rel="nofollow" target="_blank" href="https://jzt.jd.com/">营销中心</a>|<a rel="nofollow" target="_blank" href="https://app.jd.com/">手机京东</a>|<a target="_blank" href="https://club.jd.com/links.aspx">友情链接</a>|<a target="_blank" href="https://media.jd.com/">销售联盟</a>|<a href="https://club.jd.com/" target="_blank">京东社区</a>|<a href="https://sale.jd.com/act/FTrWPesiDhXt5M6.html" target="_blank">风险监测</a>|<a href="https://gongyi.jd.com/" target="_blank">京东公益</a>|<a href="https://en.jd.com/" target="_blank">English Site</a>|<a href="https://en.jd.com/help/question-58.html" target="_blank">Contact Us</a></div>
+		<div class="copyright"><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000088"><img src="cart.action_files/56a0a994Nf1b662dc.png"> 京公网安备 11000002000088号</a>&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证070359号&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" href="https://img14.360buyimg.com/da/jfs/t256/349/769670066/270505/3b03e0bb/53f16c24N7c04d9e9.jpg">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>&nbsp;&nbsp;|&nbsp;&nbsp;新出发京零&nbsp;字第大120007号<br>互联网出版许可证编号新出网证(京)字150号&nbsp;&nbsp;|&nbsp;&nbsp;<a rel="nofollow" href="https://img30.360buyimg.com/uba/jfs/t1036/328/1487467280/1405104/ea57ab94/5732f60aN53b01d06.jpg" target="_blank">出版物经营许可证</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://misc.360buyimg.com/wz/wlwhjyxkz.jpg" target="_blank">网络文化经营许可证京网文[2014]2148-348号</a>&nbsp;&nbsp;|&nbsp;&nbsp;违法和不良信息举报电话：4006561155<br>Copyright&nbsp;©&nbsp;2004-2016&nbsp;&nbsp;京东JD.com&nbsp;版权所有&nbsp;&nbsp;|&nbsp;&nbsp;消费者维权热线：4006067733<br>京东旗下网站：<a href="https://www.jdpay.com/" target="_blank">京东钱包</a>
+		</div>		
+		<div class="authentication">
+			<a rel="nofollow" target="_blank" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202007080200026">
+				<img alt="经营性网站备案中心" src="cart.action_files/54b8871eNa9a7067e.png" class="err-product" height="32" width="103">
+			</a>
+			<script type="text/JavaScript">function CNNIC_change(eleId){var str= document.getElementById(eleId).href;var str1 =str.substring(0,(str.length-6));str1+=CNNIC_RndNum(6); document.getElementById(eleId).href=str1;}function CNNIC_RndNum(k){var rnd=""; for (var i=0;i < k;i++) rnd+=Math.floor(Math.random()*10); return rnd;}</script>
+			<a rel="nofollow" target="_blank" id="urlknet" tabindex="-1" href="https://ss.knet.cn/verifyseal.dll?sn=2008070300100000031&amp;ct=df&amp;pa=294005">
+				<img onclick="CNNIC_change('urlknet')" oncontextmenu="return false;" name="CNNIC_seal" alt="可信网站" src="cart.action_files/54b8872dNe37a9860.png" class="err-product" border="true" height="32" width="103">
+			</a>
+			<a rel="nofollow" target="_blank" href="http://www.bj.cyberpolice.cn/index.do">
+				<img alt="网络警察" src="cart.action_files/56a89b8fNfbaade9a.jpg" class="err-product" height="32" width="103">
+			</a>
+			<a rel="nofollow" target="_blank" href="https://search.szfw.org/cert/l/CX20120111001803001836">
+				<img src="cart.action_files/54b8875fNad1e0c4c.png" class="err-product" height="32" width="103">
+			</a>
+			<a target="_blank" href="http://www.12377.cn/"><img src="cart.action_files/5698dc03N23f2e3b8.jpg" height="32" width="103"></a>
+			<a target="_blank" href="http://www.12377.cn/node_548446.htm"><img src="cart.action_files/5698dc16Nb2ab99df.jpg" height="32" width="103"></a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="cart.action_files/config.js"></script>
+	<script type="text/javascript" src="cart.action_files/cart-recommend-2016.js"></script>
+	<script type="text/javascript" src="cart.action_files/ceilinglamp.js"></script>
+		<script type="text/javascript" src="cart.action_files/im_cart_v1.js"></script>
+		<script type="text/javascript">
+    seajs.use("/js/cart.new.js?v=201609202016");
+</script>
+<!--统计代码 -->
+<script type="text/javascript">
+    (function() { 
+        var ja = document.createElement('script'); 
+        ja.type = 'text/javascript'; 
+        ja.async = true;
+        ja.src = ('https:' == document.location.protocol ? 'https://wlssl' : 'http://wl') + '.jd.com/wl.js';
+        var s = document.getElementsByTagName('script')[0]; 
+        s.parentNode.insertBefore(ja, s); 
+    })();
+</script>
+
+<!-- 公共头尾js end -->
+<object id="ddplugin-msie" classid="CLSID:B35D742C-5983-40C1-A8C0-A7DBFA2EF05E" height="0" width="0"></object>
+<embed id="ddplugin" type="application/dd-plugin" height="0" width="0">
+
+<div id="J-global-toolbar">            <div class="jdm-toolbar-wrap J-wrap">                <div class="jdm-toolbar J-toolbar">                    <div class="jdm-toolbar-panels J-panel">                    <div data-name="ad" class="J-content jdm-toolbar-panel jdm-tbar-panel-ad">                        <h3 class="jdm-tbar-panel-header J-panel-header">                            <a>                            <i></i>                            <em class="title"></em>                            </a>                            <span class="close-panel J-close"></span>                        </h3>                        <div class="jdm-tbar-panel-main">                            <div class="jdm-tbar-panel-content J-panel-content">                            </div>                        </div>                    </div>                             <div data-name="follow" class="J-content jdm-toolbar-panel jdm-tbar-panel-follow">                            <h3 class="jdm-tbar-panel-header J-panel-header">                                <a href="https://t.jd.com/home/follow" target="_blank" class="title" clstag="h|keycount|cebianlan_h_follow|title">                                <i></i>                                <em class="title">我的关注</em>                                </a>                                <span class="close-panel J-close"></span>                            </h3>                            <div class="jdm-tbar-panel-main">                                <div class="jdm-tbar-panel-content J-panel-content">                                <div class="jdm-tbar-tipbox2">                                    <div class="tip-inner">                                        <i class="i-loading"></i>                                    </div>                                </div>                                </div>                            </div>                            <div class="jdm-tbar-panel-footer J-panel-footer"></div>                        </div>                           </div>                    <div class="jdm-toolbar-header">                        <div class="jdm-tbar-act J-trigger" data-type="bar" data-name="ad" data-iframe="true" clstag="h|keycount|cebianlan_h_header|">                        </div>                    </div>                    <div class="jdm-toolbar-tabs J-tab">                             <div data-type="bar" clstag="h|keycount|cebianlan_h_follow|btn" class="J-trigger jdm-toolbar-tab jdm-tbar-tab-follow" data-name="follow" data-login="true">                                 <i class="tab-ico"></i>                                <em class="tab-text">                                    我的关注                                </em>                            <span class="tab-sub J-count hide">0</span>                            <div class="tabs-tip hide">                                <span class="ico"></span>                                <span class="text">成功加入购物车!</span>                                <b></b>                            </div>                        </div>                           </div>                    <div class="jdm-toolbar-footer">                        <div data-type="link" class="J-trigger jdm-toolbar-tab jdm-tbar-tab-top">                                <a href="#" clstag="h|keycount|cebianlan_h|top">                                <i class="tab-ico"></i>                                <em class="tab-text">顶部</em>                                </a>                         </div><div data-type="link" class="J-trigger jdm-toolbar-tab jdm-tbar-tab-faq"><a href="https://help.jd.com/user/issue/34-1098.html" target="_blank"><i class="tab-ico"></i><em class="tab-text tab-text-faq">常见问题</em></a></div>                        <div data-type="link" class="J-trigger jdm-toolbar-tab jdm-tbar-tab-feedback">                                 <a href="https://surveys.jd.com/index.php?r=survey/index/sid/487227/newtest/Y/lang/zh-Hans" target="_blank" clstag="h|keycount|cebianlan_h|feedback">                                    <i class="tab-ico"></i>                                    <em class="tab-text">反馈</em>                                </a>                        </div>                    </div>                    <div class="jdm-toolbar-mini">                    </div>                </div>                <div id="J-toolbar-load-hook" clstag="h|keycount|cebianlan_h|load"></div>            </div></div></body></html>

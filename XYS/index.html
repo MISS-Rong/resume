@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="1.css">
+    <script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+   
+</head>
+<body>
+    <!-- 头部导航 -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header ">
+          <a class="navbar-brand glyphicon glyphicon-earphone hidden-xs aa" href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-content="facebook"></a>
+        </div>
+        <div>
+          <ol class="nav navbar-nav">
+             <li class="active"><a class="glyphicon glyphicon-send hidden-xs aa" href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-content="instagram"></a></li>
+             <li><a class="glyphicon glyphicon-camera hidden-xs aa" href="#" data-container="body" data-toggle="popover" data-placement="bottom" data-content="twitter"></a></li>
+             <li class="dropdown">
+                <a href="#" class="glyphicon glyphicon-sound-dolby hidden-xs aa" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vimeo"></a>
+             </li>
+          </ol>
+        </div>
+        <a href="" class="pull-right" style="margin:1%;color:#666">Login</a>
+        <a href="" class="pull-right" style="margin:1%;color:#666">Register</a>
+    </nav>
+    <!-- logo部分 -->
+    <nav class="navbar navbar-default" role="navigation" style="height:100px;background:#fff">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Brand" src="images/logo.png">
+                </a>
+            </div>
+            <ol id="top-right">
+                <li class="pull-right hidden-xs"><a href="" style="color:#666">ABOUT US</a></li>
+                <li class="pull-right hidden-xs"><a href="" style="color:#666">Users</a></li>
+                <li class="pull-right hidden-xs"><a href="" style="color:#666">Blog Library</a></li>
+            </ol>
+        </div>
+    </nav>
+    <!-- 巨幕部分 -->
+    <div id="main" class="jumbotron">
+        <div class="cent">
+            <div class="right" style="margin-left:50%;padding-top:5%">
+                <h1>SHARE YOURL</h1>
+                <h1 style="font-weight:700">EGENDARY MOMENTS</h1>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg">JOIN NOW FOR FREE</button>
+            <button type="button" class="btn btn-primary btn-lg">GO TO BLOG LIBRARY</button>
+        </div>
+    </div>
+
+    <div id="contain">
+        <div id="cont">
+            <h2  class="text-center" style="margin:100px">RANDOM BLOG POST</h2>
+            <img src="images/main1.jpg" class="img-responsive" alt="Responsive image" style="width:100%;height:394px">
+            <h2  class="text-center" style="margin:100px">CHOOSE YOUR OPTIONS</h2>
+            <ol style="width:100%">
+                <li><img src="images/1.jpg" class="img-responsive pull-left" alt="Responsive image" style="width:50%;height:400px"></li>
+                <li><img src="images/2.jpg" class="img-responsive pull-left" alt="Responsive image" style="width:50%;height:400px"></li>
+                <li><img src="images/3.jpg" class="img-responsive pull-left" alt="Responsive image" style="width:50%;height:400px"></li>
+                <li><img src="images/4.jpg" class="img-responsive pull-left" alt="Responsive image" style="width:50%;height:400px"></li>
+            </ol>
+        </div>
+    </div>
+    <div id="bottom" style="width:100%;height:218px;background:#393838;">
+        <ul class="pull-left">
+            <li><a href="">Blog Library</a></li>
+            <li><a href="">User Feed</a></li>
+            <li><a href="">Bucket List</a></li>
+            <li><a href="">Users</a></li>
+        </ul>
+        <ul class="pull-left">
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Facebook</a></li>
+            <li><a href="">Instagram</a></li>
+            <li><a href="">Vimeo</a></li>
+        </ul>
+        <ul class="pull-left">
+            <li><a href="">About Us</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Terms and Conditions</a></li>
+            <li><a href="">Privacy Policy</a></li>
+        </ul>
+        <ul class="pull-left" style="list-style:none">
+            <li><a href="">COPYRIGHT TRAVEL LEGENDARY 2016</a></li>  
+        </ul>
+        
+    </div>
+    <script>
+        $('.aa').popover();
+        $('.bb').popover();
+    </script>
+</html>
