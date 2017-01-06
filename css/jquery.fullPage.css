@@ -10,6 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow:hidden;
+    width:100%;
     /*Avoid flicker on slides transitions for mobile phones #336 */
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -190,7 +191,7 @@ html, body {
 .section .slide img{width: 100%;}
 .fh-top{position: absolute;bottom:1%;left:46%;font-size: 12vw;font-weight: bold;height: 10vw;}
 .section .header{width:62vw;height:62vw;background: url(../images/head-bg.gif) no-repeat;margin:10% auto;background-size: 100% 100%;overflow: hidden;}
-.section .head{width:50vw;height: 50vw;border-radius: 50%;overflow: hidden;margin:0% 8%;position: absolute;top:9%;left:17%;}
+.section .head{width:50vw;height: 50vw;border-radius: 50%;overflow:hidden;margin:0% 8%;position: absolute;-webkit-margin-top:15%;top:10%;left:17%;}
 .section .head img{width:100%;}
 .section h1{display: none;}
 .section p{width: 80%;border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:5% 0;position:absolute;left:100%;/*margin:0 -100%;*/}
